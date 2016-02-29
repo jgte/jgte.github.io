@@ -33,6 +33,7 @@ all: pdf biber pdf view
 
 html:
 	$(HTLATEX) $(MAINTEXFILE)
+	mv -f $(MAINTEXFILE).html index.html
 
 pdf:
 	$(PDFLATEX) $(MAINTEXFILE)
