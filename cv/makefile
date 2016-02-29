@@ -22,6 +22,7 @@ BIBTEX:=$(EXEDIR)bibtex
 BIBER:=$(EXEDIR)biber
 PDFVIEW=$(shell which gnome-open || which open || which evince || which gpdf || which kpdf || which acroread || which xpdf)
 PDFLATEX:=$(EXEDIR)pdflatex $(PDFLATEXOPTS)
+HTLATEX:=htlatex
 
 # http://stackoverflow.com/questions/18136918/how-to-get-current-directory-of-your-makefile
 ROOT_DIR:=$(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
@@ -29,6 +30,9 @@ ROOT_DIR:=$(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
 .PHONY: all pdf ps dvi bib clean view tables biber
 
 all: pdf biber pdf view
+
+html:
+	$(HTLATEX) $(MAINTEXFILE)
 
 pdf:
 	$(PDFLATEX) $(MAINTEXFILE)
