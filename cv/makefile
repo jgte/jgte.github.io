@@ -32,7 +32,7 @@ ROOT_DIR:=$(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
 all: pdf biber pdf view
 
 html:
-	$(HTLATEX) $(MAINTEXFILE)
+	$(HTLATEX) $(MAINTEXFILE) "xhtml, charset=utf-8" " -cunihtf -utf8"
 	mv -f $(MAINTEXFILE).html index.html
 
 pdf:
