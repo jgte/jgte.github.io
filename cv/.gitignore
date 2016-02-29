@@ -12,3 +12,5 @@
 *.lg
 *.tmp
 *.xref
+*.pdf
+*.dvi
