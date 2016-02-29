@@ -68,8 +68,8 @@ parse_bib:
 	| sed 's_Jo{\\~a}o_\\textbf{Jo{\\~a}o}_g' \
 	| sed 's_XZQGJ_X_g' \
 	 > "$(CURDIR)/$(MAINTEXFILE).bib"
-	tr '´' "'" < "$(CURDIR)/$(MAINTEXFILE).bib" | /usr/local/bin/sponge "$(CURDIR)/$(MAINTEXFILE).bib"
-	tr '`' "'" < "$(CURDIR)/$(MAINTEXFILE).bib" | /usr/local/bin/sponge "$(CURDIR)/$(MAINTEXFILE).bib"
+	tr '´' "'" < "$(CURDIR)/$(MAINTEXFILE).bib" | sponge "$(CURDIR)/$(MAINTEXFILE).bib"
+	tr '`' "'" < "$(CURDIR)/$(MAINTEXFILE).bib" | sponge "$(CURDIR)/$(MAINTEXFILE).bib"
 
 clean:
 	@for i in aux dvi log ps pdf toc fdb_latexmk flsm blg bbl bcf out run.xml synctex.gz; do rm -fv $(MAINTEXFILE).$$i; done
