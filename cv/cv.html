@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=5.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Arbutus+Slab" type="text/css">
+
+    <title>CV of Joao Encarnacao</title>
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <script type="text/x-mathjax-config">
+        // <![CDATA[
+        MathJax.Hub.Config({
+            TeX: {extensions: ["AMSmath.js", "AMSsymbols.js"]},
+            extensions: ["tex2jax.js"],
+            jax: ["input/TeX", "output/HTML-CSS"],
+            showProcessingMessages : false,
+            messageStyle : "none" ,
+            showMathMenu: false ,
+            tex2jax: {
+                processEnvironments: true,
+                inlineMath: [ ['$','$'], ["\(","\)"] ],
+                displayMath: [ ['$$','$$'], ["\[","\]"] ],
+                preview : "none",
+                processEscapes: true
+            },
+            "HTML-CSS": { linebreaks: { automatic:true, width: "latex-container"} }
+        });
+        // ]]>
+    </script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+
+    <link rel="stylesheet" href="latex2html5.min.css">
+    <script type="text/javascript" src="latex2html5.min.js"></script>
+
+  </head>
+  <body>
+
+  <latex src="cv_jgte.tex">
+            <script type="text/javascript">
+                $('latex').LaTeX();
+            </script>
+
+  </body>
+</html>

@@ -1,0 +1,375 @@
+\documentclass[a4paper]{article}
+
+% ------ packages --------------------------------------------------------
+
+% sudo tlmgr install titlesec biblatex logreq biber
+
+\usepackage{hyperref,etoolbox,supertabular,multirow}
+
+\usepackage{titlesec}% Used to customize the \section command
+\titleformat{\section}{\sf\Large\raggedright}{}{0em}{}[\titlerule] % Text formatting of sections
+\titlespacing{\section}{0pt}{3pt}{3pt} % Spacing around sections
+\titleformat{\subsection}{\sf\large\raggedright}{}{0em}{}[] % Text formatting of sections
+\titlespacing{\subsection}{0pt}{3pt}{3pt} % Spacing around sections
+
+% \usepackage{natbib}
+\usepackage[sorting=ydnt,backend=biber,style=authoryear,maxnames=99]{biblatex}
+\addbibresource{cv_jgte.bib}
+
+\usepackage[utf8]{inputenc}    % utf8 support       %!!!!!!!!!!!!!!!!!!!!
+\usepackage[T1]{fontenc}       % code for pdf file  %!!!!!!!!!!!!!!!!!!!!
+\usepackage{longtable}
+\usepackage{fancyhdr}
+
+% ------ Name --------------------------------------------------------
+
+% Set your name here
+\def\name{Jo\~ao~de~Teixeira~da~Encarna\c c\~ao}
+
+
+% Replace this with a link to your CV if you like, or set it empty
+% (as in \def\footerlink{}) to remove the link in the footer:
+\def\footerlink{}
+
+% The following metadata will show up in the PDF properties
+\hypersetup{
+  colorlinks = true,
+  urlcolor = blue,
+  pdfauthor = {\name},
+  pdfkeywords = {},
+  pdftitle = {\name: Curriculum Vitae},
+  pdfsubject = {Curriculum Vitae},
+  pdfpagemode = UseNone
+}
+
+\author{\name}
+
+% ------ CV version: professional or academic -------------------------------
+
+\newtoggle{homecontact}
+% \togglefalse{homecontact}
+\toggletrue{homecontact}
+\newcommand{\homecv}[2]{\iftoggle{homecontact}{#1}{#2}}
+
+
+\newtoggle{professionalcv}
+\togglefalse{professionalcv}
+% \toggletrue{professionalcv}
+\newcommand{\procv}[2]{\iftoggle{professionalcv}{#1}{#2}}
+
+% ------ Margin control --------------------------------------------------------
+
+\addtolength{\oddsidemargin}{-1.5cm}
+\addtolength{\evensidemargin}{-1.5cm}
+\addtolength{\textwidth}{3cm}
+
+\addtolength{\topmargin}{-1.5cm}
+\addtolength{\textheight}{2.5cm}
+
+% ------ Customizations --------------------------------------------------------
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\it{\name}}
+\lhead{}
+\rfoot{\thepage}
+\thispagestyle{empty}
+
+
+% % Customize page headers
+% \pagestyle{myheadings}
+% \markright{\it{\name}}
+
+% Don't indent paragraphs.
+\setlength\parindent{0em}
+
+% Make lists without bullets
+\renewenvironment{itemize}{
+  \begin{list}{}{
+    \setlength{\leftmargin}{1.5em}
+  }
+}{
+  \end{list}
+}
+
+\newenvironment{cvsection}[2]{
+  \vspace{0.2in}
+  \section*{#1}
+  \vspace{-0.2in}
+  \def\arraystretch{1.33}
+  \begin{longtable}{lp{#2}}
+}{
+  \end{longtable}
+}
+
+
+
+% ------ Start --------------------------------------------------------
+
+\begin{document}
+
+% print name centered and bold:
+\centerline
+{\huge \rm \textbf \name}
+
+\procv{}{%
+\vspace{0.25in}
+\centering
+Researcher, Astrodynamics and Space Missions, Delft Technical University
+}
+
+% ------- Personal data ---------------------------------------------------
+
+
+\begin{cvsection}{Personal Information}{14cm}
+
+{\bf Full Name:} & Jo\~ao~Greg\'orio~de~Teixeira~da~Encarna\c c\~ao \\
+{\bf Birth:} & $25^{th}$ of February 1977 at Funchal, Portugal \\
+{\bf Nationality:} &  Portuguese\\
+
+\homecv{%
+  {\bf Marital Status:} & Single \\
+  {\bf Address:}   & Koornmarkt 44\\
+                   & 2611 EH - Delft, Netherlands\\
+  {\bf Telephone:} & +31618133787\\
+  {\bf Email:}     & \href{mailto:j_encarnacao@yahoo.com}{j\_encarnacao@yahoo.com}\\
+}{%
+  {\bf Address:}   & Kluyverweg 1, office 9.07\\
+                   & 2629 HS Delft, Netherlands\\
+  {\bf Telephone:} & +31152789160\\
+  {\bf Email:}     & \href{mailto:J.G.deTeixeiradaEncarnacao@tudelft.nl}{J.G.deTeixeiradaEncarnacao@tudelft.nl}\\
+  {\bf Webpage:}   & \href{http://staff.tudelft.nl/J.G.deTeixeiradaEncarnacao/}{http://staff.tudelft.nl/J.G.deTeixeiradaEncarnacao}\\
+}
+
+\end{cvsection}
+
+
+% % ------- Education ---------------------------------------------------
+
+\begin{cvsection}{Education}{13.5cm}
+
+2015 & PhD in Space Geodesy\\
+     & \href{http://www.citg.tudelft.nl/over-faculteit/afdelingen/geoscience-and-remote-sensing/}{Geoscience \& Remote Sensing},
+       \href{http://www.tudelft.nl/}{Delft University of Technology}\\
+     &  Dissertation: \href{http://dx.doi.org/10.4233/uuid:d0c61fd2-804b-4827-ae8a-e0e93d282a56}{\it Next-generation satellite gravimetry for measuring mass transport in the Earth system}\\
+     & Promotor:
+\href{http://www.citg.tudelft.nl/en/about-faculty/departments/geoscience-and-remote-sensing/staff/scientific-staff/profdr-inghabil-roland-klees/}{Prof. Dr.-Ing. habil. Roland Klees}\\
+     & Supervisor: \href{http://www.citg.tudelft.nl/en/about-faculty/departments/geoscience-and-remote-sensing/staff/scientific-staff/dr-pg-pavel-ditmar/}{dr.ir. Pavel Ditmar}\\
+\hline
+2004 & Master of Sciences in Aerospace Engineering \\
+     & \href{http://www.as.lr.tudelft.nl}{Astrodynamics and Space Missions},
+       \href{http://www.tudelft.nl/}{Delft University of Technology},\\
+     & Final Thesis: {\it Numerical Simulation of Launch Vehicles}\\
+     & Supervisor: \href{http://www.lr.tudelft.nl/en/organisation/departments/space-engineering/astrodynamics-and-space-missions/people/profir-bac-ambrosius/}{Prof.ir. B.A.C. Ambrosius}\\
+\hline
+2000 & Licenciatura in Aerospace Engineering \\
+     & \href{http://www.ist.utl.pt/}{Instituto Superior T{\'e}cnico},
+       \href{http://www.utl.pt/}{Technical University of Lisbon},\\
+     & $5^{th}$ year concluded at Delft University of Technology, through the ERASMUS program\\
+     & Report: {\it Optimum Aerodynamic Shape for a High Altitude Long Endurance Aerostatic Platform}\\
+     & Supervisor: Prof. Dr. Ir. Theo van Holten\\
+
+\end{cvsection}
+
+% \citem{Scholarships}\\
+% Socrates/ERASMUS Scholarship of the European Union (September 1999 -- June
+% 2000)
+
+
+% % -------- Work experience --------------------------------------------
+
+\begin{cvsection}{Work Experience}{10.8cm}
+
+2011 -- present
+  & Researcher \\
+  & \href{http://www.as.lr.tudelft.nl}{Astrodynamics and Space Missions},
+    \href{http://www.tudelft.nl/}{Delft University of Technology},
+    Delft, the Netherlands\\
+\hline
+2007 -- 2015
+  & PhD Candidate\\
+  & \href{http://www.citg.tudelft.nl/over-faculteit/afdelingen/geoscience-and-remote-sensing/}{Geoscience \& Remote Sensing},
+    \href{http://www.tudelft.nl/}{Delft University of Technology},
+    Delft, the Netherlands\\
+\hline
+2005 -- 2006
+  & Stress Engineer\\
+  & \href{http://www.globaltechnics.nl/}{Global Technics},
+    Leiden, the Netherlands\\
+
+% 6/2005 -- 7/2005 & Systems Engineer \\
+%                  & \href{http://www.reduct.net}{Reduct},
+%                    Kontich, Belgium\\
+\hline
+Oct. 2004 -- Jan. 2005
+  & Aerospace Engineer \\
+  & Implementation of a Sub-Orbital Optimization Module into the Simulation Tool Colvet (Contractor Work)\\
+  & \href{http://www.delta-utec.com/}{Delta-Utec},
+    Leiden, the Netherlands\\
+\hline
+Mar. 2004 -- Apr. 2004
+  & Trainee \\
+  & Numerical Simulations on Laser Propulsion (appendix of MSc thesis)\\
+  & Under the supervision of Ir. Berry Sanders, Rocket Technology Research Group\\
+  & Prins Maurits Laboratorium,
+   \href{http://www.tno.nl/}{TNO}, the Netherlands\\
+\hline
+Sep. 2001 -- Dec. 2001
+  & Trainee \\
+  & Lunar Exploration with Ariane 5\\
+  & Under the supervision of \href{https://en.wikipedia.org/wiki/Wubbo_Ockels}{Prof. Wubbo Ockels}\\
+  & \href{http://www.esa.int/About_Us/ESTEC}{European Space research and Technology Center (ESTEC)},
+    \href{http://www.esa.int}{European Space Agency (ESA)}
+    Noordwijk, the Netherlands\\
+
+\end{cvsection}
+
+% % ------- Research ------------------------------------------
+
+\procv{}{
+\begin{cvsection}{Research}{10cm}
+Satellite accelerometry & Combination of orbit-derived non-gravitational accelerations with accelerometer observations in the context of the Swarm satellite mission\\
+Space Geodesy & Gravity field models from Swarm kinematic orbits\\
+              & Impact of orbit position errors in the quality of gravimetric data from satellite formations\\
+              & Noise budget of low-low satellite-to-satellite tracking gravimetric data\\
+              & Retrieval of the time-variable gravity field of the Earth with satellites\\
+Laser Propulsion & Use of ground-based lasers to launch small satellites to orbit\\
+Single Stage to Orbit & Determination of the minimum technological requirements for a single stage to orbit launcher\\
+\end{cvsection}
+}
+
+% % -------- Research Projects ----------------------------------------------------
+
+\procv{}{
+\begin{cvsection}{Research Projects}{12.2cm}
+2013 -- 2015    & Assessment of Satellite Constellations for Monitoring the Variations in Earth's Gravity Field (ESA contract 4000108663/13/NL/MV) \\
+2013          & GOCE+ Theme3: Air density and wind retrieval using GOCE data (ESA contract 400010284/11/NL/EL)\\
+2011 -- present & Development of the Swarm Level 2 Algorithms and Associated Level 2 Processing Facility (ESA Contract 4000102140/10/NL/JA)\\
+2010          & Assessment of a Next Generation Gravity Mission for Monitoring the Variations of Earth's Gravity Field (ESTEC contract 22643/09/NL/AF)\\
+2008          & Monitoring and Modelling Individual Sources of Mass Distribution and Transport in the Earth System by Means of Satellites (ESA contract 20403) \\
+\end{cvsection}
+}
+
+\clearpage
+
+% % ------- Fields of interest ------------------------------------------
+
+\begin{cvsection}{Fields of Interest}{10cm}
+ Big data & \\
+ Geophysics & \\
+ Digital signal processing & \\
+ Numerical Simulation & \\
+ Rocket Motion and Orbital Mechanics & \\
+ Preliminary Vehicle Design & \\
+ Aerodynamics & \\
+ Structural Mechanics & \\
+\end{cvsection}
+
+% % ------- Skills ------------------------------------------------------
+
+\begin{cvsection}{Skills}{11.2cm}
+Leadership: & Established an informal cooperation between four European institutes (%
+\href{http://www.itsg.tugraz.at}{Institute of Geodesy} of the \href{http://www.tugraz.at}{Graz University of Technology},
+\href{http://www.asu.cas.cz/en}{Astronomical Institute} of the \href{http://www.cas.cz/index.html}{Academy of Sciences of the Czech Republic},
+\href{http://www.aiub.unibe.ch}{Astronomical Institute of the University of Bern} and the
+\href{http://www.lr.tudelft.nl}{Aerospace Faculty} of the \href{http://www.tudelft.nl}{Delft University of Technology}%
+) for the study of analysing the time-variable gravity field of the Earth retrieved from GPS data from the Swarm Satellite mission\\
+\hline
+Communication:  & Delivered numerous oral presentation of research results, most notably an \href{http://agu.confex.com/agu/fm15/meetingapp.cgi/Paper/71877}{invited talk} at the \href{http://fallmeeting.agu.org/2015/}{American Geophysical Union Fall Meeting in 2015}\\
+\hline
+Computational:  & Algorithm development and implementation\\
+                & Data management, analysis and visualisation\\
+                & Automation, robustness, fault recovery\\
+                & Problem resolution\slash solution discovery\slash hacking\\
+\hline
+\procv{
+Software: & Latex \\
+          & MS Office \\
+}{
+Articles review: & Successfully completed the review of 6 scientific articles\\
+}
+\hline
+Operating Systems: & OSX, MS Windows, Unix/Linux \\
+\hline
+Programming:  & MATLAB\copyright, FORTRAN, C/C++, Bash, Ruby, Python \\
+\end{cvsection}
+
+
+% % -------- Publications ----------------------------------------------------
+
+\procv{}{
+\renewcommand\refname{Publications}
+\vspace{0.25in}
+
+% grep \@ cv_jgte.bib | awk 'FS=\{; { print $2}'
+\nocite{
+gunter2011using,
+resendes2007laser,
+resendes2006laser,
+hashemi2010contribution,
+gunter2010using,
+ditmar2010mitigation,
+% mendoncca11,
+encarnaccao2009influence,
+ditmar2012understanding,
+farahani2013validation,
+gunter2009determination,
+gunter2011investigation,
+olsen2013swarm,
+visser2013thermospheric,
+doornbos2012thermospheric,
+resendes2005laser,
+olsen2011scarf,
+gunter2012potential,
+teixeira2002single,
+gunter2012deriving,
+anselmi2011assessment,
+gunter2009use,
+encarnacao2008analysis,
+van2014precise,
+bruinsma2014results,
+doornbos2013air,
+van2015precise,
+}
+
+\printbibliography
+
+~\\
+Retrived from \href{https://scholar.google.com/citations?user=k2liFwQAAAAJ}{Google Scholar}.
+}
+
+% % ------- Languages ------------------------------------------------------
+
+\begin{cvsection}{Languages}{9cm}
+Portuguese & mother tongue \\
+English    & Fluent (holder of the \href{http://www.cambridgeenglish.org/exams/proficiency/index.aspx}{Certificate of Proficiency in English}) \\
+Spanish    & Fair spoken\slash advanced reading \\
+Italian    & Fair spoken\slash advanced reading \\
+Dutch      & Fair spoken and reading \\
+French     & Basic spoken\slash fair reading \\
+\end{cvsection}
+
+% % -------- Other Activities --------------------------------------------
+
+\procv{
+\begin{cvsection}{Sports}{8cm}
+1991 -- 2009 & Basketball \\
+April 2006   & Finalist of the \href{http://www.fortismarathonrotterdam.nl/}{26th International Fortis Marathon of Rotterdam}\\
+\end{cvsection}
+
+\begin{cvsection}{Other Activities}{8cm}
+1991 -- 2001 & Scout at the 92$^{nd}$ Scout-group of the \href{http://www.aep.pt}{Association of Portuguese Escoteiros (AEP)}\\
+1993 -- present & Radio Amateur, call sign CT3IU, class B\\
+1996 -- present & Drivers Licence \\
+\end{cvsection}
+
+}{}
+
+
+% -------- Reference --------------------------------------------
+
+\begin{cvsection}{References}{8cm}
+References available upon request. &\\
+\end{cvsection}
+
+\end{document}

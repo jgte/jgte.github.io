@@ -1,0 +1,666 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.5 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \sortlist{ydnt}{ydnt}
+    \entry{van2015precise}{article}{}
+      \name{author}{4}{}{%
+        {{uniquename=2,hash=7f53a70c52e7d91b0175dcd4ac57fe01}{IJssel}{I\bibinitperiod}{Jose}{J\bibinitperiod}{van\bibnamedelima den}{v\bibinitperiod\bibinitdelim d\bibinitperiod}{}{}}%
+        {{uniquename=0,hash=c50c2adbfa84d7d909819f2aabefa8a9}{\textbf{de\bibnamedelimb Teixeira\bibnamedelimb da\bibnamedelimb Encarnação}}{\\bibinitperiod}{\textbf{João}}{\\bibinitperiod}{}{}{}{}}%
+        {{uniquename=2,hash=09d2664bb8667f74d5d56bc1e01abfbd}{Doornbos}{D\bibinitperiod}{Eelco}{E\bibinitperiod}{}{}{}{}}%
+        {{uniquename=2,hash=f75c6c94c88212b7fd2599470b4c2bd6}{Visser}{V\bibinitperiod}{Pieter}{P\bibinitperiod}{}{}{}{}}%
+      }
+      \list{publisher}{1}{%
+        {Pergamon}%
+      }
+      \strng{namehash}{14d905083822397b9f6b5e104fc8053c}
+      \strng{fullhash}{14d905083822397b9f6b5e104fc8053c}
+      \field{sortinit}{2}
+      \field{sortinithash}{8343b463aacf48517c044b4d2c9c45ed}
+      \field{labelyear}{2015}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Advances in Space Research}
+      \field{number}{6}
+      \field{title}{Precise science orbits for the Swarm satellite constellation}
+      \field{volume}{56}
+      \field{year}{2015}
+      \field{pages}{1042\bibrangedash 1055}
+      \range{pages}{14}
+    \endentry
+    \entry{bruinsma2014results}{article}{}
+      \name{author}{9}{}{%
+        {{uniquename=0,hash=042dd4020cba409423814acc286af156}{Bruinsma}{B\bibinitperiod}{S}{S\bibinitperiod}{}{}{}{}}%
+        {{uniquename=2,hash=523f4764edf5baa299e003d6b40446ac}{Doornbos}{D\bibinitperiod}{E}{E\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=2806695651cdb5ae6468fc4ac895b19a}{Siemes}{S\bibinitperiod}{C}{C\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=1631a967bcd77e9bd9f0ed2fbd129b03}{Perestý}{P\bibinitperiod}{R}{R\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=f1c0567fd252d6d4bc7e7cc516551623}{Kraus}{K\bibinitperiod}{J}{J\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=35e6a678671d86aabe7654f84d7709c9}{Bezdek}{B\bibinitperiod}{A}{A\bibinitperiod}{}{}{}{}}%
+        {{uniquename=2,hash=26bc901873ea66d3580dc8d28fdafc98}{IJssel}{I\bibinitperiod}{J}{J\bibinitperiod}{van\bibnamedelima den}{v\bibinitperiod\bibinitdelim d\bibinitperiod}{}{}}%
+        {{uniquename=0,hash=c50c2adbfa84d7d909819f2aabefa8a9}{\textbf{de\bibnamedelimb Teixeira\bibnamedelimb da\bibnamedelimb Encarnação}}{\\bibinitperiod}{\textbf{João}}{\\bibinitperiod}{}{}{}{}}%
+        {{uniquename=2,hash=a8cb71e34c42cb92d517a1abdd209b7a}{Visser}{V\bibinitperiod}{PN}{P\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{2057be7e8ce94140a7aea3c66a09d829}
+      \strng{fullhash}{2057be7e8ce94140a7aea3c66a09d829}
+      \field{sortinit}{2}
+      \field{sortinithash}{8343b463aacf48517c044b4d2c9c45ed}
+      \field{labelyear}{2014}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{AGU Fall Meeting Abstracts}
+      \field{title}{Results from the First Year of Swarm GPS Receiver and Accelerometer Data.}
+      \field{volume}{1}
+      \field{year}{2014}
+      \field{pages}{02}
+      \range{pages}{1}
+    \endentry
+    \entry{van2014precise}{inproceedings}{}
+      \name{author}{4}{}{%
+        {{uniquename=2,hash=8ceecccaa7129d486619d0b09e682f2d}{Van\bibnamedelimb Den\bibnamedelima IJssel}{V\bibinitperiod\bibinitdelim D\bibinitperiod\bibinitdelim I\bibinitperiod}{Jose}{J\bibinitperiod}{}{}{}{}}%
+        {{uniquename=1,hash=c7b6678a9ea7c66cb559dd0310611639}{Visser}{V\bibinitperiod}{Pieter\bibnamedelima NAM}{P\bibinitperiod\bibinitdelim N\bibinitperiod}{}{}{}{}}%
+        {{uniquename=2,hash=09d2664bb8667f74d5d56bc1e01abfbd}{Doornbos}{D\bibinitperiod}{Eelco}{E\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=c50c2adbfa84d7d909819f2aabefa8a9}{\textbf{de\bibnamedelimb Teixeira\bibnamedelimb da\bibnamedelimb Encarnação}}{\\bibinitperiod}{\textbf{João}}{\\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{6841ee2277356e5e5c0e539f10bf776f}
+      \strng{fullhash}{6841ee2277356e5e5c0e539f10bf776f}
+      \field{sortinit}{2}
+      \field{sortinithash}{8343b463aacf48517c044b4d2c9c45ed}
+      \field{labelyear}{2014}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{40th COSPAR Scientific Assembly. Held 2-10 August 2014, in Moscow, Russia, Abstract PSD. 1-4-14.}
+      \field{title}{Precise science orbits for the Swarm satellite constellation}
+      \field{volume}{40}
+      \field{year}{2014}
+      \field{pages}{3462}
+      \range{pages}{1}
+    \endentry
+    \entry{doornbos2013air}{inproceedings}{}
+      \name{author}{7}{}{%
+        {{uniquename=2,hash=523f4764edf5baa299e003d6b40446ac}{Doornbos}{D\bibinitperiod}{E}{E\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=042dd4020cba409423814acc286af156}{Bruinsma}{B\bibinitperiod}{S}{S\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=d22f252f5feaf3d2fa8863baa08bb5ea}{Fritsche}{F\bibinitperiod}{B}{B\bibinitperiod}{}{}{}{}}%
+        {{uniquename=2,hash=7b87dd438b911f927c8e49e992e3a43a}{Visser}{V\bibinitperiod}{P}{P\bibinitperiod}{}{}{}{}}%
+        {{uniquename=2,hash=c8bfd4d9e93a69b67c3a6c7dea0c1bd0}{Van\bibnamedelimb Den\bibnamedelima IJssel}{V\bibinitperiod\bibinitdelim D\bibinitperiod\bibinitdelim I\bibinitperiod}{J}{J\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=c50c2adbfa84d7d909819f2aabefa8a9}{\textbf{de\bibnamedelimb Teixeira\bibnamedelimb da\bibnamedelimb Encarnação}}{\\bibinitperiod}{\textbf{João}}{\\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=a0602088eefb3cdfe4febd3d7f952c1e}{Kern}{K\bibinitperiod}{M}{M\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{8d981e7a98e371066ae3ca57bf09160b}
+      \strng{fullhash}{8d981e7a98e371066ae3ca57bf09160b}
+      \field{sortinit}{2}
+      \field{sortinithash}{8343b463aacf48517c044b4d2c9c45ed}
+      \field{labelyear}{2013}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{ESA Special Publication}
+      \field{title}{Air density and wind retrieval using GOCE data}
+      \field{volume}{722}
+      \field{year}{2013}
+      \field{pages}{7}
+      \range{pages}{1}
+    \endentry
+    \entry{farahani2013validation}{article}{}
+      \name{author}{7}{}{%
+        {{uniquename=2,hash=c25370b851be019adeefafe4676eb01b}{Farahani}{F\bibinitperiod}{H\bibnamedelima Hashemi}{H\bibinitperiod\bibinitdelim H\bibinitperiod}{}{}{}{}}%
+        {{uniquename=2,hash=ceb26c9c39492ac3e0cf10425fe0b581}{Ditmar}{D\bibinitperiod}{P}{P\bibinitperiod}{}{}{}{}}%
+        {{uniquename=2,hash=3538580c38a331ffec15936a076fae1f}{Klees}{K\bibinitperiod}{R}{R\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=c50c2adbfa84d7d909819f2aabefa8a9}{\textbf{de\bibnamedelimb Teixeira\bibnamedelimb da\bibnamedelimb Encarnação}}{\\bibinitperiod}{\textbf{João}}{\\bibinitperiod}{}{}{}{}}%
+        {{uniquename=2,hash=4b44bba1743c2ad874f7d960887af663}{Liu}{L\bibinitperiod}{X}{X\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=746c23a7e527727576c544551cadb0f8}{Zhao}{Z\bibinitperiod}{Q}{Q\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=28f6068ba57e60c5e27fc2490a8e1ffd}{Guo}{G\bibinitperiod}{J}{J\bibinitperiod}{}{}{}{}}%
+      }
+      \list{publisher}{1}{%
+        {Oxford University Press}%
+      }
+      \strng{namehash}{8797aa1b12a3b4d8cad2318ce016a795}
+      \strng{fullhash}{8797aa1b12a3b4d8cad2318ce016a795}
+      \field{sortinit}{2}
+      \field{sortinithash}{8343b463aacf48517c044b4d2c9c45ed}
+      \field{labelyear}{2013}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Geophysical Journal International}
+      \field{number}{2}
+      \field{title}{Validation of static gravity field models using GRACE K-band ranging and GOCE gradiometry data}
+      \field{volume}{194}
+      \field{year}{2013}
+      \field{pages}{751\bibrangedash 771}
+      \range{pages}{21}
+    \endentry
+    \entry{olsen2013swarm}{article}{}
+      \true{moreauthor}
+      \name{author}{10}{}{%
+        {{uniquename=2,hash=124aeecd203cff9460c4d4f4e7c12e2d}{Olsen}{O\bibinitperiod}{Nils}{N\bibinitperiod}{}{}{}{}}%
+        {{uniquename=2,hash=2556be0b0f69a41a149aabe86de5b595}{Friis-Christensen}{F\bibinithyphendelim C\bibinitperiod}{Eigil}{E\bibinitperiod}{}{}{}{}}%
+        {{uniquename=2,hash=77406c723705382e75207e450fb489a2}{Floberghagen}{F\bibinitperiod}{Rune}{R\bibinitperiod}{}{}{}{}}%
+        {{uniquename=2,hash=948c32845828abec851c3d37fb1a9557}{Alken}{A\bibinitperiod}{Patrick}{P\bibinitperiod}{}{}{}{}}%
+        {{uniquename=1,hash=7bea3d2eca812a229db95ec0a3935c76}{Beggan}{B\bibinitperiod}{Ciaran\bibnamedelima D}{C\bibinitperiod\bibinitdelim D\bibinitperiod}{}{}{}{}}%
+        {{uniquename=2,hash=f1d78fb908c1a783b0ec215208280479}{Chulliat}{C\bibinitperiod}{Arnaud}{A\bibinitperiod}{}{}{}{}}%
+        {{uniquename=2,hash=09d2664bb8667f74d5d56bc1e01abfbd}{Doornbos}{D\bibinitperiod}{Eelco}{E\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=c50c2adbfa84d7d909819f2aabefa8a9}{\textbf{de\bibnamedelimb Teixeira\bibnamedelimb da\bibnamedelimb Encarnação}}{\\bibinitperiod}{\textbf{João}}{\\bibinitperiod}{}{}{}{}}%
+        {{uniquename=2,hash=6050f1ebf663b467a4f53ad8895fb688}{Hamilton}{H\bibinitperiod}{Brian}{B\bibinitperiod}{}{}{}{}}%
+        {{uniquename=2,hash=4e739d4be9449026b6e55b219b3388be}{Hulot}{H\bibinitperiod}{Gauthier}{G\bibinitperiod}{}{}{}{}}%
+      }
+      \list{publisher}{1}{%
+        {Springer-Verlag}%
+      }
+      \strng{namehash}{c9a4561f472f4c8546fca5804e272b59}
+      \strng{fullhash}{d410eaab744efa7fd7c19e8adaec37a9}
+      \field{sortinit}{2}
+      \field{sortinithash}{8343b463aacf48517c044b4d2c9c45ed}
+      \field{labelyear}{2013}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Earth, Planets and Space}
+      \field{number}{11}
+      \field{title}{The swarm satellite constellation application and research facility (scarf) and swarm data products}
+      \field{volume}{65}
+      \field{year}{2013}
+      \field{pages}{1189\bibrangedash 1200}
+      \range{pages}{12}
+    \endentry
+    \entry{visser2013thermospheric}{article}{}
+      \name{author}{4}{}{%
+        {{uniquename=2,hash=f75c6c94c88212b7fd2599470b4c2bd6}{Visser}{V\bibinitperiod}{Pieter}{P\bibinitperiod}{}{}{}{}}%
+        {{uniquename=2,hash=09d2664bb8667f74d5d56bc1e01abfbd}{Doornbos}{D\bibinitperiod}{Eelco}{E\bibinitperiod}{}{}{}{}}%
+        {{uniquename=2,hash=7f53a70c52e7d91b0175dcd4ac57fe01}{IJssel}{I\bibinitperiod}{Jose}{J\bibinitperiod}{van\bibnamedelima den}{v\bibinitperiod\bibinitdelim d\bibinitperiod}{}{}}%
+        {{uniquename=0,hash=c50c2adbfa84d7d909819f2aabefa8a9}{\textbf{de\bibnamedelimb Teixeira\bibnamedelimb da\bibnamedelimb Encarnação}}{\\bibinitperiod}{\textbf{João}}{\\bibinitperiod}{}{}{}{}}%
+      }
+      \list{publisher}{1}{%
+        {Springer-Verlag}%
+      }
+      \strng{namehash}{15df43012cec8bd94dce6dc416a9ad2c}
+      \strng{fullhash}{15df43012cec8bd94dce6dc416a9ad2c}
+      \field{sortinit}{2}
+      \field{sortinithash}{8343b463aacf48517c044b4d2c9c45ed}
+      \field{labelyear}{2013}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Earth, Planets and Space}
+      \field{number}{11}
+      \field{title}{Thermospheric density and wind retrieval from Swarm observations}
+      \field{volume}{65}
+      \field{year}{2013}
+      \field{pages}{1319\bibrangedash 1331}
+      \range{pages}{13}
+    \endentry
+    \entry{ditmar2012understanding}{article}{}
+      \name{author}{3}{}{%
+        {{uniquename=2,hash=6c2c4c2e6577fe2ac4c5bba51b995ca3}{Ditmar}{D\bibinitperiod}{Pavel}{P\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=c50c2adbfa84d7d909819f2aabefa8a9}{\textbf{de\bibnamedelimb Teixeira\bibnamedelimb da\bibnamedelimb Encarnação}}{\\bibinitperiod}{\textbf{João}}{\\bibinitperiod}{}{}{}{}}%
+        {{uniquename=2,hash=ee40326efa995df6575b16e8d278068b}{Farahani}{F\bibinitperiod}{Hassan\bibnamedelima Hashemi}{H\bibinitperiod\bibinitdelim H\bibinitperiod}{}{}{}{}}%
+      }
+      \list{publisher}{1}{%
+        {Springer-Verlag}%
+      }
+      \strng{namehash}{82c62d8cc071905a5a936f2f43a1feda}
+      \strng{fullhash}{82c62d8cc071905a5a936f2f43a1feda}
+      \field{sortinit}{2}
+      \field{sortinithash}{8343b463aacf48517c044b4d2c9c45ed}
+      \field{labelyear}{2012}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Geodesy}
+      \field{number}{6}
+      \field{title}{Understanding data noise in gravity field recovery on the basis of inter-satellite ranging measurements acquired by the satellite gravimetry mission GRACE}
+      \field{volume}{86}
+      \field{year}{2012}
+      \field{pages}{441\bibrangedash 465}
+      \range{pages}{25}
+    \endentry
+    \entry{doornbos2012thermospheric}{inproceedings}{}
+      \name{author}{8}{}{%
+        {{uniquename=2,hash=523f4764edf5baa299e003d6b40446ac}{Doornbos}{D\bibinitperiod}{E}{E\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=042dd4020cba409423814acc286af156}{Bruinsma}{B\bibinitperiod}{S}{S\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=f88083f348f8ac72713c9711c4846545}{Koppenwallner}{K\bibinitperiod}{G}{G\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=d22f252f5feaf3d2fa8863baa08bb5ea}{Fritsche}{F\bibinitperiod}{B}{B\bibinitperiod}{}{}{}{}}%
+        {{uniquename=2,hash=26bc901873ea66d3580dc8d28fdafc98}{IJssel}{I\bibinitperiod}{J}{J\bibinitperiod}{van\bibnamedelima den}{v\bibinitperiod\bibinitdelim d\bibinitperiod}{}{}}%
+        {{uniquename=2,hash=7b87dd438b911f927c8e49e992e3a43a}{Visser}{V\bibinitperiod}{P}{P\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=c50c2adbfa84d7d909819f2aabefa8a9}{\textbf{de\bibnamedelimb Teixeira\bibnamedelimb da\bibnamedelimb Encarnação}}{\\bibinitperiod}{\textbf{João}}{\\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=a0602088eefb3cdfe4febd3d7f952c1e}{Kern}{K\bibinitperiod}{M}{M\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{c55ad650dad4c6bb2d6d860718e732b2}
+      \strng{fullhash}{c55ad650dad4c6bb2d6d860718e732b2}
+      \field{sortinit}{2}
+      \field{sortinithash}{8343b463aacf48517c044b4d2c9c45ed}
+      \field{labelyear}{2012}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{EGU General Assembly Conference Abstracts}
+      \field{title}{Thermospheric density and wind from GOCE thruster activation and accelerometer data}
+      \field{volume}{14}
+      \field{year}{2012}
+      \field{pages}{5634}
+      \range{pages}{1}
+    \endentry
+    \entry{gunter2012potential}{article}{}
+      \name{author}{4}{}{%
+        {{uniquename=2,hash=a287c7b2045026a6a814ef924296b6db}{Gunter}{G\bibinitperiod}{BC}{B\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=c50c2adbfa84d7d909819f2aabefa8a9}{\textbf{de\bibnamedelimb Teixeira\bibnamedelimb da\bibnamedelimb Encarnação}}{\\bibinitperiod}{\textbf{João}}{\\bibinitperiod}{}{}{}{}}%
+        {{uniquename=2,hash=ceb26c9c39492ac3e0cf10425fe0b581}{Ditmar}{D\bibinitperiod}{P}{P\bibinitperiod}{}{}{}{}}%
+        {{uniquename=2,hash=3538580c38a331ffec15936a076fae1f}{Klees}{K\bibinitperiod}{R}{R\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{f0bbaf2fee9ad7085f4dd268274fdd2b}
+      \strng{fullhash}{f0bbaf2fee9ad7085f4dd268274fdd2b}
+      \field{sortinit}{2}
+      \field{sortinithash}{8343b463aacf48517c044b4d2c9c45ed}
+      \field{labelyear}{2012}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{AGU Fall Meeting Abstracts}
+      \field{title}{Potential contributions to space geodesy from the IridiumNEXT constellation}
+      \field{volume}{1}
+      \field{year}{2012}
+      \field{pages}{01}
+      \range{pages}{1}
+    \endentry
+    \entry{gunter2012deriving}{inproceedings}{}
+      \name{author}{6}{}{%
+        {{uniquename=2,hash=2992488ae4af3bb22411fe72bfad03c9}{Gunter}{G\bibinitperiod}{B.C.}{B\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=c50c2adbfa84d7d909819f2aabefa8a9}{\textbf{de\bibnamedelimb Teixeira\bibnamedelimb da\bibnamedelimb Encarnação}}{\\bibinitperiod}{\textbf{João}}{\\bibinitperiod}{}{}{}{}}%
+        {{uniquename=2,hash=12ae8417eebdf72097024e733ace5648}{Ditmar}{D\bibinitperiod}{P.}{P\bibinitperiod}{}{}{}{}}%
+        {{uniquename=2,hash=947fdf8183cd2518373735e863f306bb}{Klees}{K\bibinitperiod}{R.}{R\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=84a2daeb835af603caffb91690b3e175}{Barneveld}{B\bibinitperiod}{P.W.L.}{P\bibinitperiod}{van}{v\bibinitperiod}{}{}}%
+        {{uniquename=2,hash=23c9ed43ba9ad071b697e712fb958861}{Visser}{V\bibinitperiod}{P.}{P\bibinitperiod}{}{}{}{}}%
+      }
+      \list{organization}{1}{%
+        {American Astronautical Society}%
+      }
+      \strng{namehash}{7d7a1f7ee520464b6e8dbc08d7028ca0}
+      \strng{fullhash}{7d7a1f7ee520464b6e8dbc08d7028ca0}
+      \field{sortinit}{2}
+      \field{sortinithash}{8343b463aacf48517c044b4d2c9c45ed}
+      \field{labelyear}{2012}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{AAS/AIAA Astrodynamics Specialist Conference, Alaska, USA}
+      \field{title}{Deriving Global Time-Variable Gravity from Precise Orbits of the Iridium NEXT Constellation}
+      \field{year}{2012}
+    \endentry
+    \entry{anselmi2011assessment}{misc}{}
+      \true{moreauthor}
+      \name{author}{10}{}{%
+        {{uniquename=0,hash=cab0b93cd99af39faa7a1360a3abb540}{Anselmi}{A\bibinitperiod}{A.}{A\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=384d731fe33b9a7590b046853978a38d}{Cesare}{C\bibinitperiod}{S.}{S\bibinitperiod}{}{}{}{}}%
+        {{uniquename=2,hash=f66787d724106203141c142412aac916}{Visser}{V\bibinitperiod}{P.N.A.M.}{P\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=68e11ea67940bde02d362b48a58e9757}{Dam}{D\bibinitperiod}{T.}{T\bibinitperiod}{van}{v\bibinitperiod}{}{}}%
+        {{uniquename=0,hash=cc50da62316de2f233f2862586fac76a}{Sneeuw}{S\bibinitperiod}{N.}{N\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=6529e683b430dd56f1f27a2e35ea724e}{Gruber}{G\bibinitperiod}{T.}{T\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=fba839470558d13dda5826ab38b42aa2}{Altés}{A\bibinitperiod}{B.}{B\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=6cf14dd3737dcaa86928ee6eb3f462e4}{Cossu}{C\bibinitperiod}{F.}{F\bibinitperiod}{}{}{}{}}%
+        {{uniquename=2,hash=12ae8417eebdf72097024e733ace5648}{Ditmar}{D\bibinitperiod}{P.}{P\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=fc72ba41680dd9093bf5d5568d4e5991}{Murböck}{M\bibinitperiod}{M.}{M\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{ede94026d70b142780cb03e993f8df5a}
+      \strng{fullhash}{8d2f4b079fe72aab94f1898a75cd313f}
+      \field{sortinit}{2}
+      \field{sortinithash}{8343b463aacf48517c044b4d2c9c45ed}
+      \field{labelyear}{2011}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{http://www.iapg.bgu.tum.de/mediadb/5746123/5746124/04\_AO7317\_RD4-NGGM\_FinalReport\_Issue2.pdf}
+      \field{number}{ESTEC Contract No. 22643/09/NL/AF}
+      \field{title}{Assessment of a Next Generation Gravity Mission for Monitoring the Variations of Earth’s Gravity}
+      \field{year}{2011}
+    \endentry
+    \entry{gunter2011investigation}{article}{}
+      \name{author}{4}{}{%
+        {{uniquename=2,hash=8aa2e782b1ecc0d0b2580ce92a13fa06}{Gunter}{G\bibinitperiod}{B}{B\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=c50c2adbfa84d7d909819f2aabefa8a9}{\textbf{de\bibnamedelimb Teixeira\bibnamedelimb da\bibnamedelimb Encarnação}}{\\bibinitperiod}{\textbf{João}}{\\bibinitperiod}{}{}{}{}}%
+        {{uniquename=2,hash=ceb26c9c39492ac3e0cf10425fe0b581}{Ditmar}{D\bibinitperiod}{P}{P\bibinitperiod}{}{}{}{}}%
+        {{uniquename=2,hash=3538580c38a331ffec15936a076fae1f}{Klees}{K\bibinitperiod}{R}{R\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{4138a4e139712a97f79bd0130b27f06e}
+      \strng{fullhash}{4138a4e139712a97f79bd0130b27f06e}
+      \field{sortinit}{2}
+      \field{sortinithash}{8343b463aacf48517c044b4d2c9c45ed}
+      \field{labelyear}{2011}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{AGU Fall Meeting Abstracts}
+      \field{title}{An investigation into new advances in geodesy utilizing future satellite constellations}
+      \field{volume}{1}
+      \field{year}{2011}
+      \field{pages}{03}
+      \range{pages}{1}
+    \endentry
+    \entry{gunter2011using}{article}{}
+      \name{author}{4}{}{%
+        {{uniquename=2,hash=91d1a56e1cbbfa38ab7d269d8b6f0e65}{Gunter}{G\bibinitperiod}{Brian\bibnamedelima C}{B\bibinitperiod\bibinitdelim C\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=c50c2adbfa84d7d909819f2aabefa8a9}{\textbf{de\bibnamedelimb Teixeira\bibnamedelimb da\bibnamedelimb Encarnação}}{\\bibinitperiod}{\textbf{João}}{\\bibinitperiod}{}{}{}{}}%
+        {{uniquename=2,hash=6c2c4c2e6577fe2ac4c5bba51b995ca3}{Ditmar}{D\bibinitperiod}{Pavel}{P\bibinitperiod}{}{}{}{}}%
+        {{uniquename=2,hash=74863e40f537f2e2ef601d908d74b672}{Klees}{K\bibinitperiod}{Roland}{R\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{897fe0c3fdab609d67b65fcce2092b81}
+      \strng{fullhash}{897fe0c3fdab609d67b65fcce2092b81}
+      \field{sortinit}{2}
+      \field{sortinithash}{8343b463aacf48517c044b4d2c9c45ed}
+      \field{labelyear}{2011}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Spacecraft and Rockets}
+      \field{number}{2}
+      \field{title}{Using satellite constellations for improved determination of Earth's time-variable gravity}
+      \field{volume}{48}
+      \field{year}{2011}
+      \field{pages}{368\bibrangedash 377}
+      \range{pages}{10}
+    \endentry
+    \entry{olsen2011scarf}{article}{}
+      \true{moreauthor}
+      \name{author}{10}{}{%
+        {{uniquename=2,hash=6d258673605cd56747df2132bb2f3a16}{Olsen}{O\bibinitperiod}{N}{N\bibinitperiod}{}{}{}{}}%
+        {{uniquename=2,hash=e688bb8b4e582ef4ce1fe77d790e0c30}{Alken}{A\bibinitperiod}{P}{P\bibinitperiod}{}{}{}{}}%
+        {{uniquename=1,hash=9c5c94b7afedb03d4f3bd823efd56a38}{Beggan}{B\bibinitperiod}{C}{C\bibinitperiod}{}{}{}{}}%
+        {{uniquename=2,hash=c26deff94e9ab3ddb94964d798b55363}{Chulliat}{C\bibinitperiod}{A}{A\bibinitperiod}{}{}{}{}}%
+        {{uniquename=2,hash=523f4764edf5baa299e003d6b40446ac}{Doornbos}{D\bibinitperiod}{E}{E\bibinitperiod}{}{}{}{}}%
+        {{uniquename=2,hash=732f13d2d571f0ef23b0f2f5fff5cf4e}{Floberghagen}{F\bibinitperiod}{R}{R\bibinitperiod}{}{}{}{}}%
+        {{uniquename=2,hash=90257fcd09e8698ecb1e7d5337c83ace}{Friis-Christensen}{F\bibinithyphendelim C\bibinitperiod}{EA}{E\bibinitperiod}{}{}{}{}}%
+        {{uniquename=2,hash=7508d4219ba338f7adb49c1d8f7ea8dc}{Hamilton}{H\bibinitperiod}{B}{B\bibinitperiod}{}{}{}{}}%
+        {{uniquename=2,hash=ee12e5d7d26791ed36b8b97cc0732daa}{Hulot}{H\bibinitperiod}{G}{G\bibinitperiod}{}{}{}{}}%
+        {{uniquename=2,hash=26bc901873ea66d3580dc8d28fdafc98}{IJssel}{I\bibinitperiod}{J}{J\bibinitperiod}{van\bibnamedelima den}{v\bibinitperiod\bibinitdelim d\bibinitperiod}{}{}}%
+      }
+      \strng{namehash}{4b996358fe1d3859453dbbc321d5fd8f}
+      \strng{fullhash}{d3f6a1e6c681f1eaee171841b655c682}
+      \field{sortinit}{2}
+      \field{sortinithash}{8343b463aacf48517c044b4d2c9c45ed}
+      \field{labelyear}{2011}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{AGU Fall Meeting Abstracts}
+      \field{title}{SCARF-The Swarm Satellite Constellation Application and Research Facility}
+      \field{volume}{1}
+      \field{year}{2011}
+      \field{pages}{0980}
+      \range{pages}{1}
+    \endentry
+    \entry{ditmar2010mitigation}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{uniquename=2,hash=6c2c4c2e6577fe2ac4c5bba51b995ca3}{Ditmar}{D\bibinitperiod}{Pavel}{P\bibinitperiod}{}{}{}{}}%
+        {{uniquename=2,hash=c9bff4929fe0c6764ff6583e0841fecc}{Hashemi\bibnamedelima Farahani}{H\bibinitperiod\bibinitdelim F\bibinitperiod}{Hassan}{H\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=c50c2adbfa84d7d909819f2aabefa8a9}{\textbf{de\bibnamedelimb Teixeira\bibnamedelimb da\bibnamedelimb Encarnação}}{\\bibinitperiod}{\textbf{João}}{\\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{a2ad47e97c5934788f1eb6ee042c1f60}
+      \strng{fullhash}{a2ad47e97c5934788f1eb6ee042c1f60}
+      \field{sortinit}{2}
+      \field{sortinithash}{8343b463aacf48517c044b4d2c9c45ed}
+      \field{labelyear}{2010}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{EGU General Assembly Conference Abstracts}
+      \field{title}{Mitigation of along-track artifacts in unconstrained mass transport models based on GRACE satellite data}
+      \field{volume}{12}
+      \field{year}{2010}
+      \field{pages}{10393}
+      \range{pages}{1}
+    \endentry
+    \entry{gunter2010using}{article}{}
+      \name{author}{4}{}{%
+        {{uniquename=2,hash=8aa2e782b1ecc0d0b2580ce92a13fa06}{Gunter}{G\bibinitperiod}{B}{B\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=c50c2adbfa84d7d909819f2aabefa8a9}{\textbf{de\bibnamedelimb Teixeira\bibnamedelimb da\bibnamedelimb Encarnação}}{\\bibinitperiod}{\textbf{João}}{\\bibinitperiod}{}{}{}{}}%
+        {{uniquename=2,hash=ceb26c9c39492ac3e0cf10425fe0b581}{Ditmar}{D\bibinitperiod}{P}{P\bibinitperiod}{}{}{}{}}%
+        {{uniquename=2,hash=3538580c38a331ffec15936a076fae1f}{Klees}{K\bibinitperiod}{R}{R\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{4138a4e139712a97f79bd0130b27f06e}
+      \strng{fullhash}{4138a4e139712a97f79bd0130b27f06e}
+      \field{sortinit}{2}
+      \field{sortinithash}{8343b463aacf48517c044b4d2c9c45ed}
+      \field{labelyear}{2010}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{AGU Fall Meeting Abstracts}
+      \field{title}{Using existing satellite constellations to complement current and future dedicated gravity field missions}
+      \field{volume}{1}
+      \field{year}{2010}
+      \field{pages}{0788}
+      \range{pages}{1}
+    \endentry
+    \entry{hashemi2010contribution}{inproceedings}{}
+      \name{author}{4}{}{%
+        {{uniquename=2,hash=613047a0962c5452d903f5d6965af73c}{Hashemi\bibnamedelima Farahani}{H\bibinitperiod\bibinitdelim F\bibinitperiod}{H}{H\bibinitperiod}{}{}{}{}}%
+        {{uniquename=2,hash=ceb26c9c39492ac3e0cf10425fe0b581}{Ditmar}{D\bibinitperiod}{P}{P\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=c50c2adbfa84d7d909819f2aabefa8a9}{\textbf{de\bibnamedelimb Teixeira\bibnamedelimb da\bibnamedelimb Encarnação}}{\\bibinitperiod}{\textbf{João}}{\\bibinitperiod}{}{}{}{}}%
+        {{uniquename=2,hash=4b44bba1743c2ad874f7d960887af663}{Liu}{L\bibinitperiod}{X}{X\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{987e6ff25f6142f6271c740f4b5993d8}
+      \strng{fullhash}{987e6ff25f6142f6271c740f4b5993d8}
+      \field{sortinit}{2}
+      \field{sortinithash}{8343b463aacf48517c044b4d2c9c45ed}
+      \field{labelyear}{2010}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{EGU General Assembly Conference Abstracts}
+      \field{title}{Contribution of an accurate determination of GRACE satellite orbits to precise mass transport modeling}
+      \field{volume}{12}
+      \field{year}{2010}
+      \field{pages}{10867}
+      \range{pages}{1}
+    \endentry
+    \entry{encarnaccao2009influence}{incollection}{}
+      \name{author}{5}{}{%
+        {{uniquename=0,hash=c50c2adbfa84d7d909819f2aabefa8a9}{\textbf{de\bibnamedelimb Teixeira\bibnamedelimb da\bibnamedelimb Encarnação}}{\\bibinitperiod}{\textbf{João}}{\\bibinitperiod}{}{}{}{}}%
+        {{uniquename=2,hash=3538580c38a331ffec15936a076fae1f}{Klees}{K\bibinitperiod}{R}{R\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=bedc2055b7451ca3be84f3d05f271fe5}{Zapreeva}{Z\bibinitperiod}{E}{E\bibinitperiod}{}{}{}{}}%
+        {{uniquename=2,hash=ceb26c9c39492ac3e0cf10425fe0b581}{Ditmar}{D\bibinitperiod}{P}{P\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=e9d9a28172b03301a9a7c20796126bf4}{Kusche}{K\bibinitperiod}{J}{J\bibinitperiod}{}{}{}{}}%
+      }
+      \list{publisher}{1}{%
+        {Springer Berlin Heidelberg}%
+      }
+      \strng{namehash}{a93864f44acbb05b9ab8c043477a675c}
+      \strng{fullhash}{a93864f44acbb05b9ab8c043477a675c}
+      \field{sortinit}{2}
+      \field{sortinithash}{8343b463aacf48517c044b4d2c9c45ed}
+      \field{labelyear}{2009}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Observing our Changing Earth}
+      \field{title}{Influence of hydrology-related temporal aliasing on the quality of monthly models derived from GRACE satellite gravimetric data}
+      \field{year}{2009}
+      \field{pages}{323\bibrangedash 328}
+      \range{pages}{6}
+    \endentry
+    \entry{gunter2009use}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{uniquename=2,hash=23e51816ea7989e430dc84b60d3a09b7}{Gunter}{G\bibinitperiod}{Brian\bibnamedelima C.}{B\bibinitperiod\bibinitdelim C\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=c50c2adbfa84d7d909819f2aabefa8a9}{\textbf{de\bibnamedelimb Teixeira\bibnamedelimb da\bibnamedelimb Encarnação}}{\\bibinitperiod}{\textbf{João}}{\\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=dfdb874ce8d67c8b37196f4153df361c}{Ditmar.}{D\bibinitperiod}{Pavel}{P\bibinitperiod}{}{}{}{}}%
+      }
+      \list{organization}{1}{%
+        {www.univelt.com/book=1451}%
+      }
+      \strng{namehash}{97e6d69fa6f4f5fe5abe2edaf5f6c082}
+      \strng{fullhash}{97e6d69fa6f4f5fe5abe2edaf5f6c082}
+      \field{sortinit}{2}
+      \field{sortinithash}{8343b463aacf48517c044b4d2c9c45ed}
+      \field{labelyear}{2009}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Advances in the Astronautical Sciences}
+      \field{title}{The Use of Satellite Constellations and Formations for Future Satellite Gravity Missions}
+      \field{year}{2009}
+      \field{pages}{1357\bibrangedash 1368}
+      \range{pages}{12}
+    \endentry
+    \entry{gunter2009determination}{article}{}
+      \name{author}{3}{}{%
+        {{uniquename=2,hash=91d1a56e1cbbfa38ab7d269d8b6f0e65}{Gunter}{G\bibinitperiod}{Brian\bibnamedelima C}{B\bibinitperiod\bibinitdelim C\bibinitperiod}{}{}{}{}}%
+        {{uniquename=2,hash=6c2c4c2e6577fe2ac4c5bba51b995ca3}{Ditmar}{D\bibinitperiod}{Pavel}{P\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=c50c2adbfa84d7d909819f2aabefa8a9}{\textbf{de\bibnamedelimb Teixeira\bibnamedelimb da\bibnamedelimb Encarnação}}{\\bibinitperiod}{\textbf{João}}{\\bibinitperiod}{}{}{}{}}%
+      }
+      \list{publisher}{1}{%
+        {Univelt, Inc.}%
+      }
+      \strng{namehash}{dea9cc55d88f5a75dc7d74d7d7eba194}
+      \strng{fullhash}{dea9cc55d88f5a75dc7d74d7d7eba194}
+      \field{sortinit}{2}
+      \field{sortinithash}{8343b463aacf48517c044b4d2c9c45ed}
+      \field{labelyear}{2009}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Advances in the Astronautical Sciences}
+      \field{number}{3}
+      \field{title}{THE DETERMINATION OF TIME-VARIABLE GRAVITY FROM A CONSTELLATION OF NON-DEDICATED SATELLITES}
+      \field{volume}{135}
+      \field{year}{2009}
+      \field{pages}{1999\bibrangedash 2007}
+      \range{pages}{9}
+    \endentry
+    \entry{encarnacao2008analysis}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{uniquename=0,hash=c50c2adbfa84d7d909819f2aabefa8a9}{\textbf{de\bibnamedelimb Teixeira\bibnamedelimb da\bibnamedelimb Encarnação}}{\\bibinitperiod}{\textbf{João}}{\\bibinitperiod}{}{}{}{}}%
+        {{uniquename=2,hash=12ae8417eebdf72097024e733ace5648}{Ditmar}{D\bibinitperiod}{P.}{P\bibinitperiod}{}{}{}{}}%
+        {{uniquename=2,hash=217f8e8ad6ca8dc0e9f2d64a1a53a314}{Liu}{L\bibinitperiod}{X.}{X\bibinitperiod}{}{}{}{}}%
+      }
+      \list{organization}{1}{%
+        {European Space Agency}%
+      }
+      \strng{namehash}{87abda801ddaf9b902faa07df893a514}
+      \strng{fullhash}{87abda801ddaf9b902faa07df893a514}
+      \field{sortinit}{2}
+      \field{sortinithash}{8343b463aacf48517c044b4d2c9c45ed}
+      \field{labelyear}{2008}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{The 3rd International Symposium on Formation Flying, Missions and Technologies}
+      \field{title}{Analysis of Satellite Formations in the Context of Gravity Field Retrieval}
+      \field{year}{2008}
+    \endentry
+    \entry{resendes2007laser}{article}{}
+      \name{author}{6}{}{%
+        {{uniquename=0,hash=91ca5a5ff99be0ecb29af94eb7448aca}{Resendes}{R\bibinitperiod}{David\bibnamedelima P}{D\bibinitperiod\bibinitdelim P\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=d2734c2ad1ab0647aae251a36acb7209}{Mota}{M\bibinitperiod}{Sérgio}{S\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=c0ecc2aebc19cf95953d2a41640ec372}{Mendonça}{M\bibinitperiod}{José\bibnamedelima T}{J\bibinitperiod\bibinitdelim T\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=62b6e3c02a8b1611696ea208c660a437}{Sanders}{S\bibinitperiod}{Berry}{B\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=c50c2adbfa84d7d909819f2aabefa8a9}{\textbf{de\bibnamedelimb Teixeira\bibnamedelimb da\bibnamedelimb Encarnação}}{\\bibinitperiod}{\textbf{João}}{\\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=505ff3fb179c0bac29138d3c68b1aae3}{Del\bibnamedelima Amo}{D\bibinitperiod\bibinitdelim A\bibinitperiod}{Jose\bibnamedelima Gonzalez}{J\bibinitperiod\bibinitdelim G\bibinitperiod}{}{}{}{}}%
+      }
+      \list{publisher}{2}{%
+        {American Institute of Aeronautics}%
+        {Astronautics}%
+      }
+      \strng{namehash}{9c94f060cf0e616dae920057e1bb3e71}
+      \strng{fullhash}{9c94f060cf0e616dae920057e1bb3e71}
+      \field{sortinit}{2}
+      \field{sortinithash}{8343b463aacf48517c044b4d2c9c45ed}
+      \field{labelyear}{2007}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Propulsion and Power}
+      \field{number}{1}
+      \field{title}{Laser propulsion for ground launch}
+      \field{volume}{23}
+      \field{year}{2007}
+      \field{pages}{73\bibrangedash 80}
+      \range{pages}{8}
+    \endentry
+    \entry{resendes2006laser}{inproceedings}{}
+      \name{author}{7}{}{%
+        {{uniquename=0,hash=91ca5a5ff99be0ecb29af94eb7448aca}{Resendes}{R\bibinitperiod}{David\bibnamedelima P}{D\bibinitperiod\bibinitdelim P\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=d2734c2ad1ab0647aae251a36acb7209}{Mota}{M\bibinitperiod}{Sérgio}{S\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=615a6ff0503991c6c22da44f4451458c}{Mendonca}{M\bibinitperiod}{Jose\bibnamedelima T}{J\bibinitperiod\bibinitdelim T\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=62b6e3c02a8b1611696ea208c660a437}{Sanders}{S\bibinitperiod}{Berry}{B\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=c50c2adbfa84d7d909819f2aabefa8a9}{\textbf{de\bibnamedelimb Teixeira\bibnamedelimb da\bibnamedelimb Encarnação}}{\\bibinitperiod}{\textbf{João}}{\\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=03d337910677cb8ea0adda916ebd3496}{Amo}{A\bibinitperiod}{Jose\bibnamedelima Gonzalez}{J\bibinitperiod\bibinitdelim G\bibinitperiod}{del}{d\bibinitperiod}{}{}}%
+        {{uniquename=0,hash=87ea9c57447ebca66db8a0099aaa7896}{Myrabo}{M\bibinitperiod}{Leik}{L\bibinitperiod}{}{}{}{}}%
+      }
+      \list{organization}{1}{%
+        {AIP Publishing}%
+      }
+      \strng{namehash}{9264dc8f99b49d76dbf9f2386ae305ec}
+      \strng{fullhash}{9264dc8f99b49d76dbf9f2386ae305ec}
+      \field{sortinit}{2}
+      \field{sortinithash}{8343b463aacf48517c044b4d2c9c45ed}
+      \field{labelyear}{2006}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{BEAMED ENERGY PROPULSION: Fourth International Symposium on Beamed Energy Propulsion}
+      \field{number}{1}
+      \field{title}{Laser Propulsion for ESA Missions: Ground to Orbit Launch Project Overview—Part 1}
+      \field{volume}{830}
+      \field{year}{2006}
+      \field{pages}{576\bibrangedash 587}
+      \range{pages}{12}
+    \endentry
+    \entry{resendes2005laser}{inproceedings}{}
+      \name{author}{6}{}{%
+        {{uniquename=0,hash=91ca5a5ff99be0ecb29af94eb7448aca}{Resendes}{R\bibinitperiod}{David\bibnamedelima P}{D\bibinitperiod\bibinitdelim P\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=d2734c2ad1ab0647aae251a36acb7209}{Mota}{M\bibinitperiod}{Sérgio}{S\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=c0ecc2aebc19cf95953d2a41640ec372}{Mendonça}{M\bibinitperiod}{José\bibnamedelima T}{J\bibinitperiod\bibinitdelim T\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=62b6e3c02a8b1611696ea208c660a437}{Sanders}{S\bibinitperiod}{Berry}{B\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=c50c2adbfa84d7d909819f2aabefa8a9}{\textbf{de\bibnamedelimb Teixeira\bibnamedelimb da\bibnamedelimb Encarnação}}{\\bibinitperiod}{\textbf{João}}{\\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=03d337910677cb8ea0adda916ebd3496}{Amo}{A\bibinitperiod}{Jose\bibnamedelima Gonzalez}{J\bibinitperiod\bibinitdelim G\bibinitperiod}{del}{d\bibinitperiod}{}{}}%
+      }
+      \strng{namehash}{3ccb0c96b0f5896533df5569dcfd059e}
+      \strng{fullhash}{3ccb0c96b0f5896533df5569dcfd059e}
+      \field{sortinit}{2}
+      \field{sortinithash}{8343b463aacf48517c044b4d2c9c45ed}
+      \field{labelyear}{2005}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{29th International Electric Propulsion Conference}
+      \field{title}{Laser Propulsion for Ground to Orbit Launch}
+      \field{year}{2005}
+    \endentry
+    \entry{teixeira2002single}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{uniquename=0,hash=c50c2adbfa84d7d909819f2aabefa8a9}{\textbf{de\bibnamedelimb Teixeira\bibnamedelimb da\bibnamedelimb Encarnação}}{\\bibinitperiod}{\textbf{João}}{\\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=b2b4aa6c50b6c70975ad92de761c2df2}{Ockels}{O\bibinitperiod}{W.J.}{W\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{08e0d9e2fd180e9d66ef4fda298a5eb8}
+      \strng{fullhash}{08e0d9e2fd180e9d66ef4fda298a5eb8}
+      \field{sortinit}{2}
+      \field{sortinithash}{8343b463aacf48517c044b4d2c9c45ed}
+      \field{labelyear}{2002}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{53rd International Astronautical Congres}
+      \field{title}{Single Stage To Orbit Minimum Requirements Through Numerical Simulation}
+      \field{year}{2002}
+    \endentry
+  \endsortlist
+\endrefsection
+\endinput
+

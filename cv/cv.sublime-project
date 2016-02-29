@@ -1,0 +1,21 @@
+{
+	"folders":
+	[
+		{
+			"file_exclude_patterns":
+			[
+				"*.aux",
+				"*.bbl",
+				"*.blg",
+				"*.out",
+				"*.backup",
+				"*.pdf",
+				"*.bcf",
+				"*.run.xml",
+				"*.synctex.gz",
+				"*.gvz"
+			],
+			"path": "."
+		}
+	]
+}

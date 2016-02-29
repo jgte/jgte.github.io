@@ -1,0 +1,1387 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"sou",
+				"southeast"
+			],
+			[
+				"COM",
+				"COMPARE_DIR"
+			],
+			[
+				"DATA",
+				"DATA_SINK"
+			],
+			[
+				"fin",
+				"finsize"
+			],
+			[
+				"comp",
+				"compressed"
+			],
+			[
+				"deu",
+				"debug_flag"
+			],
+			[
+				"debg",
+				"debug_flag"
+			],
+			[
+				"debug",
+				"debug_flag"
+			],
+			[
+				"lo",
+				"localUrl"
+			],
+			[
+				"each",
+				"each_index"
+			],
+			[
+				"di",
+				"dirname"
+			],
+			[
+				"table",
+				"table_info"
+			],
+			[
+				"show",
+				"show_quat"
+			],
+			[
+				"pro",
+				"products"
+			],
+			[
+				"ti",
+				"timetag"
+			],
+			[
+				"regu",
+				"regular_filename"
+			],
+			[
+				"other",
+				"other_timesystem"
+			],
+			[
+				"time",
+				"timesystem"
+			],
+			[
+				"file",
+				"filegood"
+			],
+			[
+				"proce",
+				"processing"
+			],
+			[
+				"gap",
+				"gapcounter"
+			],
+			[
+				"Year",
+				"YearDoy"
+			],
+			[
+				"extr",
+				"extra_epochs"
+			],
+			[
+				"tmp",
+				"tmpfile"
+			],
+			[
+				"opt",
+				"options"
+			],
+			[
+				"array",
+				"Array"
+			],
+			[
+				"NR",
+				"NRTDM_DATA"
+			],
+			[
+				"PAD",
+				"PAD_LEN_COLUMN"
+			],
+			[
+				"PAD_",
+				"PAD_LEN_GUTTER"
+			],
+			[
+				"DIR_DATA",
+				"DIR_DATA_L3"
+			],
+			[
+				"prod",
+				"product_list"
+			],
+			[
+				"pr",
+				"product_list"
+			],
+			[
+				"This",
+				"ThisRoutineName"
+			],
+			[
+				"SA",
+				"SAT"
+			],
+			[
+				"Clean",
+				"CleanAllocate"
+			],
+			[
+				"prt",
+				"prettydate"
+			],
+			[
+				"year",
+				"year_doy"
+			],
+			[
+				"set",
+				"setstatus"
+			],
+			[
+				"nu",
+				"number"
+			],
+			[
+				"product",
+				"productflags"
+			],
+			[
+				"all",
+				"allinvalid"
+			],
+			[
+				"Bar",
+				"IsBadRecord"
+			],
+			[
+				"bg",
+				"bggreen"
+			],
+			[
+				"colo",
+				"color_code"
+			],
+			[
+				"col",
+				"color_code"
+			],
+			[
+				"mi",
+				"mirror"
+			],
+			[
+				"deb",
+				"debugging"
+			],
+			[
+				"P",
+				"PRODUCTS"
+			],
+			[
+				"order",
+				"order_idx"
+			],
+			[
+				"ut",
+				"utility"
+			],
+			[
+				"quan",
+				"quaternion"
+			],
+			[
+				"data",
+				"data_out"
+			],
+			[
+				"incl",
+				"includes"
+			],
+			[
+				"p",
+				"peek"
+			],
+			[
+				"date",
+				"date_full"
+			],
+			[
+				"Time",
+				"TimeStr"
+			],
+			[
+				"sel",
+				"self"
+			],
+			[
+				"ch",
+				"checklegal"
+			],
+			[
+				"out",
+				"outfile"
+			],
+			[
+				"inval",
+				"invalidrecordvalue"
+			],
+			[
+				"plot",
+				"plotdirname"
+			],
+			[
+				"sam",
+				"sameunits"
+			],
+			[
+				"sat",
+				"sat_now"
+			],
+			[
+				"doy",
+				"doyrange"
+			],
+			[
+				"secon",
+				"seconds_shift"
+			],
+			[
+				"sec",
+				"seconds_shift"
+			],
+			[
+				"ed",
+				"endif"
+			],
+			[
+				"do",
+				"doy_len"
+			],
+			[
+				"end",
+				"endif"
+			],
+			[
+				"scr",
+				"script_list"
+			],
+			[
+				"nrtd",
+				"nrtdmdir"
+			],
+			[
+				"debu",
+				"debug_local"
+			],
+			[
+				"to",
+				"to_s"
+			],
+			[
+				"com",
+				"commode"
+			],
+			[
+				"remote",
+				"remotecommand"
+			],
+			[
+				"no",
+				"no_output"
+			],
+			[
+				"num",
+				"num_recs"
+			],
+			[
+				"CleanA",
+				"CleanAppend"
+			],
+			[
+				"sink",
+				"sinkfiles"
+			],
+			[
+				"var",
+				"var_intern"
+			],
+			[
+				"varn",
+				"varname_intern"
+			],
+			[
+				"log",
+				"logfile"
+			],
+			[
+				"sp3l",
+				"sp3lineP"
+			],
+			[
+				"find",
+				"findopts"
+			],
+			[
+				"nr",
+				"nrtdm_quat_prod"
+			],
+			[
+				"arc",
+				"archive_location"
+			],
+			[
+				"OPERATI",
+				"OPERATIONS"
+			],
+			[
+				"sin",
+				"sinkfile"
+			],
+			[
+				"is",
+				"is_a"
+			],
+			[
+				"down",
+				"downcase"
+			],
+			[
+				"pkg",
+				"pkg_dir"
+			],
+			[
+				"pk",
+				"pkg_dir"
+			],
+			[
+				"inter",
+				"internal_key"
+			],
+			[
+				"Lib",
+				"LibNRTDM"
+			],
+			[
+				"in",
+				"increment"
+			],
+			[
+				"source",
+				"sourcefiles"
+			],
+			[
+				"cod",
+				"codxfile"
+			],
+			[
+				"get",
+				"getstring"
+			],
+			[
+				"gp",
+				"gpsweek"
+			],
+			[
+				"remotehosts",
+				"remote_hosts"
+			],
+			[
+				"ar",
+				"argv"
+			],
+			[
+				"local",
+				"localmode"
+			],
+			[
+				"remo",
+				"remotedir"
+			],
+			[
+				"sani",
+				"sanity_check"
+			],
+			[
+				"has",
+				"has_key"
+			],
+			[
+				"host",
+				"hoststruct"
+			],
+			[
+				"mod",
+				"module"
+			],
+			[
+				"rege",
+				"Regexp"
+			],
+			[
+				"to_s",
+				"to_sym"
+			],
+			[
+				"par",
+				"parvalue"
+			],
+			[
+				"LIB",
+				"LIBDIR"
+			],
+			[
+				"field",
+				"fieldnr"
+			],
+			[
+				"de",
+				"debug"
+			],
+			[
+				"sa",
+				"satname"
+			],
+			[
+				"satn",
+				"satnames"
+			],
+			[
+				"sate",
+				"satellite"
+			],
+			[
+				"SE",
+				"Setups"
+			],
+			[
+				"SLR",
+				"SLRDATA"
+			],
+			[
+				"LOCATIONS",
+				"LOCATIONS_L1"
+			],
+			[
+				"b",
+				"bin"
+			],
+			[
+				"mdfile",
+				"mdfile_part"
+			],
+			[
+				"Li",
+				"LibUtils"
+			],
+			[
+				"lib",
+				"libutils"
+			],
+			[
+				"mdf",
+				"mdfile"
+			],
+			[
+				"parameter",
+				"parameters"
+			],
+			[
+				"satname",
+				"satname_now"
+			],
+			[
+				"sub",
+				"subvalue"
+			],
+			[
+				"yea",
+				"yeardoy"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "cv_jgte.tex",
+			"settings":
+			{
+				"buffer_size": 12970,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "cv.sublime-project",
+			"settings":
+			{
+				"buffer_size": 227,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "makefile",
+			"settings":
+			{
+				"buffer_size": 2427,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "citations.bib",
+			"settings":
+			{
+				"buffer_size": 9855,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "Packages/Makefile/Make.sublime-build",
+	"command_palette":
+	{
+		"height": 375.0,
+		"selected_items":
+		[
+			[
+				"",
+				"AlignTab: Live Preview Mode"
+			],
+			[
+				"pac",
+				"Package Control: Install Package"
+			],
+			[
+				"pack",
+				"Package Control: Remove Package"
+			],
+			[
+				"pa",
+				"Package Control: Install Package"
+			],
+			[
+				"ali",
+				"AlignTab: Live Preview Mode"
+			],
+			[
+				"ai",
+				"AlignTab"
+			],
+			[
+				"al",
+				"AlignTab: Live Preview Mode"
+			],
+			[
+				"a",
+				"AlignTab"
+			],
+			[
+				"dif",
+				"FileDiffs: Menu"
+			],
+			[
+				"diff",
+				"FileDiffs: Menu"
+			],
+			[
+				":w",
+				":w - Save"
+			],
+			[
+				"align",
+				"AlignTab: Live Preview Mode"
+			],
+			[
+				"alig",
+				"AlignTab: Table Mode"
+			],
+			[
+				"p",
+				"Package Control: Remove Package"
+			],
+			[
+				"packa",
+				"Package Control: Install Package"
+			],
+			[
+				"svn",
+				"SVN: Diff"
+			],
+			[
+				"open",
+				"Snippet: Open File"
+			],
+			[
+				"men",
+				"FileDiffs: Menu"
+			],
+			[
+				"syntax: R",
+				"Set Syntax: Ruby"
+			],
+			[
+				"DIFF",
+				"FileDiffs: Menu"
+			],
+			[
+				"rem",
+				"Package Control: Remove Package"
+			],
+			[
+				"PA",
+				"Package Control: Install Package"
+			],
+			[
+				"Snippet: ",
+				"Snippet: Paragraph"
+			],
+			[
+				"pak",
+				"Preferences: Browse Packages"
+			]
+		],
+		"width": 507.0
+	},
+	"console":
+	{
+		"height": 146.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/usr/local/texlive/2015basic/texmf-dist/tex/latex/biblatex/biblatex2.sty",
+		"/home/teixeira/cloud/Common/github/latex/.gitignore",
+		"/home/teixeira/cloud/Common/github/no-ip-updater/config",
+		"/home/teixeira/cloud/Dropbox/Documents/active/pessoal/curriculum vitae/latex/citations.bib",
+		"/home/teixeira/cloud/Dropbox/Documents/active/pessoal/curriculum vitae/latex/cv.sublime-project",
+		"/Users/teixeira/cloud/Dropbox/Documents/active/pessoal/curriculum vitae/motivation letters/20150215-EPO.txt",
+		"/home/teixeira/cloud/Dropbox/Documents/active/pessoal/curriculum vitae/latex/cv_jgte.bbl",
+		"/home/teixeira/cloud/Dropbox/Documents/active/pessoal/curriculum vitae/latex/makefile",
+		"/home/teixeira/cloud/Dropbox/Documents/active/pessoal/curriculum vitae/latex/make.sh",
+		"/Users/teixeira/Library/Application Support/Sublime Text 2/Packages/User/LaTeXTools.sublime-settings",
+		"/Users/teixeira/cloud/Dropbox/Documents/active/pessoal/curriculum vitae/latex/cv_jgte.log",
+		"/Users/teixeira/cloud/Dropbox/Documents/active/pessoal/curriculum vitae/latex/cv_jgte.bib",
+		"/Users/teixeira/cloud/Dropbox/Documents/active/pessoal/curriculum vitae/latex/cv.sublime-project",
+		"/Users/teixeira/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/Users/teixeira/cloud/Dropbox/Documents/active/pessoal/curriculum vitae/latex/cv_jgte-blx.bib",
+		"/Users/teixeira/cloud/Dropbox/Documents/active/pessoal/curriculum vitae/latex/cv_jgte.run.xml",
+		"/Users/teixeira/cloud/Dropbox/Documents/active/pessoal/curriculum vitae/latex/biblatex2.sty",
+		"/Users/teixeira/cloud/Dropbox/Documents/active/pessoal/curriculum vitae/latex/citations.bib",
+		"/Users/teixeira/cloud/Dropbox/Documents/active/pessoal/curriculum vitae/latex/.gitignore",
+		"/usr/local/texlive/2014basic/texmf-dist/tex/latex/hyperref/hyperref.sty",
+		"/Users/teixeira/cloud/Dropbox/Documents/active/pessoal/curriculum vitae/latex/cv_jgte.tex",
+		"/home/teixeira/cloud/Dropbox/Documents/tese/chapter_grace_noise/section_grace_noise_budget.tex",
+		"/home/teixeira/cloud/Dropbox/Documents/tese/chapter_appendices/appendix_mod_errors_formations.tex",
+		"/Users/teixeira/cloud/Dropbox/Documents/tese/chapter_appendices/appendix_mod_errors_formations.tex",
+		"/home/teixeira/cloud/Dropbox/Documents/tese/data/noise_magnitudes.m",
+		"/home/teixeira/cloud/Dropbox/Documents/tese/data/plots.m",
+		"/home/teixeira/cloud/Dropbox/Documents/tese/data/grace_sim_scales.m",
+		"/Users/teixeira/cloud/Dropbox/Documents/tese/chapter_formations/formations.tex",
+		"/home/teixeira/cloud/Dropbox/Documents/tese/data/noise_magnitudes.tex",
+		"/home/teixeira/cloud/Dropbox/Documents/tese/chapter_formations/formations.tex",
+		"/home/teixeira/cloud/Dropbox/Documents/tese/chapter_modelling/section_noise_model.tex",
+		"/Users/teixeira/cloud/Dropbox/Documents/tese/chapter_grace_noise/excerpt_noise_ran_shape.tex",
+		"/Users/teixeira/cloud/Dropbox/Documents/tese/chapter_modelling/section_functional_model.tex",
+		"/home/teixeira/cloud/Dropbox/Documents/tese/chapter_grace_noise/section_noise_model_validation.tex",
+		"/Users/teixeira/cloud/Dropbox/Documents/tese/chapter_grace_noise/sensitivity_noise_pos.tex",
+		"/Users/teixeira/cloud/Dropbox/Documents/tese/chapter_conclusions/conclusions.tex",
+		"/Users/teixeira/cloud/Dropbox/Documents/tese/chapter_grace_noise/table_validation_summary.tex",
+		"/Users/teixeira/cloud/Dropbox/Documents/tese/chapter_appendices/appendix_adv_noise_model_deriv.tex",
+		"/Users/teixeira/cloud/Dropbox/Documents/tese/chapter_grace_noise/section_noise_model_validation.tex",
+		"/home/teixeira/cloud/Dropbox/Documents/tese/chapter_conclusions/conclusions.tex",
+		"/home/teixeira/cloud/Dropbox/Documents/tese/chapter_gravimetry/gravimetry.tex",
+		"/home/teixeira/cloud/Dropbox/Documents/tese/data/orbit_noise_magnitudes.m",
+		"/Users/teixeira/cloud/Dropbox/Documents/tese/z_rp_stats.log",
+		"/home/teixeira/cloud/Dropbox/Documents/tese/chapter_gravimetry/table_pod_accuracy.tex",
+		"/home/teixeira/cloud/Dropbox/Documents/tese/jgte-thesis.tex",
+		"/Users/teixeira/cloud/Dropbox/Documents/tese/data/grace_sim_scaled.m",
+		"/Users/teixeira/cloud/Dropbox/Documents/tese/data/save.plots.sh",
+		"/home/teixeira/cloud/Dropbox/Documents/tese/data/update.sh",
+		"/Users/teixeira/Library/Application Support/Sublime Text 2/Packages/User/Default (OSX).sublime-keymap",
+		"/home/teixeira/cloud/Dropbox/Documents/tese/chapter_grace_noise/section_orb_accuracy.tex",
+		"/home/teixeira/cloud/Dropbox/Documents/tese/tese.sublime-project",
+		"/home/teixeira/cloud/Dropbox/Documents/tese/chapter_modelling/section_functional_model.tex",
+		"/Users/teixeira/cloud/Dropbox/Documents/tese/symbols.tex",
+		"/Users/teixeira/cloud/Dropbox/Documents/tese/.gitignore",
+		"/Users/teixeira/cloud/Dropbox/Documents/tese/data/plots-mod/.gitignore",
+		"/Users/teixeira/cloud/Dropbox/Documents/tese/data/mod/.gitignore",
+		"/Users/teixeira/Library/Application Support/Sublime Text 2/Packages/SideBarEnhancements/messages/11.13.2012.1305.0.txt",
+		"/Users/teixeira/Library/Application Support/Sublime Text 2/ls_key_binding.sh",
+		"/home/teixeira/cloud/Dropbox/Documents/tese/chapter_gravimetry/plots.m",
+		"/Users/teixeira/cloud/Dropbox/Common/installation/Mac/brew-crontab.sh",
+		"/Users/teixeira/cloud/Dropbox/Documents/tese/chapter_formations/z_stats_azim_inertial.tex",
+		"/Users/teixeira/projects/4thSSM/presentation/TUDelft_Beamer/presentation.tex",
+		"/Users/teixeira/cloud/Dropbox/Documents/tese/chapter_modelling/section_noise_model.tex",
+		"/Users/teixeira/cloud/Dropbox/Documents/tese/acronyms.tex",
+		"/Users/teixeira/cloud/Dropbox/Documents/tese/chapter_appendices/appendices.tex",
+		"/Users/teixeira/cloud/Dropbox/Documents/tese/chapter_formations/z_stats_azim.tex",
+		"/Users/teixeira/cloud/Dropbox/Documents/tese/chapter_formations/z_stats_elev.tex",
+		"/Users/teixeira/cloud/Dropbox/Documents/tese/chapter_formations/z_stats_elev_inertial.tex",
+		"/Users/teixeira/cloud/Dropbox/Documents/tese/chapter_formations/z_stats_rho.tex",
+		"/Users/teixeira/cloud/Dropbox/Documents/tese/chapter_grace_noise/grace_noise.tex",
+		"/Users/teixeira/cloud/Dropbox/Documents/tese/jgte-thesis.toc",
+		"/Users/teixeira/cloud/Dropbox/Common/sublime-text-2/Packages/User/trailing_spaces.sublime-settings",
+		"/Users/teixeira/cloud/Dropbox/Common/sublime-text-2/Packages/TrailingSpaces/trailing_spaces.sublime-settings",
+		"/Users/teixeira/cloud/Dropbox/Documents/tese/data/noise_magnitudes.tex",
+		"/Users/teixeira/cloud/Dropbox/Documents/tese/chapter_grace_noise/ranging_noise.m",
+		"/Users/teixeira/cloud/Dropbox/Documents/tese/chapter_grace_noise/simulated_noise_magnitudes.tex",
+		"/Users/teixeira/cloud/Dropbox/Documents/tese/chapter_grace_noise/section_orb_accuracy.tex",
+		"/Users/teixeira/cloud/Dropbox/Documents/tese/chapter_grace_noise/section_grace_noise_budget.tex",
+		"/Users/teixeira/cloud/Dropbox/Documents/tese/header.tex",
+		"/Users/teixeira/cloud/Dropbox/Documents/tese/chapter_gravimetry/gravimetry.tex",
+		"/Users/teixeira/cloud/Dropbox/Documents/tese/chapter_appendices/appendix_mass_transport_models.tex",
+		"/Users/teixeira/cloud/Dropbox/Documents/tese/chapter_orbits_formations/orbits_formations.tex",
+		"/Users/teixeira/cloud/Dropbox/Documents/tese/chapter_appendices/appendix_reference_frames.tex",
+		"/Users/teixeira/cloud/Dropbox/Documents/tese/makefile",
+		"/Users/teixeira/cloud/Dropbox/Common/sublime-text-2/Packages/User/Preferences.sublime-settings",
+		"/Users/teixeira/cloud/Dropbox/Documents/tese/chapter_constellations/constellations.tex",
+		"/Users/teixeira/cloud/Dropbox/Documents/tese/chapter_modelling/modelling.tex",
+		"/Users/teixeira/cloud/Dropbox/Documents/tese/chapter_modelling/section_signal_model.tex",
+		"/Users/teixeira/cloud/Dropbox/Common/sublime-text-2/Packages/User/FileDiffs.sublime-settings",
+		"/Users/teixeira/cloud/Dropbox/Documents/tese/chapter_appendices/appendix_inverse_linear_mapping.tex",
+		"/Users/teixeira/cloud/Dropbox/Documents/tese/chapter_introduction/introduction.tex",
+		"/Users/teixeira/cloud/Dropbox/Documents/tese/chapter_gravimetry/table_pod_rel_accuracy.tex",
+		"/Users/teixeira/cloud/Dropbox/Documents/tese/chapter_gravimetry/table_pod_accuracy.tex",
+		"/Users/teixeira/cloud/Dropbox/Documents/tese/summary.tex",
+		"/Users/teixeira/cloud/Dropbox/Documents/tese/jgte-thesis.tex",
+		"/Users/teixeira/cloud/Dropbox/Documents/tese/chapter_appendices/appendix_GPS.tex",
+		"/Users/teixeira/cloud/Dropbox/Documents/tese/flags.tex",
+		"/Users/teixeira/cloud/Dropbox/Documents/tese/TOC/toc.tex",
+		"/Users/teixeira/cloud/Dropbox/Documents/tese/chapter_temporal_aliasing/temporal_aliasing.tex",
+		"/Users/teixeira/cloud/Dropbox/Documents/tese/chapter_gradiometry/gradiometry.tex",
+		"/Users/teixeira/cloud/Dropbox/Documents/tese/chapter_grace_noise/unused/paper_orb_accuracy.tex",
+		"/Users/teixeira/cloud/Dropbox/Documents/tese/chapter_grace_noise/unused/paper_link_to_classic.tex",
+		"/Users/teixeira/cloud/Dropbox/Documents/tese/chapter_appendices/appendix_deriv_SGG_noise.tex",
+		"/Users/teixeira/cloud/Dropbox/Documents/tese/chapter_appendices/appendix_deriv_SGG_eq.tex",
+		"/Users/teixeira/cloud/Dropbox/Documents/tese/chapter_grace_noise/unused/paper_what_is_noise.tex",
+		"/Users/teixeira/cloud/Dropbox/Documents/tese/chapter_introduction/tv_signal_magnitudes.tex",
+		"/Users/teixeira/cloud/Dropbox/Common/sublime-text-2/Packages/FileDiffs/FileDiffs.sublime-settings",
+		"/Users/teixeira/cloud/Dropbox/Common/sublime-text-2/Packages/User/LaTeXTools.sublime-settings",
+		"/Users/teixeira/cloud/Dropbox/Documents/tese/tudthesis.cls",
+		"/Users/teixeira/cloud/Dropbox/Documents/tese/chapter_introduction/tv_signal_magnitudes.m",
+		"/home/teixeira/cloud/Dropbox/Documents/tese/chapter_appendices/appendix_GPS.tex",
+		"/home/teixeira/cloud/Dropbox/Documents/tese/jgte-thesis.toc",
+		"/Users/teixeira/cloud/Dropbox/Common/github/mendeley/papers.sublime-project",
+		"/Users/teixeira/cloud/Dropbox/Common/github/mendeley/mendeley.rb",
+		"/Users/teixeira/.profile",
+		"/Users/teixeira/Library/Containers/com.apple.mail/Data/Library/Mail Downloads/9BF14703-0032-439F-B443-EB5711C3867A/CARDEAL GOUVEIA.xml",
+		"/home/teixeira/cloud/Dropbox/Common/bin/pdf-compress.sh",
+		"/home/teixeira/cloud/Dropbox/Documents/Giorgia/travel-docs/Porto_July_2014/Links.txt",
+		"/home/teixeira/Documents/swarmgen-documentation/swarmgen-installation.txt",
+		"/home/teixeira/.local/share/data/Mendeley Ltd./Mendeley Desktop/Downloaded/papers.sublime-project",
+		"/run/user/teixeira/gvfs/sftp:host=131.180.117.22,user=swarmgen/home/swarmgen/Scripts/commissioning/denswind/crontab.rb",
+		"/run/user/teixeira/gvfs/sftp:host=131.180.117.22,user=swarmgen/home/swarmgen/Scripts/commissioning/denswind/get_filename.rb",
+		"/run/user/teixeira/gvfs/sftp:host=131.180.117.22,user=swarmgen/home/swarmgen/Scripts/commissioning/denswind/ls_files_NRTDM.rb",
+		"/run/user/teixeira/gvfs/sftp:host=131.180.117.22,user=swarmgen/home/swarmgen/Software/nrtdm/src/app/core/exportdataproductscdf.f90",
+		"/run/user/teixeira/gvfs/sftp:host=131.180.117.22,user=swarmgen/home/swarmgen/Scripts/commissioning/denswind/ls_gaps.rb",
+		"/run/user/teixeira/gvfs/sftp:host=131.180.117.22,user=swarmgen/home/swarmgen/Scripts/commissioning/events.log",
+		"/home/teixeira/Documents/swarmgen-documentation/presentations/Swarm CalVal kick-off/events/maneuvers/list.txt",
+		"/run/user/teixeira/gvfs/sftp:host=131.180.117.22,user=swarmgen/home/swarmgen/Scripts/commissioning/denswind/run_import_l1b.rb"
+	],
+	"find":
+	{
+		"height": 37.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			".",
+			"research",
+			"next",
+			"homecv",
+			"procv",
+			"href",
+			"scarf",
+			"precise",
+			"teixeira",
+			"citations",
+			"geod",
+			"cvsection",
+			"\\acs{",
+			"Encarnacao",
+			"liu",
+			"\\x",
+			"'",
+			"bib",
+			" \\item ",
+			" \\item §",
+			"\\end{category}",
+			"\\begin{category}",
+			"dvi",
+			"orientation noise ",
+			"JobnameFormationsGrids",
+			"single_grid_plot",
+			"grids",
+			"tot.ftr",
+			"pos-mod",
+			"\\n",
+			"adv-rho",
+			".dsu",
+			"j",
+			"{m}",
+			"{\\acs{\\JF.k\\ISRFormations.f.ng.dsu}}",
+			"{m}",
+			"noise.apos.std",
+			"assign_value",
+			"{m}",
+			"value",
+			"\\citet{Bandikova2014}",
+			"attitude",
+			"with for",
+			". ",
+			"fig:aod",
+			"benefits",
+			"intense",
+			"NoiseFormationTable",
+			"KO",
+			"gs-6.p200.tv.dsuc",
+			"f.ori.dsuc",
+			"tv.dsuc",
+			".f.",
+			".tv",
+			"{adj",
+			"grav.grad",
+			"gradient",
+			"grav.grad",
+			"noise.pos",
+			"avg.filt",
+			"noise.pos",
+			"los",
+			"print_stats_table",
+			"data_filename",
+			"gravity gra",
+			"was",
+			".f.",
+			"get_scale",
+			"iscell",
+			"get_scale",
+			"scale",
+			",20",
+			"pos-mod",
+			"pos-mod2",
+			"scale",
+			"scaling",
+			"noise realisatio",
+			"exploited static gravity field model",
+			"exploited gravity field model",
+			"spectra of rel",
+			"spectra of ",
+			"noise.rpos.std",
+			"the relative orbit ",
+			"sat.m12",
+			"bar",
+			"avg",
+			"mean",
+			"noise.pos",
+			"is avai",
+			"disp_not_enough_data",
+			"total",
+			"-test",
+			"psd_l",
+			"sqrt",
+			"pos_mod2",
+			"\\}\n      out\\=rp_stats\\.\\('.*'\\).rms_factor_weighted\\;\n              case\\{",
+			"}\n      out=rp_stats.('.*').rms_factor_weighted;\n              case{",
+			"rp_stats",
+			"get_psd",
+			"scale",
+			"intro_temporal_aliasing",
+			"type",
+			"corr",
+			"excerpt_noise_ran_shape",
+			"model_validation_spl",
+			"FIValidationPlotsdot",
+			"<",
+			"EachFormationPlot",
+			"noise.gf",
+			"EachFormationPlot",
+			"\n\\",
+			"EachFormationPlot",
+			"sudo",
+			"formations_err",
+			"formations_err_tv",
+			"latex_num_fmt",
+			"noise.gf",
+			"noise.ori",
+			"sensitive",
+			"meters",
+			" &",
+			"NoiseFormationTable",
+			"noise.comp",
+			"formations_mod_err",
+			"formations_meas_err",
+			"inter-satellite",
+			"cpu",
+			"formations_mod_errors_sim"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"  ",
+			"%",
+			"fcov",
+			"%",
+			"/n",
+			"%",
+			" exit 3"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "cv_jgte.tex",
+					"settings":
+					{
+						"buffer_size": 12970,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								10034,
+								10038
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"spell_check": true,
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 3506.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "cv.sublime-project",
+					"settings":
+					{
+						"buffer_size": 227,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								121,
+								121
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"syntax": "Packages/JavaScript/JSON.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "makefile",
+					"settings":
+					{
+						"buffer_size": 2427,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								804,
+								804
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"syntax": "Packages/Makefile/Makefile.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 120.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "citations.bib",
+					"settings":
+					{
+						"buffer_size": 9855,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6046,
+								6051
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"syntax": "Packages/LaTeX/Bibtex.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1915.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 34.0
+	},
+	"input":
+	{
+		"height": 36.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 258.0
+	},
+	"output.unsaved_changes":
+	{
+		"height": 281.0
+	},
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"plots",
+				"data/plots.m"
+			],
+			[
+				"",
+				"/home/teixeira/.gvfs/SFTP for swarmgen on 131.180.117.22/home/swarmgen/Software/nrtdm/src/lib/processing/nasacdfsupport.f90"
+			],
+			[
+				"produc",
+				"/home/teixeira/projects/swarmgen/Scripts/V2/denswind/lib/swarm_products.rb"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+			[
+				"",
+				"/Users/teixeira/cloud/TUDelft/projects/gswarm/2016-01 EGSIEM/EGSIEM-2016.01.sublime-project"
+			],
+			[
+				"com",
+				"/Users/teixeira/cloud/Common/common.sublime-project"
+			],
+			[
+				"swar",
+				"/home/swarmgen/Scripts/swarmgen.sublime-project"
+			],
+			[
+				"psg",
+				"/home/teixeira/bin/psg/psg.sublime-project"
+			],
+			[
+				"tese",
+				"/home/teixeira/cloud/Dropbox/Documents/tese/tese.sublime-project"
+			],
+			[
+				"latex",
+				"/home/teixeira/cloud/Dropbox/Documents/latex/latex-template.sublime-project"
+			],
+			[
+				"prime",
+				"/home/teixeira/cloud/Dropbox/Documents/fortran/prime/dropbox-prime.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": false,
+	"side_bar_visible": true,
+	"side_bar_width": 167.0,
+	"status_bar_visible": true
+}
