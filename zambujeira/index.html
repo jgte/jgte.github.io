@@ -93,7 +93,6 @@
 	* --------------------------------------- */
 	#blueroom{
 		background-image: url(imgs/blueroom.png);
-		/*padding: 6% 0 0 0;*/
 	}
 	#blueroom h1{color: #D1FAFF}
 	#blueroom h2{color: #D1FAFF}
@@ -101,7 +100,6 @@
 
 	#greenroom{
 		background-image: url(imgs/greenroom.jpg);
-		/*padding: 6% 0 0 0;*/
 	}
 	#greenroom h1{color: #D1FAFF}
 	#greenroom h2{color: #D1FAFF}
@@ -109,7 +107,6 @@
 
 	#redroom{
 		background-image: url(imgs/redroom.jpg);
-		/*padding: 6% 0 0 0;*/
 	}
 	#redroom h1{color: #D1FAFF}
 	#redroom h2{color: #D1FAFF}
@@ -117,7 +114,6 @@
 
 	#yellowroom{
 		background-image: url(imgs/yellowroom.jpg);
-		/*padding: 6% 0 0 0;*/
 	}
 	#yellowroom h1{color: #D1FAFF}
 	#yellowroom h2{color: #D1FAFF}
@@ -125,7 +121,6 @@
 
 	#cozinha{
 		background-image: url(imgs/cozinha.jpg);
-		/*padding: 6% 0 0 0;*/
 	}
 	#cozinha h1{color: #D1FAFF}
 	#cozinha h2{color: #D1FAFF}
@@ -133,7 +128,6 @@
 
 	#saladejantar{
 		background-image: url(imgs/saladejantar.jpg);
-		/*padding: 6% 0 0 0;*/
 	}
 	#saladejantar h1{color: #660033}
 	#saladejantar h2{color: #660033}
@@ -141,7 +135,6 @@
 
 	#salatv{
 		background-image: url(imgs/salatv.jpg);
-		/*padding: 6% 0 0 0;*/
 	}
 	#salatv h1{color: #D1FAFF}
 	#salatv h2{color: #D1FAFF}
@@ -149,7 +142,6 @@
 
 	#terraco{
 		background-image: url(imgs/terraco.jpg);
-		/*padding: 6% 0 0 0;*/
 	}
 	#terraco h1{color: #660033}
 	#terraco h2{color: #660033}
@@ -183,23 +175,21 @@
 		</script>
 	<![endif]-->
 
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
 
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.7.8/jquery.fullPage.js"></script>
 
 	<script type="text/javascript">
 		$(document).ready(function() {
-			$('#fullpage').fullpage();
+			$('#fullpage').fullpage({
+				verticalCentered: false
+			});
 		});
 	</script>
 
-
 </head>
 <body link="white" vlink="white" alink="red">
-
-
-
 
 <div id="fullpage">
 	<div class="section " id="intro" >
