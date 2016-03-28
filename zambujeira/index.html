@@ -41,18 +41,24 @@
     font-family: arial,helvetica;
     margin:0;
     padding:0;
+    color: #660033;
+    text-shadow: 2px 2px 3px #D1FAFF;
   }
   h2{
     font-size: 4em;
     font-family: arial,helvetica;
     margin:0;
     padding:0;
+    color: #660033;
+    text-shadow: 1px 1px 3px #D1FAFF;
   }
   h3{
     font-size: 3em;
     font-family: arial,helvetica;
     margin:0;
     padding:0;
+    color: #660033;
+    text-shadow: 1px 1px 3px #D1FAFF;
   }
 
   /* Centered texts in each section
@@ -61,11 +67,11 @@
     text-align:center;
   }
 
-
   /* Backgrounds will cover all the section
   * --------------------------------------- */
   .section{
     background-size: cover;
+    padding: 5% 0 0 0;
   }
   .slide{
     background-size: cover;
@@ -74,93 +80,53 @@
   /* Defining each section background and styles
   * --------------------------------------- */
   #intro{
-    background-image: url(imgs/pordosol.jpg);
+    background-image: url(imgs/palheirao.jpg);
     padding: 10% 0 0 0;
   }
-  #intro h1{color: #660033}
-  #intro h2{color: #660033}
-  #intro h3{color: #660033}
   #casa{
     background-image: url(imgs/casa.png);
     padding: 20% 0 0 0;
-    color: #0000FF;
   }
-  #casa h1{color: #D1FAFF}
-  #casa h2{color: #D1FAFF}
-  #casa h3{color: #D1FAFF}
 
   /*Adding background for the slides
   * --------------------------------------- */
   #blueroom{
     background-image: url(imgs/blueroom.jpg);
   }
-  #blueroom h1{color: #660033}
-  #blueroom h2{color: #660033}
-  #blueroom h3{color: #660033}
-
   #greenroom{
     background-image: url(imgs/greenroom.jpg);
   }
-  #greenroom h1{color: #660033}
-  #greenroom h2{color: #660033}
-  #greenroom h3{color: #660033}
-
   #redroom{
     background-image: url(imgs/redroom.jpg);
   }
-  #redroom h1{color: #660033}
-  #redroom h2{color: #660033}
-  #redroom h3{color: #660033}
-
   #yellowroom{
     background-image: url(imgs/yellowroom.jpg);
   }
-  #yellowroom h1{color: #660033}
-  #yellowroom h2{color: #660033}
-  #yellowroom h3{color: #660033}
-
   #cozinha{
     background-image: url(imgs/cozinha.jpg);
   }
-  #cozinha h1{color: #660033}
-  #cozinha h2{color: #660033}
-  #cozinha h3{color: #660033}
-
   #saladejantar{
     background-image: url(imgs/saladejantar.jpg);
   }
-  #saladejantar h1{color: #660033}
-  #saladejantar h2{color: #660033}
-  #saladejantar h3{color: #660033}
-
   #salatv{
     background-image: url(imgs/salatv.jpg);
   }
-  #salatv h1{color: #660033}
-  #salatv h2{color: #660033}
-  #salatv h3{color: #660033}
-
   #terraco{
     background-image: url(imgs/terraco.jpg);
   }
-  #terraco h1{color: #660033}
-  #terraco h2{color: #660033}
-  #terraco h3{color: #660033}
-
   #casadebanho0{
     background-image: url(imgs/casadebanho0.jpg);
   }
-  #casadebanho0 h1{color: #660033}
-  #casadebanho0 h2{color: #660033}
-  #casadebanho0 h3{color: #660033}
-
   #casadebanho1{
     background-image: url(imgs/casadebanho1.jpg);
   }
-  #casadebanho1 h1{color: #660033}
-  #casadebanho1 h2{color: #660033}
-  #casadebanho1 h3{color: #660033}
-
+  #servicos{
+    background-image: url(imgs/praia.jpg);
+  }
+  #disponibilidade{
+    background-image: url(imgs/pordosol.jpg);
+    padding: 0% 0 0 0;
+  }
 
   /* Fixed header and footer.
   * --------------------------------------- */
@@ -219,23 +185,23 @@
   </div>
   <div class="section" id="blueroom">
     <h1>Quarto Noroeste</h1>
-    <h2>Uma cama de casal (183x124mm)</h2>
-    <h2>Uma cama individual (190x95mm)</h2>
+    <h2>Uma cama de casal (183x124cm)</h2>
+    <h2>Uma cama individual (190x95cm)</h2>
     <h3>Janela para Este</h3>
   </div>
   <div class="section" id="yellowroom">
     <h1>Quarto Sudeste</h1>
-    <h2>Duas camas individuais (183x100mm)</h2>
+    <h2>Duas camas individuais (183x100cm)</h2>
     <h3>Janela para Sul</h3>
   </div>
   <div class="section" id="greenroom">
     <h1>Quarto Sudoeste</h1>
-    <h2>Uma cama de casal (195x140mm)</h2>
+    <h2>Uma cama de casal (195x140cm)</h2>
     <h3>Janelas para Sul e Oeste</h3>
   </div>
   <div class="section" id="redroom">
     <h1>Quarto Noroeste</h1>
-    <h2>Uma cama de casal (183x120mm)</h2>
+    <h2>Uma cama de casal (183x120cm)</h2>
     <h3>Janela para Oeste</h3>
   </div>
   <div class="section" id="cozinha">
@@ -249,7 +215,8 @@
   <div class="section" id="saladejantar">
     <h1>Sala de jantar</h1>
     <h2>Mesa extensível</h2>
-    <h2>senta 8 pessoas confortávelmente</h2>
+    <h2>Senta 8 pessoas confortávelmente</h2>
+    <h2>Máquina de café</h2>
   </div>
   <div class="section" id="salatv">
     <h1>Sala de TV</h1>
@@ -268,9 +235,16 @@
     <h2>Vista para o largo da igreja</h2>
     <h2>Sossegado e soalheiro</h2>
   </div>
-  <div class="section">
+  <div class="section" id="servicos">
+    <h1>Serviços</h1>
+    <h2>Internet (WiFi)</h2>
+    <h2>Máquina de lavar roupa</h2>
+    <h2>Lavandaria (custo extra)</h2>
+    <h2>Limpeza pontual (custo extra)</h2>
+  </div>
+  <div class="section" id="disponibilidade">
     <h1>Disponibilidade</h1>
-    <iframe src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showPrint=0&amp;showCalendars=0&amp;showTz=0&amp;height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;src=i7h2oc3eeotcd9kgf1v0ccrb3s%40group.calendar.google.com&amp;color=%23711616&amp;ctz=Europe%2FLisbon" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+    <iframe src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showPrint=0&amp;showCalendars=0&amp;showTz=0&amp;height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;src=i7h2oc3eeotcd9kgf1v0ccrb3s%40group.calendar.google.com&amp;color=%23711616&amp;ctz=Europe%2FLisbon" style="border-width:0" width="600" height="480" frameborder="0" scrolling="no"></iframe>
   </div>
 </div>
 
