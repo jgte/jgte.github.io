@@ -17,6 +17,8 @@
 \addbibresource{cv_jgte.bib}
 
 \usepackage[utf8]{inputenc}    % utf8 support       %!!!!!!!!!!!!!!!!!!!!
+\DeclareUnicodeCharacter{301}{'}
+
 \usepackage[T1]{fontenc}       % code for pdf file  %!!!!!!!!!!!!!!!!!!!!
 \usepackage{longtable}
 \usepackage{fancyhdr}
@@ -290,13 +292,13 @@ Sep. 2001 -- Dec. 2001
 
 \procv{}{
 \begin{cvsection}{Research}{11cm}
-Satellite accelerometry & Combination of orbit-derived non-gravitational accelerations with accelerometer observations in the context of the Swarm satellite mission\\[\listskipbig]
-Space Geodesy & Gravity field models from Swarm kinematic orbits\newline
-                Impact of orbit position errors in the quality of gravimetric data from satellite formations\newline
-                Noise budget of low-low satellite-to-satellite tracking gravimetric data\newline
-                Retrieval of the time-variable gravity field of the Earth with satellites\\[\listskipbig]
-Laser Propulsion & Use of ground-based lasers to launch small satellites to orbit\\[\listskipbig]
-Single Stage to Orbit & Determination of the minimum technological requirements for a single stage to orbit launcher\\[\listskipbig]
+Satellite accelerometry & $\bullet$ Combination of orbit-derived non-gravitational accelerations with accelerometer observations in the context of the Swarm satellite mission\\[\listskipbig]
+Space Geodesy & $\bullet$ Gravity field models from Swarm kinematic orbits\newline
+                $\bullet$ Impact of orbit position errors in the quality of gravimetric data from satellite formations\newline
+                $\bullet$ Noise budget of low-low satellite-to-satellite tracking gravimetric data\newline
+                $\bullet$ Retrieval of the high-frequency time-variable gravity field of the Earth with numerous satellites\\[\listskipbig]
+Laser Propulsion & $\bullet$ Use of ground-based lasers to launch small satellites to orbit\\[\listskipbig]
+Single Stage to Orbit & $\bullet$ Determination of the minimum technological requirements for a single stage to orbit launcher\\[\listskipbig]
 \end{cvsection}
 }
 
@@ -321,7 +323,7 @@ Single Stage to Orbit & Determination of the minimum technological requirements 
 \renewcommand\refname{Publications}
 \vspace{0.25in}
 
-% grep \@ cv_jgte.bib | awk 'FS=\{; { print $2}'
+% grep \@ citations.bib | awk -F'{' '{ print $2}'
 \nocite{
 gunter2011using,
 resendes2007laser,
@@ -346,10 +348,13 @@ gunter2012deriving,
 anselmi2011assessment,
 gunter2009use,
 encarnacao2008analysis,
-van2014precise,
+van2015precise,
 bruinsma2014results,
 doornbos2013air,
-van2015precise,
+olsen2013swarm,
+bezdvek2016time,
+encarnacao2015first,
+encarnacao2015impact,
 }
 
 \printbibliography
@@ -361,12 +366,24 @@ Retrived from \href{https://scholar.google.com/citations?user=k2liFwQAAAAJ}{Goog
 % % ------- Languages ------------------------------------------------------
 
 \begin{cvsection}{Languages}{9cm}
-Portuguese & mother tongue \\
-English    & Fluent (holder of the \href{http://www.cambridgeenglish.org/exams/proficiency/index.aspx}{Certificate of Proficiency in English}) \\
-Spanish    & Fair spoken\slash advanced reading \\
-Italian    & Fair spoken\slash advanced reading \\
-Dutch      & Fair spoken and reading \\
-French     & Basic spoken\slash fair reading \\
+~\\
+\begin{minipage}{\textwidth}
+\begin{tabular}{
+l
+>{\centering\arraybackslash}m{3cm}
+>{\centering\arraybackslash}m{3cm}
+>{\centering\arraybackslash}m{3cm}}
+   & Speaking & Reading & Writing \\
+\hline
+Portuguese & \multicolumn{3}{c}{mother tongue}  \\
+English\footnote{holder of the \href{http://www.cambridgeenglish.org/exams/proficiency/index.aspx}{Certificate of Proficiency in English}}    & excellent & excellent & excellent \\
+Spanish    & good & good & fair \\
+Italian    & good & good & fair \\
+Dutch      & fair & fair & limited \\
+French     & fair & fair & limited \\
+\hline
+\end{tabular}
+\end{minipage}
 \end{cvsection}
 
 % % -------- Other Activities --------------------------------------------

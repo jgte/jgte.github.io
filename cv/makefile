@@ -1,5 +1,6 @@
 MAINTEXFILE:=cv_jgte
-GOOGLESCHOLARBIBFILE=citations.bib
+PUBLTEXFILE:=publications
+GOOGLESCHOLARBIBFILE:=citations.bib
 BIBFILE:=cv_jgte.bib
 
 # determining computer
@@ -13,6 +14,7 @@ endif
 ifeq ($(UNAME), Darwin)
 	EXEDIR:=/Library/TeX/texbin/
 	PDFLATEXOPTS:=-halt-on-error -interaction nonstopmode
+	export PATH := $(PATH):/usr/local/bin/
 endif
 
 LATEX:=$(EXEDIR)latex
@@ -20,7 +22,7 @@ DVIPS:=$(EXEDIR)dvips
 DVIPDF:=$(EXEDIR)dvipdf
 BIBTEX:=$(EXEDIR)bibtex
 BIBER:=$(EXEDIR)biber
-PDFVIEW=$(shell which gnome-open || which open || which evince || which gpdf || which kpdf || which acroread || which xpdf)
+PDFVIEW:=$(shell which gnome-open || which open || which evince || which gpdf || which kpdf || which acroread || which xpdf)
 PDFLATEX:=$(EXEDIR)pdflatex $(PDFLATEXOPTS)
 HTLATEX:=htlatex
 
@@ -37,6 +39,7 @@ html:
 
 pdf:
 	$(PDFLATEX) $(MAINTEXFILE)
+	$(PDFLATEX) $(PUBLTEXFILE)
 
 view:
 	$(PDFVIEW) $(MAINTEXFILE).pdf
@@ -50,9 +53,11 @@ dvi: ps
 
 bib:
 	$(BIBTEX) $(MAINTEXFILE)
+	$(BIBTEX) $(PUBLTEXFILE)
 
 biber: parse_bib
 	$(BIBER) --output-directory "$(CURDIR)" --input-directory "$(CURDIR)" $(MAINTEXFILE)
+	$(BIBER) --output-directory "$(CURDIR)" --input-directory "$(CURDIR)" $(PUBLTEXFILE)
 
 parse_bib:
 	cat $(GOOGLESCHOLARBIBFILE) \
@@ -72,12 +77,14 @@ parse_bib:
 	| sed 's_Encarna{\\c{c}}{\\~a}o_\\textbf{de Teixeira da Encarna{\\c{c}}{\\~a}o}_g' \
 	| sed 's_Jo{\\~a}o_\\textbf{Jo{\\~a}o}_g' \
 	| sed 's_XZQGJ_X_g' \
+	| sed 's_Congres}_Congress}_g' \
+	| sed 's_(scarf)_({SCARF})_g' \
 	 > "$(CURDIR)/$(MAINTEXFILE).bib"
 	tr '´' "'" < "$(CURDIR)/$(MAINTEXFILE).bib" | sponge "$(CURDIR)/$(MAINTEXFILE).bib"
 	tr '`' "'" < "$(CURDIR)/$(MAINTEXFILE).bib" | sponge "$(CURDIR)/$(MAINTEXFILE).bib"
 
 clean:
-	@for i in aux dvi log ps pdf toc fdb_latexmk flsm blg bbl bcf out run.xml synctex.gz; do rm -fv $(MAINTEXFILE).$$i; done
+	@for j in $(MAINTEXFILE) $(PUBLTEXFILE); do for i in aux dvi log ps pdf toc fdb_latexmk flsm blg bbl bcf out run.xml synctex.gz; do rm -fv $$j.$$i; done; done
 
 
 
