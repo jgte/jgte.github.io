@@ -16,3 +16,4 @@
 *.sublime-workspace
 *.synctex.gz
 *.fls
+*.fdb_latexmk
