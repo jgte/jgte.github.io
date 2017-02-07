@@ -114,8 +114,17 @@
   \end{longtable}
 }
 
-
-
+\newenvironment{cvtext}[1]{
+  \vspace{0.15in}
+  \section*{#1}
+  \begin{minipage}{\textwidth}
+  \setlength{\parindent}{10ex}
+  \raggedright
+}{
+  % \end{tabular*}
+  % \end{tabularx}
+  \end{minipage}
+}
 % ------ Start --------------------------------------------------------
 
 \begin{document}
@@ -127,11 +136,22 @@
 \procv{}{%
 \vspace{0.25in}
 \centering
-Researcher, Astrodynamics and Space Missions, Delft Technical University
+Postdoctoral Fellow, Center for Space Research, University of Texas at Austin
 }
 
-% ------- Personal data ---------------------------------------------------
+\begin{cvtext}{Summary}
+\hspace{3ex} Jo\~ao Encarna\c c\~ao is a researcher in the field of satellite geodesy.
+He has worked with different types of gravimetric data, focusing on understanding their error characteristics and how that influences the quality of the resulting gravity field models.
+He participated in numerous research projects involving international teams, which has allowed him to develop a wide and strong network.
 
+\hspace{3ex} As a Postdoctoral Fellow at Center for Space Research, he is looking at ways to improve the calibration of GRACE accelerometer data and to predict the long-term trends in the GRACE gravity field models over the GRACE/GRACE Follow-on gap.
+Additionally, Jo\~ao Encarna\c c\~ao leads in informal cooperation between several European institutes for researching and promoting the gravity field models estimated from the GPS data gathered by the Swarm satellite mission.
+
+\hspace{3ex} He has worked in different areas, including Structural Mechanics, Aerodynamics, Preliminary Vehicle Design, Single Stage to Orbit and Laser Propulsion, which have given him the opportunity to broaden his understanding of physics.
+Jo\~ao Encarna\c c\~ao is an avid programmer, actively learning new languages and techniques in order to better implement the algorithms and procedures required to develop his research.
+\end{cvtext}
+
+% ------- Personal data ---------------------------------------------------
 
 \begin{cvsection}{Personal Information}{14cm}
 
@@ -160,7 +180,6 @@ Researcher, Astrodynamics and Space Missions, Delft Technical University
                      \href{https://www.mendeley.com/profiles/joao-encarnacao4/}{https://www.mendeley.com/profiles/joao-encarnacao4/}\newline
                      \href{https://www.scopus.com/authid/detail.uri?authorId=15135565900}{https://www.scopus.com/authid/detail.uri?authorId=15135565900}\\[\listskipsmall]
 }
-
 \end{cvsection}
 
 % % ------- Skills ------------------------------------------------------
