@@ -15,3 +15,4 @@
 *.dvi
 *.sublime-workspace
 *.synctex.gz
+*.fls
