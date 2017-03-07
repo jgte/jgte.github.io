@@ -47,6 +47,19 @@
 
 \author{\name}
 
+% ------ dynamic web references -------------------------------
+
+\newtoggle{expliciturl}
+\togglefalse{expliciturl}
+% \toggletrue{expliciturl}
+\newcommand{\dynhref}[2]{%
+  \iftoggle{expliciturl}{%
+    #2 (\href{#1}{\texttt{\detokenize{#1}}})%
+  }{%
+    \href{#1}{#2}%
+  }%
+}
+
 % ------ CV version: professional or academic -------------------------------
 
 \newtoggle{homecontact}
@@ -142,13 +155,16 @@ Postdoctoral Fellow, Center for Space Research, University of Texas at Austin
 \begin{cvtext}{Summary}
 \hspace{3ex} Jo\~ao Encarna\c c\~ao is a researcher in the field of satellite geodesy.
 He has worked with different types of gravimetric data, focusing on understanding their error characteristics and how that influences the quality of the resulting gravity field models.
-He participated in numerous research projects involving international teams, which has allowed him to develop a wide and strong network.
+He participated in numerous research projects involving international teams, which has allowed him to develop a wide and strong network (AT, CH, CZ, DE, NL, PT and US).
 
-\hspace{3ex} As a Postdoctoral Fellow at Center for Space Research, he is looking at ways to improve the calibration of GRACE accelerometer data and to predict the long-term trends in the GRACE gravity field models over the GRACE/GRACE Follow-on gap.
+\hspace{3ex} As a Postdoctoral Fellow at Center for Space Research, he is currently looking at ways to improve the calibration of GRACE accelerometer data and to predict the long-term trends in the GRACE gravity field models over the GRACE/GRACE Follow-on gap.
 Additionally, Jo\~ao Encarna\c c\~ao leads in informal cooperation between several European institutes for researching and promoting the gravity field models estimated from the GPS data gathered by the Swarm satellite mission.
 
 \hspace{3ex} He has worked in different areas, including Structural Mechanics, Aerodynamics, Preliminary Vehicle Design, Single Stage to Orbit and Laser Propulsion, which have given him the opportunity to broaden his understanding of physics.
-Jo\~ao Encarna\c c\~ao is an avid programmer, actively learning new languages and techniques in order to better implement the algorithms and procedures required to develop his research.
+Jo\~ao Encarna\c c\~ao is an avid programmer, actively learning new languages and techniques in order to better implement the algorithms and procedures required to develop his research. He openly shares the code he has developed in \dynhref{https://github.com/jgte}{GitHub}.
+
+\hspace{3ex} An \dynhref{http://jgte.github.io/cv/}{on-line version this document} is also available.
+
 \end{cvtext}
 
 % ------- Personal data ---------------------------------------------------
@@ -165,35 +181,40 @@ Jo\~ao Encarna\c c\~ao is an avid programmer, actively learning new languages an
                     78751, Austin Texas, USA\\[\listskipsmall]
   {\bf Telephone:} & +1 512 765 1351\\[\listskipsmall]
   {\bf Email:}     & \href{mailto:j_encarnacao@yahoo.com}{j\_encarnacao@yahoo.com}\\[\listskipsmall]
-  {\bf Web:}       & \href{http://nl.linkedin.com/in/joaoencarnacao}{http://nl.linkedin.com/in/joaoencarnacao}\\[\listskipsmall]
+  {\bf Web:}       & \dynhref{http://nl.linkedin.com/in/joaoencarnacao}{LinkedIn}\\[\listskipsmall]
 }{%
   {\bf Address:}   & 3925 W Braker Lane Ste 200 - WPR 2.9076\newline
                      Austin TX 78759-5316\newline
                     USA\\[\listskipsmall]
   {\bf Telephone:} & +1 (512) 232-6897\\[\listskipsmall]
   {\bf Email:}     & \href{mailto:teixeira@csr.utexas.edu}{teixeira@csr.utexas.edu}\\[\listskipsmall]
-  {\bf Web:}       & \href{https://directory.utexas.edu/index.php?q=joao+encarnacao}{https://directory.utexas.edu/index.php?q=joao+encarnacao}\newline
-                     \href{http://nl.linkedin.com/in/joaoencarnacao}{http://nl.linkedin.com/in/joaoencarnacao}\newline
-                     \href{https://www.researchgate.net/profile/Joao_Encarnacao2}{https://www.researchgate.net/profile/Joao\_Encarnacao2}\newline
-                     \href{https://scholar.google.com/citations?user=k2liFwQAAAAJ}{https://scholar.google.com/citations?user=k2liFwQAAAAJ}\newline
-                     \href{http://orcid.org/0000-0001-6824-2733}{http://orcid.org/0000-0001-6824-2733}\newline
-                     \href{https://www.mendeley.com/profiles/joao-encarnacao4/}{https://www.mendeley.com/profiles/joao-encarnacao4/}\newline
-                     \href{https://www.scopus.com/authid/detail.uri?authorId=15135565900}{https://www.scopus.com/authid/detail.uri?authorId=15135565900}\\[\listskipsmall]
+  {\bf Web:}       & \dynhref{https://directory.utexas.edu/index.php?q=joao+encarnacao}{University of Texas}\newline
+                     \dynhref{http://nl.linkedin.com/in/joaoencarnacao}{LinkedIn}\newline
+                     \dynhref{https://www.researchgate.net/profile/Joao_Encarnacao2}{ResearchGate}\newline
+                     \dynhref{https://scholar.google.com/citations?user=k2liFwQAAAAJ}{Google Scholar}\newline
+                     \dynhref{http://orcid.org/0000-0001-6824-2733}{ORCID}\newline
+                     \dynhref{https://www.mendeley.com/profiles/joao-encarnacao4/}{Mendeley}\newline
+                     \dynhref{https://www.scopus.com/authid/detail.uri?authorId=15135565900}{SCOPUS}\newline
+                     \dynhref{https://publons.com/a/782170/}{Publons}\newline
+                     \dynhref{https://github.com/jgte}{GitHub}\\[\listskipsmall]
 }
 \end{cvsection}
 
 % % ------- Skills ------------------------------------------------------
 
+\clearpage
+
 \begin{cvsection}{Skills}{11.2cm}
 Leadership: & Established an informal cooperation between four European institutes:\newline
-  \href{http://www.itsg.tugraz.at}{Institute of Geodesy} of the \href{http://www.tugraz.at}{Graz University of Technology},\newline
-  \href{http://www.asu.cas.cz/en}{Astronomical Institute} of the \href{http://www.cas.cz/index.html}{Academy of Sciences of the Czech Republic},\newline
-  \href{http://www.aiub.unibe.ch}{Astronomical Institute of the University of Bern} and\newline
-  \href{http://www.lr.tudelft.nl}{Aerospace Faculty} of the \href{http://www.tudelft.nl}{Delft University of Technology}\newline
+  \dynhref{http://www.itsg.tugraz.at}{Institute of Geodesy} of the \dynhref{http://www.tugraz.at}{Graz University of Technology}, \newline
+  \dynhref{http://www.asu.cas.cz/en}{Astronomical Institute} of the \dynhref{http://www.cas.cz/index.html}{Academy of Sciences of the Czech Republic}, \newline
+  \dynhref{http://www.aiub.unibe.ch}{Astronomical Institute of the University of Bern} \newline
+  \dynhref{http://www.lr.tudelft.nl}{Aerospace Faculty} of the \dynhref{http://www.tudelft.nl}{Delft University of Technology} and\newline
+  \dynhref{https://earthsciences.osu.edu}{School of Earth Sciences} of the \dynhref{https://www.osu.edu}{Ohio State University} \newline
   for the study of analysing the time-variable gravity field of the Earth retrieved from GPS data from the Swarm Satellite mission\\[\listskipbig]
 
-Communication:  & Delivered numerous oral presentation of research results\newline
-                  most notably an \href{http://agu.confex.com/agu/fm15/meetingapp.cgi/Paper/71877}{invited talk} at the \href{http://fallmeeting.agu.org/2015/}{American Geophysical Union Fall Meeting in 2015}\\[\listskipbig]
+Communication:  & Delivered numerous presentations of research results (8 oral and 4 poster)\newline
+                  most notably the \dynhref{http://tinyurl.com/h928s3c}{invited talk} at the \dynhref{http://fallmeeting.agu.org/2015/}{American Geophysical Union Fall Meeting in 2015} and the invited lecture at the \dynhref{http://data-assimilation.com}{Summer School on Data Assimilation and its applications in Oceanography, Hydrology, Risk \& Safety and Reservoir Engineering in 2017}\\[\listskipbig]
 
 Theoretical:   & Parametric inversion\newline
                  Statistical analysis\newline
@@ -203,20 +224,23 @@ Theoretical:   & Parametric inversion\newline
                  Coordinate transformations\slash quaternion arithmetic\newline
                  Fourier transform\\[\listskipbig]
 
+Teaching:      & Student supervision in the context of individual and group assignments\newline
+                 Introductory lectures to the practical projects\\[\listskipbig]
+
 Computational:  & Algorithm development and implementation\newline
                   Data management, analysis and visualisation\newline
                   Automation, robustness, fault recovery\newline
                   Problem resolution\slash solution discovery\slash hacking\\[\listskipbig]
 Software: & Latex, MS Office, Git, SVN\\[\listskipbig]
 \procv{}{
-Articles review: & Successfully completed the review of 7 scientific articles (\href{https://publons.com/a/782170/}{https://publons.com/a/782170/})\\[\listskipbig]
+Articles review: & Successfully completed the review of 8 scientific articles cf. \dynhref{https://publons.com/a/782170/}{Publons}\\[\listskipbig]
 }
 
 Operating Systems: & OSX, MS Windows, Unix/Linux \\[\listskipbig]
 
 Programming:
 & 1996 -- present: Bash \\
-& 1998 -- present: MATLAB\copyright  \\
+& 1998 -- present: MATLAB \\
 & 2002 -- present: FORTRAN \\
 & 2006 -- 2008: C/C++ \\
 & 2011 -- present: Ruby \\
@@ -236,26 +260,27 @@ Programming:
  Structural Mechanics & \\
 \end{cvsection}
 
-
 % % ------- Education ---------------------------------------------------
+
+\clearpage
 
 \begin{cvsection}{Education}{13.5cm}
 
 2015 & PhD in Space Geodesy\newline
-      \href{http://www.citg.tudelft.nl/over-faculteit/afdelingen/geoscience-and-remote-sensing/}{Geoscience \& Remote Sensing}, \href{http://www.tudelft.nl/}{Delft University of Technology}\newline
-      Dissertation: \href{http://dx.doi.org/10.4233/uuid:d0c61fd2-804b-4827-ae8a-e0e93d282a56}{\it Next-generation satellite gravimetry for measuring mass transport in the Earth system}\newline
-      Promotor: \href{http://www.citg.tudelft.nl/en/about-faculty/departments/geoscience-and-remote-sensing/staff/scientific-staff/profdr-inghabil-roland-klees/}{Prof. Dr.-Ing. habil. Roland Klees}\newline
-      Supervisor: \href{http://www.citg.tudelft.nl/en/about-faculty/departments/geoscience-and-remote-sensing/staff/scientific-staff/dr-pg-pavel-ditmar/}{dr.ir. Pavel Ditmar}\\[\listskipbig]
+      \dynhref{http://tinyurl.com/GRS-TUDelft}{Geoscience \& Remote Sensing}, \dynhref{http://www.tudelft.nl/}{Delft University of Technology}\newline
+      Dissertation: \dynhref{http://tinyurl.com/SatGrav}{Next-generation satellite gravimetry for measuring mass transport in the Earth system}\newline
+      Promotor: \dynhref{http://tinyurl.com/ProfKlees}{Prof. Dr.-Ing. habil. Roland Klees}\newline
+      Supervisor: \dynhref{http://tinyurl.com/DrDitmar}{dr.ir. Pavel Ditmar}\\[\listskipbig]
 
 2004 & Master of Sciences in Aerospace Engineering\newline
-      \href{http://www.as.lr.tudelft.nl}{Astrodynamics and Space Missions},\href{http://www.tudelft.nl/}{Delft University of Technology}\newline
-      Final Thesis: {\it Numerical Simulation of Launch Vehicles}\newline
-      Supervisor: \href{http://www.lr.tudelft.nl/en/organisation/departments/space-engineering/astrodynamics-and-space-missions/people/profir-bac-ambrosius/}{Prof.ir. B.A.C. Ambrosius}\\[\listskipbig]
+      \dynhref{http://www.as.lr.tudelft.nl}{Astrodynamics and Space Missions}, \dynhref{http://www.tudelft.nl/}{Delft University of Technology}\newline
+      Final Thesis: Numerical Simulation of Launch Vehicles\newline
+      Supervisor: \dynhref{http://tinyurl.com/ProfAmbrosius}{Prof.ir. B.A.C. Ambrosius}\\[\listskipbig]
 
 2000 & Licenciatura in Aerospace Engineering\newline
-       \href{http://www.ist.utl.pt/}{Instituto Superior T{\'e}cnico},\href{http://www.utl.pt/}{Technical University of Lisbon}\newline
+       \dynhref{http://www.ist.utl.pt/}{Instituto Superior T{\'e}cnico}, \dynhref{http://www.utl.pt/}{Technical University of Lisbon}\newline
        $5^{th}$ year concluded at Delft University of Technology, through the ERASMUS program\newline
-       Report: {\it Optimum Aerodynamic Shape for a High Altitude Long Endurance Aerostatic Platform}\newline
+       Report: Optimum Aerodynamic Shape for a High Altitude Long Endurance Aerostatic Platform\newline
        Supervisor: Prof. Dr. Ir. Theo van Holten\\[\listskipbig]
 
 \end{cvsection}
@@ -271,50 +296,52 @@ Programming:
 
 Aug. 2016 -- present
   & Research Associate\newline
-    \href{http://www.csr.utexas.edu}{Center for Space Research}, \href{http://www.utexas.edu}{Texas University at Austin}\newline
+    \dynhref{http://www.csr.utexas.edu}{Center for Space Research}, \dynhref{http://www.utexas.edu}{Texas University at Austin}\newline
     Austin, Texas, USA\\[\listskipbig]
 
 Sep. 2011 -- Jul. 2016
   & Research Associate\newline
-    \href{http://www.as.lr.tudelft.nl}{Astrodynamics and Space Missions}, \href{http://www.tudelft.nl/}{Delft University of Technology}\newline
+    \dynhref{http://www.as.lr.tudelft.nl}{Astrodynamics and Space Missions}, \dynhref{http://www.tudelft.nl/}{Delft University of Technology}\newline
     Delft, the Netherlands\\[\listskipbig]
 
 Jan. 2007 -- Dec. 2015
   & PhD Candidate\newline
-    \href{http://www.citg.tudelft.nl/over-faculteit/afdelingen/geoscience-and-remote-sensing/}{Geoscience \& Remote Sensing}, \href{http://www.tudelft.nl/}{Delft University of Technology}\newline
+    \dynhref{http://tinyurl.com/GRS-TUDelft}{Geoscience \& Remote Sensing}, \dynhref{http://www.tudelft.nl/}{Delft University of Technology}\newline
     Delft, the Netherlands\\[\listskipbig]
 
 Apr. 2005 -- Nov. 2006
   & Stress Engineer\newline
-    \href{http://www.globaltechnics.nl/}{Global Technics}\newline
+    \dynhref{http://www.globaltechnics.nl/}{Global Technics}\newline
     Leiden, the Netherlands\\[\listskipbig]
 
 % 6/2005 -- 7/2005 & Systems Engineer \newline
-%                  \href{http://www.reduct.net}{Reduct}\newline
+%                  \dynhref{http://www.reduct.net}{Reduct}\newline
 %                    Kontich, Belgium\\[\listskipbig]
 
 Oct. 2004 -- Jan. 2005
   & Aerospace Engineer\newline
   Implementation of a Sub-Orbital Optimization Module into the Simulation Tool Colvet (Contractor Work)\newline
-  \href{http://www.delta-utec.com/}{Delta-Utec}\newline
+  \dynhref{http://www.delta-utec.com/}{Delta-Utec}\newline
   Leiden, the Netherlands\\[\listskipbig]
 
 Mar. 2004 -- Apr. 2004
   & Trainee\newline
     Numerical Simulations on Laser Propulsion (appendix of MSc thesis)\newline
     Under the supervision of Ir. Berry Sanders, Rocket Technology Research Group\newline
-    Prins Maurits Laboratorium,\href{http://www.tno.nl/}{TNO}, the Netherlands\\[\listskipbig]
+    Prins Maurits Laboratorium, \dynhref{http://www.tno.nl/}{TNO}, the Netherlands\\[\listskipbig]
 
 Sep. 2001 -- Dec. 2001
   & Trainee\newline
     Lunar Exploration with Ariane 5\newline
-    Under the supervision of \href{https://en.wikipedia.org/wiki/Wubbo_Ockels}{Prof. Wubbo Ockels}\newline
-    \href{http://www.esa.int/About_Us/ESTEC}{European Space research and Technology Center (ESTEC)},\href{http://www.esa.int}{European Space Agency (ESA)}
+    Under the supervision of \dynhref{https://en.wikipedia.org/wiki/Wubbo_Ockels}{Prof. Wubbo Ockels}\newline
+    \dynhref{http://www.esa.int/About_Us/ESTEC}{European Space research and Technology Center (ESTEC)}, \dynhref{http://www.esa.int}{European Space Agency (ESA)}
     Noordwijk, the Netherlands\\[\listskipbig]
 
 \end{cvsection}
 
 % % ------- Research ------------------------------------------
+
+\clearpage
 
 \procv{}{
 \begin{cvsection}{Research}{11cm}
@@ -340,10 +367,63 @@ Single Stage to Orbit & $\bullet$ Determination of the minimum technological req
 \end{cvsection}
 }
 
-\clearpage
+% % ------- Conferences
 
+% 2001 IAF (Houton) - presentation
+% 2007 INTERGEO (Leipzig) - presentation
+% 2008 IUGG (Chania) - poster
+% 2013 1st Swarm Data Quality Workshop (Rome) - presentation
+% 2013 2nd Swarm Data Quality Workshop (Rome) - presentation
+% 2014 3rd Swarm Data Quality Workshop and 3rd Swarm Science Meeting (Copenhagen) - presentation
+% 2014 4th Swarm Data Quality Workshop (Potsdam) - presentation
+% 2015 5th Swarm Data Quality Workshop (Paris) - presentation
+% 2015 AGU - presentation and poster
+% 2016 EGU - poster
+% 2016 LPS - poster
+% 2016 AGU (no presentation)
+
+% % ------- Languages ------------------------------------------------------
+
+\begin{cvsection}{Languages}{9cm}
+~\\
+\begin{minipage}{\textwidth}
+\begin{tabular}{
+l
+>{\centering\arraybackslash}m{3cm}
+>{\centering\arraybackslash}m{3cm}
+>{\centering\arraybackslash}m{3cm}}
+   & Speaking & Reading & Writing \\
+\hline
+Portuguese & \multicolumn{3}{c}{mother tongue}  \\
+English\footnote{holder of the \dynhref{http://www.cambridgeenglish.org/exams/proficiency/index.aspx}{Certificate of Proficiency in English}}    & excellent & excellent & excellent \\
+Spanish    & good & good & fair \\
+Italian    & good & good & fair \\
+Dutch      & fair & fair & limited \\
+French     & fair & fair & limited \\
+\hline
+\end{tabular}
+\end{minipage}
+\end{cvsection}
+
+% % -------- Other Activities --------------------------------------------
+
+\procv{
+\begin{cvsection}{Sports}{8cm}
+1991 -- 2009 & Basketball \\
+April 2006   & Finalist of the \dynhref{http://www.fortismarathonrotterdam.nl/}{26th International Fortis Marathon of Rotterdam}
+September 2016 - present & Sailing\\
+\end{cvsection}
+
+\begin{cvsection}{Other Activities}{8cm}
+1991 -- 2001 & Scout at the 92$^{nd}$ Scout-group of the \dynhref{http://www.aep.pt}{Association of Portuguese Escoteiros (AEP)}\\
+1993 -- present & Radio Amateur, call sign CT3IU, class B\\
+1996 -- present & Drivers Licence \\
+\end{cvsection}
+}{}
 
 % % -------- Publications ----------------------------------------------------
+
+\clearpage
 
 \procv{}{
 \renewcommand\refname{Publications}
@@ -389,53 +469,8 @@ da2016gravity,
 \printbibliography
 
 ~\\
-Retrived from \href{https://scholar.google.com/citations?user=k2liFwQAAAAJ}{Google Scholar}.
+Retrived from \dynhref{https://scholar.google.com/citations?user=k2liFwQAAAAJ}{Google Scholar}.
 }
 
-% % ------- Languages ------------------------------------------------------
-
-\begin{cvsection}{Languages}{9cm}
-~\\
-\begin{minipage}{\textwidth}
-\begin{tabular}{
-l
->{\centering\arraybackslash}m{3cm}
->{\centering\arraybackslash}m{3cm}
->{\centering\arraybackslash}m{3cm}}
-   & Speaking & Reading & Writing \\
-\hline
-Portuguese & \multicolumn{3}{c}{mother tongue}  \\
-English\footnote{holder of the \href{http://www.cambridgeenglish.org/exams/proficiency/index.aspx}{Certificate of Proficiency in English}}    & excellent & excellent & excellent \\
-Spanish    & good & good & fair \\
-Italian    & good & good & fair \\
-Dutch      & fair & fair & limited \\
-French     & fair & fair & limited \\
-\hline
-\end{tabular}
-\end{minipage}
-\end{cvsection}
-
-% % -------- Other Activities --------------------------------------------
-
-\procv{
-\begin{cvsection}{Sports}{8cm}
-1991 -- 2009 & Basketball \\
-April 2006   & Finalist of the \href{http://www.fortismarathonrotterdam.nl/}{26th International Fortis Marathon of Rotterdam}\\
-\end{cvsection}
-
-\begin{cvsection}{Other Activities}{8cm}
-1991 -- 2001 & Scout at the 92$^{nd}$ Scout-group of the \href{http://www.aep.pt}{Association of Portuguese Escoteiros (AEP)}\\
-1993 -- present & Radio Amateur, call sign CT3IU, class B\\
-1996 -- present & Drivers Licence \\
-\end{cvsection}
-
-}{}
-
-
-% -------- Reference --------------------------------------------
-
-\begin{cvsection}{References}{8cm}
-References available upon request. &\\
-\end{cvsection}
 
 \end{document}
