@@ -1,78 +1,3 @@
-\documentclass[a4paper]{article}
-
-% ------ packages --------------------------------------------------------
-
-% sudo tlmgr install titlesec biblatex logreq biber
-
-\usepackage{hyperref,etoolbox,supertabular,multirow}
-
-\usepackage{titlesec}% Used to customize the \section command
-\titleformat{\section}{\sf\Large\raggedright}{}{0em}{}[\titlerule] % Text formatting of sections
-\titlespacing{\section}{0pt}{3pt}{3pt} % Spacing around sections
-\titleformat{\subsection}{\sf\large\raggedright}{}{0em}{}[] % Text formatting of sections
-\titlespacing{\subsection}{0pt}{3pt}{3pt} % Spacing around sections
-
-% \usepackage{natbib}
-\usepackage[sorting=ydnt,backend=biber,style=authoryear,maxnames=99]{biblatex}
-\addbibresource{cv_jgte.bib}
-
-\usepackage[utf8]{inputenc}    % utf8 support       %!!!!!!!!!!!!!!!!!!!!
-\DeclareUnicodeCharacter{301}{'}
-
-\usepackage[T1]{fontenc}       % code for pdf file  %!!!!!!!!!!!!!!!!!!!!
-\usepackage{longtable}
-\usepackage{fancyhdr}
-\usepackage{tabularx}
-
-% ------ Name --------------------------------------------------------
-
-% Set your name here
-\def\name{Jo\~ao~de~Teixeira~da~Encarna\c c\~ao}
-
-
-% Replace this with a link to your CV if you like, or set it empty
-% (as in \def\footerlink{}) to remove the link in the footer:
-\def\footerlink{}
-
-% The following metadata will show up in the PDF properties
-\hypersetup{
-  colorlinks = true,
-  urlcolor = blue,
-  pdfauthor = {\name},
-  pdfkeywords = {},
-  pdftitle = {\name: Curriculum Vitae},
-  pdfsubject = {Curriculum Vitae},
-  pdfpagemode = UseNone
-}
-
-\author{\name}
-
-% ------ Margin control --------------------------------------------------------
-
-\addtolength{\oddsidemargin}{-1.5cm}
-\addtolength{\evensidemargin}{-1.5cm}
-\addtolength{\textwidth}{3cm}
-
-\addtolength{\topmargin}{-1.5cm}
-\addtolength{\textheight}{2.5cm}
-
-
-
-% ------ Start --------------------------------------------------------
-
-\begin{document}
-
-% print name centered and bold:
-\centerline
-{\huge \rm \textbf \name}
-
-\vspace{0.25in}
-\centering
-Researcher, Astrodynamics and Space Missions, Delft Technical University
-
-
-% % -------- Publications ----------------------------------------------------
-
 \renewcommand\refname{Publications}
 \vspace{0.25in}
 
@@ -80,41 +5,40 @@ Researcher, Astrodynamics and Space Missions, Delft Technical University
 \nocite{
 gunter2011using,
 resendes2007laser,
-% resendes2006laser,
-% hashemi2010contribution,
-% gunter2010using,
-% ditmar2010mitigation,
+resendes2006laser,
+hashemi2010contribution,
+gunter2010using,
+ditmar2010mitigation,
 % mendoncca11,
 encarnaccao2009influence,
 ditmar2012understanding,
 farahani2013validation,
 gunter2009determination,
-% gunter2011investigation,
+gunter2011investigation,
 olsen2013swarm,
 visser2013thermospheric,
-% doornbos2012thermospheric,
-% resendes2005laser,
-% olsen2011scarf,
-% gunter2012potential,
-% teixeira2002single,
-% gunter2012deriving,
-% anselmi2011assessment,
+doornbos2012thermospheric,
+resendes2005laser,
+olsen2011scarf,
+gunter2012potential,
+teixeira2002single,
+gunter2012deriving,
+anselmi2011assessment,
 gunter2009use,
-% encarnacao2008analysis,
+encarnacao2008analysis,
 van2015precise,
-% bruinsma2014results,
+bruinsma2014results,
 doornbos2013air,
-olsen2013swarm,
+friis2013preface,
 bezdvek2016time,
-% encarnacao2015first,
-% encarnacao2015impact,
+encarnaccao2015first,
+encarnacao2015impact,
+siemes2016swarm,
+de2016gravity,
+da2016gravity,
 }
 
 \printbibliography
 
 ~\\
-Retrived from \href{https://scholar.google.com/citations?user=k2liFwQAAAAJ}{Google Scholar}.
-
-
-
-\end{document}
+Retrived from \dynhref{https://scholar.google.com/citations?user=k2liFwQAAAAJ}{Google Scholar}.

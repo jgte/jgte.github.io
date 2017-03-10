@@ -1,5 +1,5 @@
 MAINTEXFILE:=cv_jgte
-PUBLTEXFILE:=publications
+PUBLTEXFILE:=publications_jgte
 GOOGLESCHOLARBIBFILE:=citations.bib
 BIBFILE:=cv_jgte.bib
 
@@ -31,15 +31,27 @@ ROOT_DIR:=$(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
 
 .PHONY: all pdf ps dvi bib clean view tables biber
 
-all: pdf biber pdf view
+all: clean pdf print publ html
 
 html:
 	$(HTLATEX) $(MAINTEXFILE) "xhtml, charset=utf-8" " -cunihtf -utf8"
 	mv -f $(MAINTEXFILE).html index.html
 
-pdf:
-	$(PDFLATEX) $(MAINTEXFILE)
+print: parse_bib
+	sed 's_\togglefalse{expliciturl}_\toggletrue{expliciturl}_' $(MAINTEXFILE).tex > $(MAINTEXFILE)_print.tex
+	$(PDFLATEX) $(MAINTEXFILE)_print
+	$(BIBER) --output-directory "$(CURDIR)" --input-directory "$(CURDIR)" $(MAINTEXFILE)_print
+	$(PDFLATEX) $(MAINTEXFILE)_print
+
+publ: parse_bib
 	$(PDFLATEX) $(PUBLTEXFILE)
+	$(BIBER) --output-directory "$(CURDIR)" --input-directory "$(CURDIR)" $(PUBLTEXFILE)
+	$(PDFLATEX) $(PUBLTEXFILE)
+
+pdf: parse_bib
+	$(PDFLATEX) $(MAINTEXFILE)
+	$(BIBER) --output-directory "$(CURDIR)" --input-directory "$(CURDIR)" $(MAINTEXFILE)
+	$(PDFLATEX) $(MAINTEXFILE)
 
 view:
 	$(PDFVIEW) $(MAINTEXFILE).pdf
@@ -58,6 +70,10 @@ bib:
 biber: parse_bib
 	$(BIBER) --output-directory "$(CURDIR)" --input-directory "$(CURDIR)" $(MAINTEXFILE)
 	$(BIBER) --output-directory "$(CURDIR)" --input-directory "$(CURDIR)" $(PUBLTEXFILE)
+	$(BIBER) --output-directory "$(CURDIR)" --input-directory "$(CURDIR)" $(MAINTEXFILE)_print
+
+clean:
+	@for j in $(MAINTEXFILE) $(PUBLTEXFILE) $(MAINTEXFILE)_print; do for i in aux dvi log ps pdf toc fdb_latexmk flsm blg bbl bcf out run.xml synctex.gz; do rm -fv $$j.$$i; done; done
 
 parse_bib:
 	cat $(GOOGLESCHOLARBIBFILE) \
@@ -83,8 +99,7 @@ parse_bib:
 	tr '´' "'" < "$(CURDIR)/$(MAINTEXFILE).bib" | sponge "$(CURDIR)/$(MAINTEXFILE).bib"
 	tr '`' "'" < "$(CURDIR)/$(MAINTEXFILE).bib" | sponge "$(CURDIR)/$(MAINTEXFILE).bib"
 
-clean:
-	@for j in $(MAINTEXFILE) $(PUBLTEXFILE); do for i in aux dvi log ps pdf toc fdb_latexmk flsm blg bbl bcf out run.xml synctex.gz; do rm -fv $$j.$$i; done; done
+
 
 
 

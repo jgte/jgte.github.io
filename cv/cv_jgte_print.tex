@@ -51,7 +51,7 @@
 % ------ dynamic web references -------------------------------
 
 \newtoggle{expliciturl}
-\togglefalse{expliciturl}
+\toggletrue{expliciturl}
 \newcommand{\dynhref}[2]{%
   \iftoggle{expliciturl}{%
     #2 (\href{#1}{\texttt{\detokenize{#1}}})%
