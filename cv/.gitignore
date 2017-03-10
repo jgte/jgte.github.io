@@ -11,7 +11,6 @@
 *.lg
 *.tmp
 *.xref
-*.pdf
 *.dvi
 *.sublime-workspace
 *.synctex.gz
