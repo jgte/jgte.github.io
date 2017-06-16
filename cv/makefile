@@ -1,7 +1,25 @@
 MAINTEXFILE:=cv_jgte
 PUBLTEXFILE:=publications_jgte
-GOOGLESCHOLARBIBFILE:=citations.bib
 BIBFILE:=cv_jgte.bib
+
+GOOGLESCHOLARBIBURL:=https://scholar.googleusercontent.com/citations?view_op=export_citations&user=k2liFwQAAAAJ&citsig=AMstHGQAAAAAWTwP5LOWbyU-D_8kJPCaHzcsYYKO8zbm&hl=en
+GOOGLESCHOLARBIBURL:=https://scholar.googleusercontent.com/citations?view_op=export_citations&user=k2liFwQAAAAJ&citsig=AMstHGQAAAAAWUVsJENP3Wq7ycYTfyozEl9CoKgl7lZJ&hl=en
+GOOGLESCHOLARBIBFILE:=citations.bib
+GOOGLESCHOLARBIBENCOD=CP1250
+# CP1251
+# CP1252
+# CP1253
+# CP1254
+# CP1255
+# CP1256
+# CP1257
+# CP1258
+# GEORGIAN-ACADEMY
+# GEORGIAN-PS
+# KOI8-T
+# CP154
+# CP874
+# CP1162
 
 # determining computer
 UNAME := $(shell uname)
@@ -75,8 +93,14 @@ biber: parse_bib
 clean:
 	@for j in $(MAINTEXFILE) $(PUBLTEXFILE) $(MAINTEXFILE)_print; do for i in aux dvi log ps pdf toc fdb_latexmk flsm blg bbl bcf out run.xml synctex.gz; do rm -fv $$j.$$i; done; done
 
-parse_bib:
+get_bib:
+	wget '$(GOOGLESCHOLARBIBURL)' -O $(GOOGLESCHOLARBIBFILE)
+	iconv -f $(GOOGLESCHOLARBIBENCOD) -t utf-8 $(GOOGLESCHOLARBIBFILE) > /tmp/$(GOOGLESCHOLARBIBFILE)
+	mv -f /tmp/$(GOOGLESCHOLARBIBFILE) $(GOOGLESCHOLARBIBFILE)
+
+parse_bib: get_bib
 	cat $(GOOGLESCHOLARBIBFILE) \
+	| sed 's|\d0097|-|g' \
 	| sed 's_Encarnacao_Encarna{\\c{c}}{\\~a}o_g' \
 	| sed 's_Encarnagao_Encarna{\\c{c}}{\\~a}o_g' \
 	| sed 's_Encarnac{\\~a}o_Encarna{\\c{c}}{\\~a}o_g' \
