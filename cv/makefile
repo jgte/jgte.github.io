@@ -4,6 +4,7 @@ BIBFILE:=cv_jgte.bib
 
 GOOGLESCHOLARBIBURL:=https://scholar.googleusercontent.com/citations?view_op=export_citations&user=k2liFwQAAAAJ&citsig=AMstHGQAAAAAWTwP5LOWbyU-D_8kJPCaHzcsYYKO8zbm&hl=en
 GOOGLESCHOLARBIBURL:=https://scholar.googleusercontent.com/citations?view_op=export_citations&user=k2liFwQAAAAJ&citsig=AMstHGQAAAAAWUVsJENP3Wq7ycYTfyozEl9CoKgl7lZJ&hl=en
+GOOGLESCHOLARBIBURL:=https://scholar.googleusercontent.com/citations?view_op=export_citations&user=k2liFwQAAAAJ&citsig=AMstHGQAAAAAWUfKXezz05QTaki6HPT6ZrdR5kyo59-4&hl=en
 GOOGLESCHOLARBIBFILE:=citations.bib
 GOOGLESCHOLARBIBENCOD=CP1250
 # CP1251

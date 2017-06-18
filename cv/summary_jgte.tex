@@ -1,0 +1,110 @@
+\documentclass[a4paper]{article}
+
+% ------ packages --------------------------------------------------------
+
+% sudo tlmgr install titlesec biblatex logreq biber
+
+\usepackage{hyperref,etoolbox,supertabular,multirow}
+
+\usepackage{titlesec}% Used to customize the \section command
+\titleformat{\section}{\sf\Large\raggedright}{}{0em}{}[\titlerule] % Text formatting of sections
+\titlespacing{\section}{0pt}{3pt}{3pt} % Spacing around sections
+\titleformat{\subsection}{\sf\large\raggedright}{}{0em}{}[] % Text formatting of sections
+\titlespacing{\subsection}{0pt}{3pt}{3pt} % Spacing around sections
+
+% \usepackage{natbib}
+\usepackage[sorting=ydnt,backend=biber,style=authoryear,maxnames=99]{biblatex}
+\addbibresource{cv_jgte.bib}
+
+\usepackage[utf8]{inputenc}    % utf8 support       %!!!!!!!!!!!!!!!!!!!!
+\DeclareUnicodeCharacter{301}{'}
+
+\usepackage[T1]{fontenc}       % code for pdf file  %!!!!!!!!!!!!!!!!!!!!
+\usepackage{longtable}
+\usepackage{fancyhdr}
+\usepackage{tabularx}
+
+% ------ Name --------------------------------------------------------
+
+% Set your name here
+\def\name{Jo\~ao~de~Teixeira~da~Encarna\c c\~ao}
+
+
+% Replace this with a link to your CV if you like, or set it empty
+% (as in \def\footerlink{}) to remove the link in the footer:
+\def\footerlink{}
+
+% The following metadata will show up in the PDF properties
+\hypersetup{
+  colorlinks = true,
+  urlcolor = blue,
+  pdfauthor = {\name},
+  pdfkeywords = {},
+  pdftitle = {\name: Curriculum Vitae},
+  pdfsubject = {Curriculum Vitae},
+  pdfpagemode = UseNone
+}
+
+\author{\name}
+
+% ------ Margin control --------------------------------------------------------
+
+\addtolength{\oddsidemargin}{-1.5cm}
+\addtolength{\evensidemargin}{-1.5cm}
+\addtolength{\textwidth}{3cm}
+
+\addtolength{\topmargin}{-1.5cm}
+\addtolength{\textheight}{2.5cm}
+
+% ------ dynamic web references -------------------------------
+
+\newtoggle{expliciturl}
+\togglefalse{expliciturl}
+\newcommand{\dynhref}[2]{%
+  \iftoggle{expliciturl}{%
+    #2 (\href{#1}{\texttt{\detokenize{#1}}})%
+  }{%
+    \href{#1}{#2}%
+  }%
+}
+
+\newenvironment{cvtext}[1]{
+  \vspace{0.15in}
+  \section*{#1}
+  \begin{minipage}{\textwidth}
+  \setlength{\parindent}{10ex}
+  \raggedright
+}{
+  % \end{tabular*}
+  % \end{tabularx}
+  \end{minipage}
+}
+\flushbottom
+
+% ------ Start --------------------------------------------------------
+
+\begin{document}
+
+% print name centered and bold:
+\centerline
+{\huge \rm \textbf \name}
+
+\input{affiliation}
+
+% % -------- Publications ----------------------------------------------------
+
+\begin{cvtext}{Summary}
+\hspace{3ex} Jo\~ao Encarna\c c\~ao is a researcher in the field of satellite geodesy.
+He has worked with different types of gravimetric data, focusing on understanding their error characteristics and how that influences the quality of the resulting gravity field models.
+He participated in numerous research projects involving international teams, which has allowed him to develop a wide and strong network (AT, CH, CZ, DE, NL, PT and US).
+
+\hspace{3ex} As a Postdoctoral Fellow at Center for Space Research (CSR), he is currently looking at ways to improve the calibration of GRACE accelerometer data and to predict the long-term trends in the GRACE gravity field models over the GRACE/GRACE Follow-on gap.
+Additionally, Jo\~ao Encarna\c c\~ao leads in informal cooperation between several European institutes for researching and promoting the gravity field models estimated from the GPS data gathered by the Swarm satellite mission.
+He also promotes the use of nano-satellites for collecting gravimetric data and, towards that end, is currently cooperating with Universidade do Minho and CSR to develop a MEMS-based micro accelerometer.
+
+\hspace{3ex} He has worked in different areas, including Structural Mechanics, Aerodynamics, Preliminary Vehicle Design, Single Stage to Orbit and Laser Propulsion, which have given him the opportunity to broaden his understanding of physics.
+Jo\~ao Encarna\c c\~ao is an avid programmer, actively learning new languages and techniques in order to better implement the algorithms and procedures required to develop his research. He openly shares the code he has developed in GitHub.
+
+\end{cvtext}
+
+\end{document}
