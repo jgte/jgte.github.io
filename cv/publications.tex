@@ -1,52 +1,133 @@
-\renewcommand\refname{Publications}
-\vspace{0.25in}
+% !TEX root = ./publications_jgte.tex
 
-% grep \@ citations.bib | awk -F'{' '{ print $2}'
+
+\section*{Journal publications}
+
+\begin{refsection}
+\defbibheading{bibliography}[\refname]{}
 \nocite{
-gunter2011using,
-resendes2007laser,
-resendes2006laser,
-hashemi2010contribution,
-gunter2010using,
-ditmar2010mitigation,
-% mendoncca11,
-encarnaccao2008influence,
-ditmar2012understanding,
-hashemi2013validation,
-gunter2009determination,
-gunter2011investigation,
-olsen2013swarm,
-visser2013thermospheric,
-doornbos2012thermospheric,
-resendes2005laser,
-olsen2011scarf,
-gunter2012potential,
-teixeira2002single,
-gunter2012deriving,
-anselmi2011assessment,
-gunter2009use,
-encarnacao2008analysis,
-van2015precise,
-bruinsma2014results,
-doornbos2013air,
-% friis2013preface,
-bezdvek2016time,
-encarnaccao2015first,
-encarnacao2015impact,
-siemes2016swarm,
-da2016gravity,
-de2016gravity,
-siemes2016swarm,
-doornbos2016thermospheric,
-doornbos2015processing,
-astafyeva2015ionospheric,
-siemes2016improvements,
-% resendesnear,
-jaggi2016european,
-teixeira2017gravity,
+TeixeiraEncarnacao2016,
+Bezdek2016,
+Siemes2016,
+VandenIJssel2015,
+HashemiFarahani2013,
+Olsen2013a,
+Visser2013,
+Ditmar2012,
+Gunter2011,
+Encarnacao2008a,
+Resendes2007}
+\togglefalse{bbx:url}
+\printbibliography
+\end{refsection}
+
+%--------------------------------------
+
+\section*{Conference proceedings (peer-reviewed)}
+
+\begin{refsection}
+\defbibheading{bibliography}[\refname]{}
+\renewbibmacro*{doi+eprint+url}{%
+  \iftoggle{bbx:doi}
+    {\printfield{doi}}
+    {}%
+  \newunit\newblock
+  \iftoggle{bbx:eprint}
+    {\usebibmacro{eprint}}
+    {}%
+  \newunit\newblock
+  \iftoggle{bbx:url}
+    {\iffieldundef{doi}{\usebibmacro{url+urldate}}{}}
+    {}%
 }
 
+\nocite{
+Gunter2012a,
+Gunter2010,
+Gunter2009,
+Encarnacao2008,
+Resendes2006,
+Resendes2005}
 \printbibliography
+\end{refsection}
 
-~\\
-Retrived from \dynhref{https://scholar.google.com/citations?user=k2liFwQAAAAJ}{Google Scholar}.
+%--------------------------------------
+
+\section*{Invited Presentations}
+
+\begin{refsection}
+\defbibheading{bibliography}[\refname]{}
+\nocite{
+TeixeiraEncarnacao2015a,
+Encarnacao2017}
+\printbibliography
+\end{refsection}
+
+%--------------------------------------
+
+\section*{Conference Attendance}
+
+\begin{refsection}
+\defbibheading{bibliography}[\refname]{}
+\nocite{
+Encarnacao2002,
+Encarnacao2008,
+TeixeiraEncarnacao2008,
+TeixeiraEncarnacao2007,
+TeixeiraEncarnacao2007a,
+TeixeiraEncarnacao2014,
+TeixeiraEncarnacao2014a,
+TeixeiraEncarnacao2014b,
+Encarnacao2015,
+TeixeiraEncarnacao2015b,
+TeixeiraEncarnacao2016a,
+TeixeiraEncarnacao2016b,
+TeixeiraEncarnacao2017a,
+TeixeiraEncarnacao2017}
+\printbibliography
+\end{refsection}
+
+\section*{Conference Contributions}
+
+\begin{refsection}
+\defbibheading{bibliography}[\refname]{}
+\nocite{
+gunter2010using,
+ditmar2010mitigation,
+hashemi2010contribution,
+gunter2011investigation,
+gunter2012potential,
+doornbos2012thermospheric,
+Olsen2013,
+doornbos2013air,
+bruinsma2014results,
+astafyeva2015ionospheric,
+doornbos2015processing,
+Siemes2015,
+jaggi2016european,
+siemes2016improvements,
+doornbos2016thermospheric}
+\printbibliography
+\end{refsection}
+
+
+
+%--------------------------------------
+
+\section*{Miscellaneous Contributions}
+
+\begin{refsection}
+\defbibheading{bibliography}[\refname]{}
+\nocite{
+Iran-Pour2015,
+Anselmi2010}
+\printbibliography
+\end{refsection}
+
+%--------------------------------------
+
+
+
+
+
+

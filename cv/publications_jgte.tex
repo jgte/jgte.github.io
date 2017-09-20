@@ -1,74 +1,10 @@
 \documentclass[a4paper]{article}
 
-% ------ packages --------------------------------------------------------
+\input{packages}
+\input{bibsetup}
+\input{name}
 
-% sudo tlmgr install titlesec biblatex logreq biber
-
-\usepackage{hyperref,etoolbox,supertabular,multirow}
-
-\usepackage{titlesec}% Used to customize the \section command
-\titleformat{\section}{\sf\Large\raggedright}{}{0em}{}[\titlerule] % Text formatting of sections
-\titlespacing{\section}{0pt}{3pt}{3pt} % Spacing around sections
-\titleformat{\subsection}{\sf\large\raggedright}{}{0em}{}[] % Text formatting of sections
-\titlespacing{\subsection}{0pt}{3pt}{3pt} % Spacing around sections
-
-% \usepackage{natbib}
-\usepackage[sorting=ydnt,backend=biber,style=authoryear,maxnames=99]{biblatex}
-\addbibresource{cv_jgte.bib}
-
-\usepackage[utf8]{inputenc}    % utf8 support       %!!!!!!!!!!!!!!!!!!!!
-\DeclareUnicodeCharacter{301}{'}
-
-\usepackage[T1]{fontenc}       % code for pdf file  %!!!!!!!!!!!!!!!!!!!!
-\usepackage{longtable}
-\usepackage{fancyhdr}
-\usepackage{tabularx}
-
-% ------ Name --------------------------------------------------------
-
-% Set your name here
-\def\name{Jo\~ao~de~Teixeira~da~Encarna\c c\~ao}
-
-
-% Replace this with a link to your CV if you like, or set it empty
-% (as in \def\footerlink{}) to remove the link in the footer:
-\def\footerlink{}
-
-% The following metadata will show up in the PDF properties
-\hypersetup{
-  colorlinks = true,
-  urlcolor = blue,
-  pdfauthor = {\name},
-  pdfkeywords = {},
-  pdftitle = {\name: Curriculum Vitae},
-  pdfsubject = {Curriculum Vitae},
-  pdfpagemode = UseNone
-}
-
-\author{\name}
-
-% ------ Margin control --------------------------------------------------------
-
-\addtolength{\oddsidemargin}{-1.5cm}
-\addtolength{\evensidemargin}{-1.5cm}
-\addtolength{\textwidth}{3cm}
-
-\addtolength{\topmargin}{-1.5cm}
-\addtolength{\textheight}{2.5cm}
-
-% ------ dynamic web references -------------------------------
-
-\newtoggle{expliciturl}
-\togglefalse{expliciturl}
-\newcommand{\dynhref}[2]{%
-  \iftoggle{expliciturl}{%
-    #2 (\href{#1}{\texttt{\detokenize{#1}}})%
-  }{%
-    \href{#1}{#2}%
-  }%
-}
-
-% ------ Start --------------------------------------------------------
+% ----------------------------------------------------
 
 \begin{document}
 
@@ -78,8 +14,9 @@
 
 \input{affiliation}
 
-% % -------- Publications ----------------------------------------------------
+% ----------------------------------------------------
 
 \input{publications}
 
+\label{endpage}
 \end{document}

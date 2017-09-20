@@ -1,64 +1,25 @@
-\documentclass[a4paper]{article}
+\documentclass[a4paper,12pt]{article}
 
-% ------ packages --------------------------------------------------------
-
-% sudo tlmgr install titlesec biblatex logreq biber tex4ht
-
-\usepackage{hyperref,etoolbox,supertabular,multirow}
-
-\usepackage{titlesec}% Used to customize the \section command
-\titleformat{\section}{\sf\Large\raggedright}{}{0em}{}[\titlerule] % Text formatting of sections
-\titlespacing{\section}{0pt}{3pt}{3pt} % Spacing around sections
-\titleformat{\subsection}{\sf\large\raggedright}{}{0em}{}[] % Text formatting of sections
-\titlespacing{\subsection}{0pt}{3pt}{3pt} % Spacing around sections
-
-% \usepackage{natbib}
-\usepackage[sorting=ydnt,backend=biber,style=authoryear,maxnames=99]{biblatex}
-\addbibresource{cv_jgte.bib}
-
-\usepackage[utf8]{inputenc}    % utf8 support       %!!!!!!!!!!!!!!!!!!!!
-\DeclareUnicodeCharacter{301}{'}
-
-\usepackage[T1]{fontenc}       % code for pdf file  %!!!!!!!!!!!!!!!!!!!!
-\usepackage{longtable}
-\usepackage{fancyhdr}
-\usepackage{tabularx}
-\usepackage{float}
-
-% ------ Name --------------------------------------------------------
-
-% Set your name here
-\def\name{Jo\~ao~de~Teixeira~da~Encarna\c c\~ao}
-
-
-% Replace this with a link to your CV if you like, or set it empty
-% (as in \def\footerlink{}) to remove the link in the footer:
-\def\footerlink{}
-
-% The following metadata will show up in the PDF properties
-\hypersetup{
-  colorlinks = true,
-  urlcolor = blue,
-  pdfauthor = {\name},
-  pdfkeywords = {},
-  pdftitle = {\name: Curriculum Vitae},
-  pdfsubject = {Curriculum Vitae},
-  pdfpagemode = UseNone
-}
-
-\author{\name}
+\input{packages}
+\input{bibsetup}
+\input{name}
+\input{utils}
 
 % ------ dynamic web references -------------------------------
 
+%this needs to come before the acronyms
 \newtoggle{expliciturl}
 \togglefalse{expliciturl}
 \newcommand{\dynhref}[2]{%
   \iftoggle{expliciturl}{%
-    #2 (\href{#1}{\texttt{\detokenize{#1}}})%
+    #2 \footnote{\href{http://#1}{\detokenize{#1}}}%
   }{%
-    \href{#1}{#2}%
+    \href{http://#1}{#2}%
   }%
 }
+
+%acronym packaged loaded inside
+\input{acronyms}
 
 % ------ state home or work address -------------------------------
 
@@ -74,70 +35,22 @@
 % \toggletrue{professionalcv}
 \newcommand{\procv}[2]{\iftoggle{professionalcv}{#1}{#2}}
 
-% ------ Margin control --------------------------------------------------------
+% ------ Verbose description of milestones -------------------------------
 
-\addtolength{\oddsidemargin}{-1.5cm}
-\addtolength{\evensidemargin}{-1.5cm}
-\addtolength{\textwidth}{3cm}
+\newtoggle{verbose}
+% \togglefalse{verbose}
+\toggletrue{verbose}
+\newcommand{\verbcv}[2]{\iftoggle{verbose}{#1}{#2}}
 
-\addtolength{\topmargin}{-1.5cm}
-\addtolength{\textheight}{2.5cm}
 
 % ------ Customizations --------------------------------------------------------
-
-\pagestyle{fancy}
-\fancyhf{}
-\rhead{\it{\name}}
-\lhead{}
-\rfoot{\thepage}
-\thispagestyle{empty}
-
 
 % % Customize page headers
 % \pagestyle{myheadings}
 % \markright{\it{\name}}
 
 % Don't indent paragraphs.
-\setlength\parindent{0em}
-
-% Make lists without bullets
-\renewenvironment{itemize}{
-  \begin{list}{}{
-    \setlength{\leftmargin}{1.5em}
-  }
-}{
-  \end{list}
-}
-\newlength{\listskipbig}
- \setlength\listskipbig{0.15cm}
-\newlength{\listskipsmall}
- \setlength\listskipsmall{0.1cm}
-
-
-\newenvironment{cvsection}[2]{
-  \setlength{\floatsep}{0pt}
-  \setlength{\textfloatsep}{0pt}
-  \setlength{\intextsep}{0pt}
-  \section*{#1}
-  % \begin{figure}[H]
-  \begin{longtable}{lp{#2}}
-}{
-  \end{longtable}
-  % \end{figure}
-}
-
-\newenvironment{cvtext}[1]{
-  \vspace{0.15in}
-  \section*{#1}
-  \begin{minipage}{\textwidth}
-  \setlength{\parindent}{10ex}
-  \raggedright
-}{
-  % \end{tabular*}
-  % \end{tabularx}
-  \end{minipage}
-}
-\flushbottom
+\setlength\parindent{0pt}
 
 % ------ Start --------------------------------------------------------
 
@@ -148,62 +61,74 @@
 
 \procv{}{\input{affiliation}}
 
-
-
 % ------- Personal data ---------------------------------------------------
 
-\begin{cvsection}{Personal Information}{12.5cm}
+\begin{cvsection}{Personal Information}
 
-{\bf Full Name:} & Jo\~ao~Greg\'orio~de~Teixeira~da~Encarna\c c\~ao \\[\listskipsmall]
-{\bf Birth:} & $25^{th}$ of February 1977 at Funchal, Portugal \\[\listskipsmall]
-{\bf Nationality:} &  Portuguese\\[\listskipsmall]
+{\bf Full Name:} & Jo\~ao~Greg\'orio~de~Teixeira~da~Encarna\c c\~ao \\
+{\bf Birth:} & $25^{th}$ of February 1977 at Funchal, Portugal \\
+{\bf Nationality:} &  Portuguese\\
 
 \homecv{%
-  {\bf Marital Status:} & Single \\[\listskipsmall]
-  {\bf Address:}   & 4303 Duval Street 302 \newline
-                    78751, Austin Texas, USA\\[\listskipsmall]
-  {\bf Telephone:} & +1 512 765 1351\\[\listskipsmall]
-  {\bf Email:}     & \href{mailto:j_encarnacao@yahoo.com}{j\_encarnacao@yahoo.com}\\[\listskipsmall]
-  {\bf Web:}       & \dynhref{http://nl.linkedin.com/in/joaoencarnacao}{LinkedIn}\\[\listskipsmall]
+  {\bf Marital Status:} & Single \\
+  {\bf Address:}   & 4303 Duval Street 302
+                    78751, Austin Texas, USA\\
+  {\bf Telephone:} & +1 512 765 1351\\
+  {\bf Email:}     & \href{mailto:j_encarnacao@yahoo.com}{j\_encarnacao@yahoo.com}\\
+  {\bf Web:}       & \dynhref{nl.linkedin.com/in/joaoencarnacao}{LinkedIn}\\
 }{%
-  {\bf Address:}   & 3925 W Braker Lane Ste 200 - WPR 2.9076\newline
-                     Austin TX 78759-5316, USA\\[\listskipsmall]
-  {\bf Telephone:} & +1 (512) 232-6897\\[\listskipsmall]
-  {\bf Email:}     & \href{mailto:teixeira@csr.utexas.edu}{teixeira@csr.utexas.edu}\\[\listskipsmall]
-  {\bf Web:}       & \dynhref{https://directory.utexas.edu/index.php?q=joao+encarnacao}{University of Texas},
-                     \dynhref{http://nl.linkedin.com/in/joaoencarnacao}{LinkedIn},
-                     \dynhref{https://www.researchgate.net/profile/Joao_Encarnacao2}{ResearchGate},
-                     \dynhref{https://scholar.google.com/citations?user=k2liFwQAAAAJ}{Google Scholar},
-                     \dynhref{http://orcid.org/0000-0001-6824-2733}{ORCID},
-                     \dynhref{https://www.mendeley.com/profiles/joao-encarnacao4/}{Mendeley},
-                     \dynhref{https://www.scopus.com/authid/detail.uri?authorId=15135565900}{SCOPUS},
-                     \dynhref{https://publons.com/a/782170/}{Publons},
-                     \dynhref{https://github.com/jgte}{GitHub}\\[\listskipsmall]
+  {\bf Address:}   & 3925 W Braker Lane\newline
+                     Ste 200 - WPR 2.9076\newline
+                     Austin TX 78759-5316, \ac{USA}\\
+  {\bf Telephone:} & +1 (512) 232-6897\\
+  {\bf Email:}     & \href{mailto:teixeira@csr.utexas.edu}{teixeira@csr.utexas.edu}\\
+  {\bf Web:}       & \dynhref{directory.utexas.edu/index.php?q=joao+encarnacao}{University of Texas},
+                     \dynhref{nl.linkedin.com/in/joaoencarnacao}{LinkedIn},
+                     \dynhref{www.researchgate.net/profile/Joao_Encarnacao2}{ResearchGate},
+                     \dynhref{scholar.google.com/citations?user=k2liFwQAAAAJ}{Google Scholar},
+                     \dynhref{orcid.org/0000-0001-6824-2733}{ORCID},
+                     \dynhref{www.mendeley.com/profiles/joao-encarnacao4/}{Mendeley},
+                     \dynhref{www.scopus.com/authid/detail.uri?authorId=15135565900}{SCOPUS},
+                     \dynhref{publons.com/a/782170/}{Publons},
+                     \dynhref{github.com/jgte}{GitHub}\\
 }
 \end{cvsection}
 
-\iftoggle{expliciturl}{\pagebreak}{}
+% ------- Summary ---------------------------------------------------
 
-% % ------- Education ---------------------------------------------------
+% \verbcv{\input{summary}}{}
 
-\begin{cvsection}{Education}{13.8cm}
+% ------- Education ---------------------------------------------------
 
-2015 & PhD in Space Geodesy\newline
-      \dynhref{http://tinyurl.com/GRS-TUDelft}{Geoscience \& Remote Sensing}, \dynhref{http://www.tudelft.nl/}{Delft University of Technology}\newline
-      Dissertation: \dynhref{http://tinyurl.com/SatGrav}{Next-generation satellite gravimetry for measuring mass transport in the Earth system}\newline
-      Promotor: \dynhref{http://tinyurl.com/ProfKlees}{Prof Dr-Ing. habil. Roland Klees}\newline
-      Supervisor: \dynhref{http://tinyurl.com/DrDitmar}{Dr Ir. Pavel Ditmar}\\[\listskipbig]
+\begin{cvsection}{Education}
 
-2004 & Master of Sciences in Aerospace Engineering\newline
-      \dynhref{http://www.as.lr.tudelft.nl}{Astrodynamics and Space Missions}, \dynhref{http://www.tudelft.nl/}{Delft University of Technology}\newline
-      Final Thesis: Numerical Simulation of Launch Vehicles\newline
-      Supervisor: \dynhref{https://www.tudelft.nl/en/staff/b.a.c.ambrosius}{Prof Ir. B.A.C. Ambrosius}\\[\listskipbig]
+2015 &
+  \begin{itti}
+    \item \textbf{PhD in Space Geodesy}
+    \item \acf{GRS}, \acf{TUD}
+    \item Dissertation: \dynhref{tinyurl.com/SatGrav}{\emph{Next-generation satellite gravimetry for measuring mass transport in the Earth system}}
+    %TODO: fix these URLs
+    \item Promotor: \dynhref{www.tudelft.nl/en/ceg/over-faculteit/departments/geoscience-remote-sensing/staff/scientific-staff/profdr-ing-habil-r-roland-klees/}{Prof. Dr-Ing. habil. Roland Klees}
+    \item Supervisor: \dynhref{www.tudelft.nl/citg/over-faculteit/afdelingen/geoscience-remote-sensing/staff/scientific-staff/dr-pg-pavel-ditmar/}{Dr. Ir. Pavel Ditmar}
+  \end{itti}\\
 
-2000 & \dynhref{https://en.wikipedia.org/wiki/Licentiate_(degree)\#Portugal}{Licenciatura} (Licenciate) in Aerospace Engineering\newline
-       \dynhref{http://www.ist.utl.pt/}{Instituto Superior T{\'e}cnico}, \dynhref{http://www.utl.pt/}{Technical University of Lisbon}\newline
-       $5^{th}$ year concluded at Delft University of Technology, through the ERASMUS program\newline
-       Report: Optimum Aerodynamic Shape for a High Altitude Long Endurance Aerostatic Platform\newline
-       Supervisor: Prof Dr Ir. Theo van Holten\\[\listskipbig]
+
+2004 &
+  \begin{itti}
+    \item \textbf{Master of Sciences in Aerospace Engineering}
+    \item \acf{AS}, \ac{TUD}
+    \item Final Thesis: \emph{Numerical Simulation of Launch Vehicles}
+    \item Supervisor: \dynhref{www.tudelft.nl/en/staff/b.a.c.ambrosius}{Prof. Ir. B.A.C. Ambrosius}
+  \end{itti}\\
+
+2000 &
+  \begin{itti}
+    \item \textbf{\acf{Lic.} in Aerospace Engineering}
+    \item \acf{IST}, \acf{UTL}
+    \item 5$^{\rm th}$ year concluded at \ac{TUD}, through the \dynhref{www.erasmusprogramme.com}{ERASMUS program}
+    \item Report: \emph{Optimum Aerodynamic Shape for a High Altitude Long Endurance Aerostatic Platform}
+    \item Supervisor: Prof. Dr. Ir. Theo van Holten
+  \end{itti}\\
 
 \end{cvsection}
 
@@ -214,180 +139,182 @@
 
 % % -------- Work experience --------------------------------------------
 
-\begin{cvsection}{Academic and Research Experience}{11.0cm}
+\begin{cvsection}{Academic and Research Experience}
 
-Aug. 2016 -- present
-  & Research Associate\newline
-    \dynhref{http://www.csr.utexas.edu}{Center for Space Research}, \dynhref{http://www.utexas.edu}{Texas University at Austin}, USA:\newline
-    $\bullet$ Improvements in the calibration of the accelerometers on-board the \dynhref{http://www.csr.utexas.edu/grace/}{GRACE} satellites, in particular in what relates to temperature effects;\newline
-    $\bullet$ Determination of the (non-linear) long-term trends in the GRACE gravity field solutions and their prediction during the GRACE/GRACE-FO gap;\newline
-    $\bullet$ Time-varying gravity fields estimated from Kinematic Orbits.
-    \\[\listskipbig]
+Aug. 2016 -- present &
+  \begin{itti}
+    \item \textbf{Research Associate} at \acf{CSR}, \acf{UTexas}, \ac{USA}:
+    \begin{ittib}
+      \item Improvements in the calibration of the accelerometers on-board the \acf{GRACE} satellites, in particular in what relates to temperature effects;
+      \item Determination of the (non-linear) long-term trends in the \ac{GRACE} gravity field solutions and their prediction during the \ac{GRACE}\slash\acf{GRACE-FO} gap;
+      \item Time-varying gravity fields estimated from Kinematic Orbits;
+      \item In-house software development in Matlab and Ruby.
+    \end{ittib}
+  \end{itti}\\
 
-Sep. 2011 -- Jul. 2016
-  & Research Associate\newline
-    \dynhref{http://www.as.lr.tudelft.nl}{Astrodynamics and Space Missions}, \dynhref{http://www.tudelft.nl/}{Delft University of Technology}, the Netherlands:\newline
-    $\bullet$ Calibration of the accelerometers on-board the Swarm satellites;\newline
-    $\bullet$ Improvements in the modelling of non-conservative forces acting on satellites;\newline
-    $\bullet$ Exploiting signal-processing techniques to merge the measurement of non-gravitational accelerations from different sources (GPS-driven and accelerometer observations);\newline
-    $\bullet$ In-house software development in Fortran, Matlab and Ruby;\newline
-    $\bullet$ Research project: Assessment of Satellite Constellations for Monitoring the Variations in Earth's Gravity Field;\newline
-    $\bullet$ Research project: GOCE+ Theme3: Air density and wind retrieval using GOCE data;\newline
-    $\bullet$ Research project: Development of the Swarm Level 2 Algorithms and Associated Level 2 Processing Facility;\newline
-    $\bullet$ Time-varying gravity fields estimated from Kinematic Orbits;\newline
-    $\bullet$ Student supervision and mentoring.
-    \\[\listskipbig]
+Sep. 2011 -- Jul. 2016 &
+  \begin{itti}
+    \item \textbf{Research Associate} at \ac{AS}, \ac{TUD}, the Netherlands:
+    \begin{ittib}
+      \item Calibration of the accelerometers on-board the Swarm satellites;
+      \item Improvements in the modelling of non-conservative forces acting on satellites;
+      \item Exploiting \acf{DSP} techniques to merge the measurement of non-gravitational accelerations from different sources: \acf{GPS}-driven and accelerometer observations;
+      \item Time-varying gravity fields estimated from Kinematic Orbits;
+      \item Research project: Assessment of Satellite Constellations for Monitoring the Variations in Earth's Gravity Field;
+      \item Research project: GOCE+ Theme3: Air density and wind retrieval using \acf{GOCE} data;
+      \item Research project: Development of the Swarm Level 2 Algorithms and Associated Level 2 Processing Facility;
+      \item In-house software development in Fortran, Matlab and Ruby;
+      \item Student supervision and mentoring.
+    \end{ittib}
+  \end{itti}\\
 
-Jan. 2007 -- Dec. 2015
-  & PhD Candidate\newline
-    \dynhref{http://tinyurl.com/GRS-TUDelft}{Geoscience \& Remote Sensing}, \dynhref{http://www.tudelft.nl/}{Delft University of Technology}, the Netherlands:\newline
-    $\bullet$ Simulation of future gravimetric satellite missions and noise budget of low-low satellite-to-satellite tracking gravimetric data;\newline
-    $\bullet$ Impact of orbit position modelling errors in the quality of satellite gravimetric data;\newline
-    $\bullet$ Retrieval of the high-frequency time-variable gravity field of the Earth with numerous satellites;\newline
-    $\bullet$ Research project: Assessment of a Next Generation Gravity Mission for Monitoring the Variations of Earth's Gravity Field;\newline
-    $\bullet$ Research project: Monitoring and Modelling Individual Sources of Mass Distribution and Transport in the Earth System by Means of Satellites;\newline
-    $\bullet$ In-house software development in Fortran and Matlab;\newline
-    $\bullet$ Student supervision and mentoring.
-    \\[\listskipbig]
+Jan. 2007 -- Dec. 2015 &
+  \begin{itti}
+    \item \textbf{PhD Candidate} at \ac{GRS}, \ac{TUD}, the Netherlands:
+    \begin{ittib}
+      \item Simulation of future gravimetric satellite missions and noise budget of low-low satellite-to-satellite tracking gravimetric data;
+      \item Impact of orbit position modelling errors in the quality of satellite gravimetric data;
+      \item Retrieval of the high-frequency time-variable gravity field of the Earth with numerous satellites;
+      \item Research project: Assessment of a Next Generation Gravity Mission for Monitoring the Variations of Earth's Gravity Field;
+      \item Research project: Monitoring and Modelling Individual Sources of Mass Distribution and Transport in the Earth System by Means of Satellites;
+      \item In-house software development in Fortran and Matlab;
+      \item Student supervision and mentoring.
+    \end{ittib}
+  \end{itti}\\
 
 
-Apr. 2005 -- Nov. 2006
-  & Stress Engineer\newline
-    \dynhref{http://www.globaltechnics.nl/}{Global Technics}, Leiden, the Netherlands:\newline
-    $\bullet$ Automated design (for weight and stress minimization) of fuselage panels for the Airbus A380 aircraft (in-house implementation of a tool in C++);\newline
-    $\bullet$ Trainees supervision and mentoring.
-    \\[\listskipbig]
+Apr. 2005 -- Nov. 2006 &
+  \begin{itti}
+    \item \textbf{Stress Engineer} at \dynhref{www.globaltechnics.nl/}{Global Technics}, Leiden, the Netherlands:
+    \begin{ittib}
+      \item Automated design (for weight and stress minimization) of fuselage panels for the Airbus A380 aircraft (in-house implementation of a tool in C++);
+      \item Trainees supervision and mentoring.
+    \end{ittib}
+  \end{itti}\\
 
 \procv{
-6/2005 -- 7/2005 & Systems Engineer \newline
-                 \dynhref{http://www.reduct.net}{Reduct}\newline
-                   Kontich, Belgium\\[\listskipbig]
+6/2005 -- 7/2005 &
+  \begin{itti}
+    \item \textbf{Systems Engineer} at \dynhref{www.reduct.net}{Reduct}, Kontich, Belgium
+  \end{itti}\\
 }{}
 
-Oct. 2004 -- Jan. 2005
-  & Aerospace Engineer\newline
-    \dynhref{http://www.delta-utec.com/}{Delta-Utec}, Leiden, the Netherlands:\newline
-      $\bullet$ Contractor Work: Implementation of a Sub-Orbital Optimization Module into the Simulation Tool Colvet (developed in-house at TU Delft).
-    \\[\listskipbig]
+Oct. 2004 -- Jan. 2005 &
+  \begin{itti}
+    \item \textbf{Aerospace Engineer} at \dynhref{www.delta-utec.com/}{Delta-Utec}, Leiden, the Netherlands:
+    \begin{ittib}
+      \item Contractor Work: Implementation of a Sub-Orbital Optimization Module into the Simulation Tool \emph{COLVET} (developed in-house at TU Delft).
+    \end{ittib}
+  \end{itti}\\
 
-Mar. 2004 -- Apr. 2004
-  & Trainee\newline
-    Under the supervision of Ir. Berry Sanders, Rocket Technology Research Group
-    Prins Maurits Laboratorium, \dynhref{http://www.tno.nl/}{TNO}, the Netherlands:\newline
-      $\bullet$ Numerical Simulations on Laser Propulsion (appendix of MSc thesis);\newline
-      $\bullet$ Collaboration with international colleagues (PT and NL) on a \dynhref{http://www.esa.int}{ESA}-funded project to determine the feasibility of Laser Propulsion.
-    \\[\listskipbig]
+Mar. 2004 -- Apr. 2004 &
+  \begin{itti}
+    \item \textbf{Trainee} at the Prins Maurits Laboratorium, \dynhref{www.tno.nl/}{TNO}, the Netherlands
+    \item Supervisor: Ir. Berry Sanders, Rocket Technology Research Group:
+    \begin{ittib}
+      \item Implementation of the Launch Vehicle Simulation and Optimisation Tool \emph{COLVET};
+      \item Numerical Simulations on Laser Propulsion (appendix of MSc thesis);
+      \item Collaboration with international colleagues (PT and NL) on a \acf{ESA}-funded project to determine the feasibility of Laser Propulsion.
+    \end{ittib}
+  \end{itti}\\
 
-Sep. 2001 -- Dec. 2001
-  & Trainee\newline
-    Under the supervision of \dynhref{https://en.wikipedia.org/wiki/Wubbo_Ockels}{Prof Wubbo Ockels},
-    \dynhref{http://www.esa.int/About_Us/ESTEC}{European Space research and Technology Center (ESTEC)}, \dynhref{http://www.esa.int}{ESA}
-    Noordwijk, the Netherlands:\newline
-      $\bullet$ Collaboration with fellow MSc colleagues on a space mission design project: Lunar Exploration with Ariane 5;\newline
-      $\bullet$ Simulation of rocket ascent trajectories (implemented a 2D orbit integrator in Matlab);\newline
-      $\bullet$ Optimization or rocket trajectories, thrust and attitude program, fuel consumption and payload;\newline
-      $\bullet$ Preliminary lunar mission design.
-    \\[\listskipbig]
+Sep. 2001 -- Dec. 2001 &
+  \begin{itti}
+    \item \textbf{Trainee} at \acf{ESTEC}, \ac{ESA}, Noordwijk, the Netherlands
+    \item Supervisor: \dynhref{en.wikipedia.org/wiki/Wubbo_Ockels}{Prof. Wubbo Ockels}:
+    \begin{ittib}
+      \item Collaboration with fellow MSc colleagues on a space mission design project: \emph{Lunar Exploration with Ariane 5};
+      \item Simulation of rocket ascent trajectories (implemented a 2D orbit integrator in Matlab);
+      \item Optimization or rocket trajectories, thrust and attitude program, fuel consumption and payload;
+      \item Preliminary lunar mission design.
+    \end{ittib}
+  \end{itti}\\
 
 \end{cvsection}
+
+\verbcv{
+\begin{cvtext}{Teaching Experience}
+
+At TU Delft, I was required to supervise student projects of a practical nature, every year.
+This means that I had to direct the work of a small group of students (7 to 9) to a particular objective.
+It is an activity I enjoy doing and I see the students are enthusiastic about.
+I always ask them to fill (anonymously) a short list of questions regarding their opinion of the project and my ability as instructor (these answer sheets are available if requested).
+I always get encouraging and positive feedback.
+
+My senior colleagues always grade my teaching activities as very good to excellent and I am often asked by students to support their application with recommendation letters.
+
+In what concerns teaching large groups of students, I have given lectures to classes of about 30 students, on exceptional occasions, at the request of colleagues.
+
+Additionally, I was a lecturer at the 2017 Summer School On Data Assimilation And Its Applications In Oceanography, Hydrology, Risk \& Safety And Reservoir Engineering (cf. \dynhref{data-assimilation.com}{data-assimilation.com}).
+
+I value all teaching my experiences because they were extremely rewarding.
+
+\end{cvtext}
+}{}
 
 % \iftoggle{expliciturl}{\pagebreak}{}
 
-% % ------- Collaborations ------------------------------------------------------
+
+% % ------- Skills ------------------------------------------------------
+
+\begin{cvsection}{Skills}
+
+Communication: & Numerous presentations of research results (8 oral and 4 poster)\\
+
+Teaching: & \vspace{-1.5ex}
+  \begin{ittib}
+    \item Student supervision in the context of individual and group assignments
+    \item Introductory lectures to the practical projects
+  \end{ittib}\\
+
+Theoretical: & \vspace{-1.5ex}
+  \begin{ittib}
+   \item Parametric inversion
+   \item Statistical analysis
+   \item Stochastic modelling
+   \item Spherical harmonic functions
+   \item Digital signal processing
+   \item Coordinate transformations\slash quaternion arithmetic
+   \item Fourier analysis
+ \end{ittib}\\
+
 
 \procv{}{
-\begin{cvsection}{Collaborations}{12.4cm}
-
-2016 -- present &
-International collaboration with Prof Luis Rocha of \dynhref{https://www.uminho.pt/EN}{Universidade do Minho} and Dr Dae Lee of the \dynhref{http://www.csr.utexas.edu}{Center for Space Research}, \dynhref{http://www.utexas.edu}{Texas University at Austin} for the {\bf development of a Microelectromechanical systems-based space accelerometer as a first step towards the nano-gravimetric satellite framework}.\\[\listskipbig]
-
-2015 -- present &
-International collaboration with
-Prof Torsten Mayer-G\"{u}rr of the \dynhref{http://www.itsg.tugraz.at}{Institute of Geodesy} of the \dynhref{http://www.tugraz.at}{Graz University of Technology},
-Dr Ale\v{s} Bezd\v{e}k of the \dynhref{http://www.asu.cas.cz/en}{Astronomical Institute} of the \dynhref{http://www.cas.cz/index.html}{Academy of Sciences of the Czech Republic},
-Prof Adrian J\"{a}ggi of the \dynhref{http://www.aiub.unibe.ch}{Astronomical Institute of the University of Bern},
-Prof Pieter Visser of the \dynhref{http://www.lr.tudelft.nl}{Aerospace Faculty} of the \dynhref{http://www.tudelft.nl}{Delft University of Technology} and
-Prof C.K. Shum of the \dynhref{https://earthsciences.osu.edu}{School of Earth Sciences} of the \dynhref{https://www.osu.edu}{Ohio State University}
-for the {\bf study of the time-variable gravity field of the Earth estimated from GPS data collected by the \dynhref{https://earth.esa.int/web/guest/missions/esa-operational-eo-missions/swarm}{Swarm Satellite mission}}. Within the scope of this project, we submitted a grant application with very positive reviews (Ref. ESA AO/1-7927/14/NL/MP), and have recently been awarded funding under the \dynhref{http://tinyurl.com/SwarmGrav}{ITT posted by the \dynhref{http://www.esa.int}{ESA}-funded DISC consortium}\\[\listskipsmall]
-
-2014 -- present &
-Collaboration with \dynhref{http://www.tudelft.nl}{Delft University of Technology} on the \dynhref{http://doptrack.tudelft.nl}{DopTrack project}, consisting of a {\bf satellite tracking radio station that exploits the Doppler effect}; co-initiated and promoted the project, secured departmental funding, selected and assembled the hardware, developed software, engaged students and mentored practical undergraduate projects.\\[\listskipbig]
-
-\end{cvsection}
+Articles review: & Successfully completed the review of 8 scientific articles, cf. \dynhref{publons.com/a/782170/}{Publons}\\
 }
 
-% \pagebreak
+Computational: & \vspace{-1.5ex}
+  \begin{ittib}
+    \item Algorithm development and implementation
+    \item Data management, analysis and visualisation
+    \item Automation, robustness, fault recovery
+    \item Problem resolution\slash solution discovery\slash hacking
+ \end{ittib}\\
 
-% % ------- Invited talks ------------------------------------------------------
+Software: & Latex, MS Office, Git, SVN\\
 
-\begin{cvsection}{Invited talks}{11.2cm}
+Programming: & \vspace{-1.5ex}
+  \begin{ittib}
+    \item 1996 -- present: Bash
+    \item 1998 -- present: Matlab
+    \item 2002 -- present: Fortran
+    \item 2006 -- 2008: C/C++
+    \item 2011 -- present: Ruby
+    \item 2015 -- present: Python
+  \end{ittib}\\
 
-Dec. 2015 & \dynhref{http://tinyurl.com/h928s3c}{Oral presentation} at the \dynhref{http://fallmeeting.agu.org/2015/}{American Geophysical Union Fall Meeting in 2015}\\
-
-Jul. 2017 & Lectures at the \dynhref{http://data-assimilation.com}{Summer School on Data Assimilation and its applications in Oceanography, Hydrology, Risk \& Safety and Reservoir Engineering in 2017}\\
-
-\end{cvsection}
-
-% % ------- Personal development ------------------------------------------------------
-
-\begin{cvsection}{Personal development}{11.2cm}
-
-Sep. 2015 & Scientific Writing, Sören Johnson, TU Delft\\
-
-Jul. 2017 & Leading without formal authority, Emil Kresl, University of Texas at Austin\\
-
-Jul. 2017 & Meeting effectiveness, Emil Kresl, University of Texas at Austin\\
-
-\end{cvsection}
-
-\vspace{3mm}
-
-% % ------- Conferences
-
-\begin{cvsection}{Conference Attendance}{13cm}
-
-Sep. 2001 & Single Stage To Orbit Minimum Requirements Through Numerical Simulation (oral presentation). 53rd International Astronautical Congress, Houston, USA \\
-Sep. 2007 & Temporal aliasing in GRACE monthly solutions (oral presentation). Intergeo,  Leipzig, Germany\\
-Nov. 2007 & Influence of hydrology-related temporal aliasing on the quality of monthly models derived from GRACE satellite gravimetric data (poster presentation). VMSG Symposium,  Utrecht, The Netherlands\\
-Apr. 2008 & Analysis of Satellite Formations in the Context of Gravity Field Retrieval (oral presentation). 3rd International Symposium on Formation Flying, Missions and Technologies. Noordwijk, the Netherlands\\
-Jun. 2008 & Spectral analysis of positioning modelling errors in gravimetric data (poster presentation). IAG Symposium on Gravity, Geoid, and Earth Observation, Chania, Greece\\
-Dec. 2012 & American Geophysical Union fall meeting, San Francisco, USA\\
-Sep. 2013 & 1st Swarm Data Quality Workshop Rome, Italy\\
-Mar. 2014 & Preliminary analysis of accelerometer data (oral presentation). 2nd Swarm Data Quality Workshop, Rome, Italy\\
-Jun. 2014 & Combination of Swarm's Uncalibrated Accelerometer Data with POD-Based Accelerometry (oral presentation). 3rd Swarm Data Quality Workshop and 3rd Swarm Science Meeting, Copenhagen\\
-Dec. 2014 & Analysis of accelerometer data (oral presentation). 4th Swarm Data Quality Workshop, Potsdam, Germany\\
-Sep. 2015 & Frequency domain combination of POD-driven and measured accelerations (oral presentation). 5th Swarm Data Quality Workshop  Paris, France\\
-Dec. 2015 & First monthly gravity field solutions derived from GPS orbits of Swarm (oral presentation) and Impact of Orbit Position Errors on Future Satellite Gravity Models (poster presentation). American Geophysical Union fall meeting, San Francisco, USA\\
-Apr. 2016 & Gravity field models derived from Swarm GPS data (poster presentation). European Geophysical Union Vienna, Austria\\
-May 2016 & Gravity field models derived from Swarm GPS data (poster presentation). ESA Living Planet Symposium, Prague, Czech Republic\\
-Dec. 2016 & American Geophysical Union fall meeting, San Francisco, USA\\
-Apr. 2017 & Gravity field models derived from Swarm GPS data (poster presentation). European Geophysical Union Vienna, Austria\\
+\acp{OS}: & OSX, MS Windows, Unix/Linux \\
 
 \end{cvsection}
-
-% % -------- Publications ----------------------------------------------------
-
-\procv{}{\input{publications}}
-
-% % -------- Research Projects ----------------------------------------------------
-
-\procv{}{
-\begin{cvsection}{Research Projects}{12.6cm}
-2013 -- 2015  & Assessment of Satellite Constellations for Monitoring the Variations in Earth's Gravity Field (ESA contract 4000108663/13/NL/MV) \\[\listskipbig]
-2013          & GOCE+ Theme3: Air density and wind retrieval using GOCE data (ESA contract 400010284/11/NL/EL)\\[\listskipbig]
-2011 -- 2016  & Development of the Swarm Level 2 Algorithms and Associated Level 2 Processing Facility (ESA Contract 4000102140/10/NL/JA)\\[\listskipbig]
-2010          & Assessment of a Next Generation Gravity Mission for Monitoring the Variations of Earth's Gravity Field (ESTEC contract 22643/09/NL/AF)\\[\listskipbig]
-2008          & Monitoring and Modelling Individual Sources of Mass Distribution and Transport in the Earth System by Means of Satellites (ESA contract 20403) \\[\listskipbig]
-\end{cvsection}
-}
 
 % % ------- Fields of interest ------------------------------------------
 
-\begin{cvsection}{Fields of Interest}{10cm}
- Big data & \\
+\begin{cvsection}{Fields of Interest}
  Space geodesy & \\
+ Earth System modelling & \\
  Digital signal processing & \\
  Numerical Simulation & \\
+ Big data & \\
  Rocket Motion and Orbital Mechanics & \\
  Preliminary Vehicle Design & \\
  Aerodynamics & \\
@@ -395,51 +322,54 @@ Apr. 2017 & Gravity field models derived from Swarm GPS data (poster presentatio
 \end{cvsection}
 
 
-% % ------- Skills ------------------------------------------------------
+% % ------- Collaborations ------------------------------------------------------
 
-\begin{cvsection}{Skills}{11.2cm}
-
-Communication:  & Numerous presentations of research results (8 oral and 4 poster)\\[\listskipbig]
-
-Teaching:      & $\bullet$ Student supervision in the context of individual and group assignments\newline
-                 $\bullet$ Introductory lectures to the practical projects\\[\listskipbig]
-
-Theoretical:   & $\bullet$ Parametric inversion\newline
-                 $\bullet$ Statistical analysis\newline
-                 $\bullet$ Stochastic modelling\newline
-                 $\bullet$ Spherical harmonic functions\newline
-                 $\bullet$ Digital signal processing\newline
-                 $\bullet$ Coordinate transformations\slash quaternion arithmetic\newline
-                 $\bullet$ Fourier analysis\\[\listskipbig]
-
-Computational:  & $\bullet$ Algorithm development and implementation\newline
-                  $\bullet$ Data management, analysis and visualisation\newline
-                  $\bullet$ Automation, robustness, fault recovery\newline
-                  $\bullet$ Problem resolution\slash solution discovery\slash hacking\\[\listskipbig]
-
-Software: & Latex, MS Office, Git, SVN\\[\listskipbig]
 \procv{}{
-Articles review: & Successfully completed the review of 8 scientific articles cf. \dynhref{https://publons.com/a/782170/}{Publons}\\[\listskipbig]
+\begin{cvsection}{Collaborations}
+
+2017 -- present &
+Collaboration with Dr. Guillaume Ramillien from \acf{CNRS} and Dr. Ale\v{s} Bezd\v{e}k the \acf{ASU}  of the \acf{AVCR} to {\bf drive surface mass variations directly from \enquote{reduced} gravimetric data } (i.e. observations \enquote{cleaned} of non-gravitational and trivial gravitational effects).\\
+
+2017 -- present &
+Collaboration with Dr. Noble Hatten and Dr. Dae Lee of the \ac{CSR}. \ac{UTexas} for the {\bf development of a CubeSat architecture that replicates the gravimetric capabilities of the \ac{GRACE} satellites}.\\
+
+2016 -- present &
+International collaboration with Prof. Luis Rocha of \acf{UMinho} and Dr. Dae Lee of the \ac{CSR}, \ac{UTexas} for the {\bf development of a \ac{MEMS}-based space accelerometer as a first step towards the nano-gravimetric satellite framework}.\\
+
+2015 -- present &
+International collaboration with
+Prof. Torsten Mayer-G\"{u}rr of the \acf{IfG} of the \acf{TUG},
+Dr. Ale\v{s} Bezd\v{e}k of the \ac{ASU}  of the \acf{AVCR},
+Prof. Adrian J\"{a}ggi of the \acf{AIUB},
+Prof. Pieter Visser of the \dynhref{www.lr.tudelft.nl}{Aerospace Faculty} of the \ac{TUD} and
+Prof. C.K. Shum of the \acf{SES} of the \acf{OSU}
+for the {\bf study of the time-variable gravity field of the Earth estimated from GPS data collected by the \dynhref{earth.esa.int/web/guest/missions/esa-operational-eo-missions/swarm}{Swarm Satellite mission}}. Within the scope of this project, we submitted a grant application with very positive reviews (Ref. ESA AO/1-7927/14/NL/MP), and have recently been awarded funding under the \dynhref{tinyurl.com/SwarmGrav}{ITT posted by the \ac{ESA}-funded a\ac{DISC} consortium}\\
+
+2014 -- present &
+Collaboration with \ac{TUD} on the \dynhref{doptrack.tudelft.nl}{DopTrack project}, consisting of a {\bf satellite tracking radio station that exploits the Doppler effect}; co-initiated and promoted the project, secured departmental funding, selected and assembled the hardware, developed software, engaged students and mentored practical undergraduate projects.\\
+
+\end{cvsection}
 }
 
-Operating Systems: & OSX, MS Windows, Unix/Linux \\[\listskipbig]
+% % -------- Research Projects ----------------------------------------------------
 
-Programming:
-& 1996 -- present: Bash \\
-& 1998 -- present: MATLAB \\
-& 2002 -- present: FORTRAN \\
-& 2006 -- 2008: C/C++ \\
-& 2011 -- present: Ruby \\
-& 2015 -- present: Python\\[\listskipbig]
+\procv{}{
+\begin{cvsection}{Research Projects}
+2013 -- 2015  & Assessment of Satellite Constellations for Monitoring the Variations in Earth's Gravity Field (ESA contract 4000108663/13/NL/MV) \\
+2013          & GOCE+ Theme3: Air density and wind retrieval using GOCE data (ESA contract 400010284/11/NL/EL)\\
+2011 -- 2016  & Development of the Swarm Level 2 Algorithms and Associated Level 2 Processing Facility (ESA Contract 4000102140/10/NL/JA)\\
+2010          & Assessment of a Next Generation Gravity Mission for Monitoring the Variations of Earth's Gravity Field (ESTEC contract 22643/09/NL/AF)\\
+2008          & Monitoring and Modelling Individual Sources of Mass Distribution and Transport in the Earth System by Means of Satellites (ESA contract 20403) \\
 \end{cvsection}
+}
 
+% % -------- Publications ----------------------------------------------------
 
-\pagebreak
+\procv{}{\input{publications}}
 
 % % ------- Languages ------------------------------------------------------
 
-\begin{cvsection}{Languages}{9cm}
-\begin{minipage}{\textwidth}
+\begin{cvtext}{Languages}
 \begin{tabular}{
 l
 >{\centering\arraybackslash}m{3cm}
@@ -448,26 +378,39 @@ l
    & Speaking & Reading & Writing \\
 \hline
 Portuguese & \multicolumn{3}{c}{mother tongue}  \\
-English\footnote{holder of the \dynhref{http://www.cambridgeenglish.org/exams/proficiency/index.aspx}{Certificate of Proficiency in English}}    & excellent & excellent & excellent \\
+English\footnote{holder of the \dynhref{www.cambridgeenglish.org/exams/proficiency/index.aspx}{Certificate of Proficiency in English}}    & excellent & excellent & excellent \\
 Spanish    & good & good & fair \\
 Italian    & good & good & fair \\
 Dutch      & fair & fair & limited \\
 French     & fair & fair & limited \\
 \hline
 \end{tabular}
-\end{minipage}
+\end{cvtext}
+
+% % ------- Personal development ------------------------------------------------------
+
+\begin{cvsection}{Personal development}
+
+Sep. 2015 & Scientific Writing, Sören Johnson, \ac{TUD}\\
+
+Jul. 2017 & Leading without formal authority, Emil Kresl, \ac{UTexas}\\
+
+Jul. 2017 & Meeting effectiveness, Emil Kresl, \ac{UTexas}\\
+
+Sep. 2017 & Dealing with Difficult People, Jeff Stellmach, \ac{UTexas}\\
+
 \end{cvsection}
 
 % % -------- Other Activities --------------------------------------------
 
-\begin{cvsection}{Sports}{12cm}
+\begin{cvsection}{Sports}
 1991 -- 2009 & Basketball \\
-April 2006   & Finalist of the \dynhref{http://www.fortismarathonrotterdam.nl/}{26th International Fortis Marathon of Rotterdam}\\
+April 2006   & Finalist of the \dynhref{www.fortismarathonrotterdam.nl/}{26th International Fortis Marathon of Rotterdam}\\
 September 2016 - present & Sailing\\
 \end{cvsection}
 
-\begin{cvsection}{Other Activities}{12cm}
-1991 -- 2001 & Scout at the 92$^{nd}$ Scout-group of the \dynhref{http://www.aep.pt}{Association of Portuguese Escoteiros}\\
+\begin{cvsection}{Other Activities}
+1991 -- 2001 & Scout at the 92$^{nd}$ Scout-group of the \dynhref{www.aep.pt}{Association of Portuguese Escoteiros}\\
 1993 -- present & Radio Amateur, call sign CT3IU, class B\\
 \procv{1996 -- present & Drivers Licence \\}{}
 \end{cvsection}
@@ -476,16 +419,38 @@ September 2016 - present & Sailing\\
 
 % \pagebreak
 
-\begin{cvtext}{Referees}
-\begin{itemize}
-\item Prof Byron Tapley (Research advisor), Center for Space Research of the University of Texas at Austin, +1 512 471 5573, \href{mailto:tapley@csr.utexas.edu}{tapley@csr.utexas.edu}
-\item Prof Pieter Visser (Research advisor), Astrodynamics and Satellite Missions Group of the Delft University of Technology, +31 15 27 82595, \href{mailto:P.N.A.M.Visser@tudelft.nl}{P.N.A.M.Visser@tudelft.nl}
-\item Dr Pavel Ditmar (PhD advisor), Geosciences and Remote Sensing of the Delft University of Technology, +31 15 27 82501, \href{mailto:p.g.ditmar@tudelft.nl}{p.g.ditmar@tudelft.nl}
-\item Prof Boudewijn Ambrosius (MSc advisor), Astrodynamics and Satellite Missions Group of the Delft University of Technology, \href{mailto:B.A.C.Ambrosius@tudelft.nl}{B.A.C.Ambrosius@tudelft.nl}
-\end{itemize}
-\end{cvtext}
+\begin{cvsection}{Referees}
+Prof. Byron Tapley &
+  \begin{itti}
+    \item Research advisor at \ac{CSR} of \ac{UTexas}
+    \item +1 512 471 5573
+    \item \href{mailto:tapley@csr.utexas.edu}{tapley@csr.utexas.edu}
+  \end{itti}\\
+
+Prof. Pieter Visser &
+  \begin{itti}
+    \item Research advisor at \ac{AS} of \ac{TUD}
+    \item +31 15 27 82595
+    \item \href{mailto:P.N.A.M.Visser@tudelft.nl}{P.N.A.M.Visser@tudelft.nl}
+  \end{itti}\\
+
+Dr. Pavel Ditmar &
+  \begin{itti}
+    \item PhD advisor at \ac{GRS} of \ac{TUD}
+    \item +31 15 27 82501
+    \item \href{mailto:p.g.ditmar@tudelft.nl}{p.g.ditmar@tudelft.nl}
+  \end{itti}\\
+
+Prof. Boudewijn Ambrosius &
+  \begin{itti}
+    \item MSc advisor at \ac{AS} of \ac{TUD}
+    \item \href{mailto:B.A.C.Ambrosius@tudelft.nl}{B.A.C.Ambrosius@tudelft.nl}
+  \end{itti}\\
+
+\end{cvsection}
 
 \vfill
-The \dynhref{http://jgte.github.io/cv/}{html}, \dynhref{http://jgte.github.io/cv/cv_jgte.pdf}{PDF} and \dynhref{http://jgte.github.io/cv/cv_jgte_print.pdf}{print-ready} versions this document are available on-line.
+The \dynhref{jgte.github.io/cv/cv_jgte.pdf}{PDF} and \dynhref{jgte.github.io/cv/cv_jgte_print.pdf}{print-ready} versions this document are available on-line.
 
+\label{endpage}
 \end{document}

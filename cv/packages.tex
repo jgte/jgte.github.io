@@ -1,0 +1,74 @@
+% !TEX root = ./cv_jgte.tex
+
+% http://www.tug.dk/FontCatalogue/carlito/
+\usepackage[sfdefault,lf]{carlito}
+\renewcommand*\oldstylenums[1]{\carlitoOsF #1}
+%% The 'lf' option for lining figures
+%% The 'sfdefault' option to make the base font sans serif
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}    % utf8 support       %!!!!!!!!!!!!!!!!!!!!
+\DeclareUnicodeCharacter{301}{'}
+\usepackage{lmodern}
+\usepackage{eurosym}
+% \usepackage{lastpage}
+% \usepackage{xspace}
+\usepackage[a4paper,left=30mm,right=30mm,top=30mm,bottom=30mm,headsep=5mm,footskip=10mm]{geometry}
+% \addtolength{\oddsidemargin}{-1.5cm}
+% \addtolength{\evensidemargin}{-1.5cm}
+% \addtolength{\textwidth}{3cm}
+% \addtolength{\topmargin}{-1.5cm}
+% \addtolength{\textheight}{2.5cm}
+% \usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{array}
+% \usepackage[usenames,dvipsnames,table]{xcolor}
+\usepackage{csquotes}
+% \usepackage{pgfgantt}
+% \usepackage{etoolbox}
+\usepackage{hyperref}
+\usepackage{amsfonts,amsmath,amssymb}
+% \usepackage{soul} % for smarter (word-wrapping) underlining.
+% \usepackage{lineno}
+\usepackage{enumitem} % for broken enumerate in ethics section.
+% \usepackage{multirow}
+% \usepackage{float}
+\usepackage[document]{ragged2e}
+\usepackage{longtable}
+\usepackage{tabu}
+
+% ----------------------------------
+
+\usepackage[nobottomtitles*]{titlesec}% Used to customize the \section command
+\renewcommand{\bottomtitlespace}{0pt}
+   \titleformat{\section}{\sf\Large\raggedright}{}{0em}{}[\titlerule]  % Text formatting of sections
+\titleformat{\subsection}{\sf\large\raggedright}{}{0em}{}[]            % Text formatting of subsections
+   \titlespacing{\section}{0pt}{3ex plus 5ex minus 3ex}{1ex plus .1ex minus .1ex} % Spacing around sections
+\titlespacing{\subsection}{0pt}{3ex plus 5ex minus 3ex}{1ex plus .1ex minus .1ex} % Spacing around subsections
+
+% ----------------------------------
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\it{\name}}
+\lhead{}
+\rfoot{\thepage~of \pageref*{endpage}}
+\thispagestyle{empty}
+
+% ----------------------------------
+
+\usepackage{url}                            % http://www.ctan.org/pkg/url
+\makeatletter
+\g@addto@macro{\UrlBreaks}{\UrlOrds}
+\g@addto@macro{\UrlBreaks}{%
+  \do\/\do\a\do\b\do\c\do\d\do\e\do\f%
+  \do\g\do\h\do\i\do\j\do\k\do\l\do\m%
+  \do\n\do\o\do\p\do\q\do\r\do\s\do\t%
+  \do\u\do\v\do\w\do\x\do\y\do\z%
+  \do\A\do\B\do\C\do\D\do\E\do\F\do\G%
+  \do\H\do\I\do\J\do\K\do\L\do\M\do\N%
+  \do\O\do\P\do\Q\do\R\do\S\do\T\do\U%
+  \do\V\do\W\do\X\do\Y\do\Z}
+\makeatother
+\Urlmuskip=0mu plus 1mu\relax

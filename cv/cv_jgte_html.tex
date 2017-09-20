@@ -4,22 +4,7 @@
 \input{bibsetup}
 \input{name}
 \input{utils}
-
-% ------ dynamic web references -------------------------------
-
-%this needs to come before the acronyms
-\newtoggle{expliciturl}
-\toggletrue{expliciturl}
-\newcommand{\dynhref}[2]{%
-  \iftoggle{expliciturl}{%
-    #2 \footnote{\href{http://#1}{\detokenize{#1}}}%
-  }{%
-    \href{http://#1}{#2}%
-  }%
-}
-
-%acronym packaged loaded inside
-\input{acronyms}
+\input{cvsection_html}
 
 % ------ state home or work address -------------------------------
 
@@ -42,6 +27,17 @@
 \toggletrue{verbose}
 \newcommand{\verbcv}[2]{\iftoggle{verbose}{#1}{#2}}
 
+% ------ dynamic web references -------------------------------
+
+\newtoggle{expliciturl}
+\togglefalse{expliciturl}
+\newcommand{\dynhref}[2]{%
+  \iftoggle{expliciturl}{%
+    #2 \footnote{\href{#1}{\texttt{\detokenize{#1}}}}%
+  }{%
+    \href{#1}{#2}%
+  }%
+}
 
 % ------ Customizations --------------------------------------------------------
 
@@ -75,22 +71,22 @@
                     78751, Austin Texas, USA\\
   {\bf Telephone:} & +1 512 765 1351\\
   {\bf Email:}     & \href{mailto:j_encarnacao@yahoo.com}{j\_encarnacao@yahoo.com}\\
-  {\bf Web:}       & \dynhref{nl.linkedin.com/in/joaoencarnacao}{LinkedIn}\\
+  {\bf Web:}       & \dynhref{http://nl.linkedin.com/in/joaoencarnacao}{LinkedIn}\\
 }{%
   {\bf Address:}   & 3925 W Braker Lane\newline
                      Ste 200 - WPR 2.9076\newline
                      Austin TX 78759-5316, \ac{USA}\\
   {\bf Telephone:} & +1 (512) 232-6897\\
   {\bf Email:}     & \href{mailto:teixeira@csr.utexas.edu}{teixeira@csr.utexas.edu}\\
-  {\bf Web:}       & \dynhref{directory.utexas.edu/index.php?q=joao+encarnacao}{University of Texas},
-                     \dynhref{nl.linkedin.com/in/joaoencarnacao}{LinkedIn},
-                     \dynhref{www.researchgate.net/profile/Joao_Encarnacao2}{ResearchGate},
-                     \dynhref{scholar.google.com/citations?user=k2liFwQAAAAJ}{Google Scholar},
-                     \dynhref{orcid.org/0000-0001-6824-2733}{ORCID},
-                     \dynhref{www.mendeley.com/profiles/joao-encarnacao4/}{Mendeley},
-                     \dynhref{www.scopus.com/authid/detail.uri?authorId=15135565900}{SCOPUS},
-                     \dynhref{publons.com/a/782170/}{Publons},
-                     \dynhref{github.com/jgte}{GitHub}\\
+  {\bf Web:}       & \dynhref{https://directory.utexas.edu/index.php?q=joao+encarnacao}{University of Texas},
+                     \dynhref{http://nl.linkedin.com/in/joaoencarnacao}{LinkedIn},
+                     \dynhref{https://www.researchgate.net/profile/Joao_Encarnacao2}{ResearchGate},
+                     \dynhref{https://scholar.google.com/citations?user=k2liFwQAAAAJ}{Google Scholar},
+                     \dynhref{http://orcid.org/0000-0001-6824-2733}{ORCID},
+                     \dynhref{https://www.mendeley.com/profiles/joao-encarnacao4/}{Mendeley},
+                     \dynhref{https://www.scopus.com/authid/detail.uri?authorId=15135565900}{SCOPUS},
+                     \dynhref{https://publons.com/a/782170/}{Publons},
+                     \dynhref{https://github.com/jgte}{GitHub}\\
 }
 \end{cvsection}
 
@@ -106,10 +102,10 @@
   \begin{itti}
     \item \textbf{PhD in Space Geodesy}
     \item \acf{GRS}, \acf{TUD}
-    \item Dissertation: \dynhref{tinyurl.com/SatGrav}{\emph{Next-generation satellite gravimetry for measuring mass transport in the Earth system}}
+    \item Dissertation: \dynhref{http://tinyurl.com/SatGrav}{\emph{Next-generation satellite gravimetry for measuring mass transport in the Earth system}}
     %TODO: fix these URLs
-    \item Promotor: \dynhref{www.tudelft.nl/en/ceg/over-faculteit/departments/geoscience-remote-sensing/staff/scientific-staff/profdr-ing-habil-r-roland-klees/}{Prof. Dr-Ing. habil. Roland Klees}
-    \item Supervisor: \dynhref{www.tudelft.nl/citg/over-faculteit/afdelingen/geoscience-remote-sensing/staff/scientific-staff/dr-pg-pavel-ditmar/}{Dr. Ir. Pavel Ditmar}
+    \item Promotor: \dynhref{http://tinyurl.com/ProfKlees}{Prof. Dr-Ing. habil. Roland Klees}
+    \item Supervisor: \dynhref{http://tinyurl.com/DrDitmar}{Dr. Ir. Pavel Ditmar}
   \end{itti}\\
 
 
@@ -118,7 +114,7 @@
     \item \textbf{Master of Sciences in Aerospace Engineering}
     \item \acf{AS}, \ac{TUD}
     \item Final Thesis: \emph{Numerical Simulation of Launch Vehicles}
-    \item Supervisor: \dynhref{www.tudelft.nl/en/staff/b.a.c.ambrosius}{Prof. Ir. B.A.C. Ambrosius}
+    \item Supervisor: \dynhref{https://www.tudelft.nl/en/staff/b.a.c.ambrosius}{Prof. Ir. B.A.C. Ambrosius}
   \end{itti}\\
 
 2000 &
@@ -185,7 +181,7 @@ Jan. 2007 -- Dec. 2015 &
 
 Apr. 2005 -- Nov. 2006 &
   \begin{itti}
-    \item \textbf{Stress Engineer} at \dynhref{www.globaltechnics.nl/}{Global Technics}, Leiden, the Netherlands:
+    \item \textbf{Stress Engineer} at \dynhref{http://www.globaltechnics.nl/}{Global Technics}, Leiden, the Netherlands:
     \begin{ittib}
       \item Automated design (for weight and stress minimization) of fuselage panels for the Airbus A380 aircraft (in-house implementation of a tool in C++);
       \item Trainees supervision and mentoring.
@@ -195,13 +191,13 @@ Apr. 2005 -- Nov. 2006 &
 \procv{
 6/2005 -- 7/2005 &
   \begin{itti}
-    \item \textbf{Systems Engineer} at \dynhref{www.reduct.net}{Reduct}, Kontich, Belgium
+    \item \textbf{Systems Engineer} at \dynhref{http://www.reduct.net}{Reduct}, Kontich, Belgium
   \end{itti}\\
 }{}
 
 Oct. 2004 -- Jan. 2005 &
   \begin{itti}
-    \item \textbf{Aerospace Engineer} at \dynhref{www.delta-utec.com/}{Delta-Utec}, Leiden, the Netherlands:
+    \item \textbf{Aerospace Engineer} at \dynhref{http://www.delta-utec.com/}{Delta-Utec}, Leiden, the Netherlands:
     \begin{ittib}
       \item Contractor Work: Implementation of a Sub-Orbital Optimization Module into the Simulation Tool \emph{COLVET} (developed in-house at TU Delft).
     \end{ittib}
@@ -209,7 +205,7 @@ Oct. 2004 -- Jan. 2005 &
 
 Mar. 2004 -- Apr. 2004 &
   \begin{itti}
-    \item \textbf{Trainee} at the Prins Maurits Laboratorium, \dynhref{www.tno.nl/}{TNO}, the Netherlands
+    \item \textbf{Trainee} at the Prins Maurits Laboratorium, \dynhref{http://www.tno.nl/}{TNO}, the Netherlands
     \item Supervisor: Ir. Berry Sanders, Rocket Technology Research Group:
     \begin{ittib}
       \item Implementation of the Launch Vehicle Simulation and Optimisation Tool \emph{COLVET};
@@ -221,7 +217,7 @@ Mar. 2004 -- Apr. 2004 &
 Sep. 2001 -- Dec. 2001 &
   \begin{itti}
     \item \textbf{Trainee} at \acf{ESTEC}, \ac{ESA}, Noordwijk, the Netherlands
-    \item Supervisor: \dynhref{en.wikipedia.org/wiki/Wubbo_Ockels}{Prof. Wubbo Ockels}:
+    \item Supervisor: \dynhref{https://en.wikipedia.org/wiki/Wubbo_Ockels}{Prof. Wubbo Ockels}:
     \begin{ittib}
       \item Collaboration with fellow MSc colleagues on a space mission design project: \emph{Lunar Exploration with Ariane 5};
       \item Simulation of rocket ascent trajectories (implemented a 2D orbit integrator in Matlab);
@@ -245,7 +241,7 @@ My senior colleagues always grade my teaching activities as very good to excelle
 
 In what concerns teaching large groups of students, I have given lectures to classes of about 30 students, on exceptional occasions, at the request of colleagues.
 
-Additionally, I was a lecturer at the 2017 Summer School On Data Assimilation And Its Applications In Oceanography, Hydrology, Risk \& Safety And Reservoir Engineering (cf. \dynhref{data-assimilation.com}{data-assimilation.com}).
+Additionally, I was a lecturer at the 2017 Summer School On Data Assimilation And Its Applications In Oceanography, Hydrology, Risk \& Safety And Reservoir Engineering (cf. \dynhref{http://data-assimilation.com}{data-assimilation.com}).
 
 I value all teaching my experiences because they were extremely rewarding.
 
@@ -280,7 +276,7 @@ Theoretical: & \vspace{-1.5ex}
 
 
 \procv{}{
-Articles review: & Successfully completed the review of 8 scientific articles, cf. \dynhref{publons.com/a/782170/}{Publons}\\
+Articles review: & Successfully completed the review of 8 scientific articles, cf. \dynhref{https://publons.com/a/782170/}{Publons}\\
 }
 
 Computational: & \vspace{-1.5ex}
@@ -341,12 +337,12 @@ International collaboration with
 Prof. Torsten Mayer-G\"{u}rr of the \acf{IfG} of the \acf{TUG},
 Dr. Ale\v{s} Bezd\v{e}k of the \ac{ASU}  of the \acf{AVCR},
 Prof. Adrian J\"{a}ggi of the \acf{AIUB},
-Prof. Pieter Visser of the \dynhref{www.lr.tudelft.nl}{Aerospace Faculty} of the \ac{TUD} and
+Prof. Pieter Visser of the \dynhref{http://www.lr.tudelft.nl}{Aerospace Faculty} of the \ac{TUD} and
 Prof. C.K. Shum of the \acf{SES} of the \acf{OSU}
-for the {\bf study of the time-variable gravity field of the Earth estimated from GPS data collected by the \dynhref{earth.esa.int/web/guest/missions/esa-operational-eo-missions/swarm}{Swarm Satellite mission}}. Within the scope of this project, we submitted a grant application with very positive reviews (Ref. ESA AO/1-7927/14/NL/MP), and have recently been awarded funding under the \dynhref{tinyurl.com/SwarmGrav}{ITT posted by the \ac{ESA}-funded a\ac{DISC} consortium}\\
+for the {\bf study of the time-variable gravity field of the Earth estimated from GPS data collected by the \dynhref{https://earth.esa.int/web/guest/missions/esa-operational-eo-missions/swarm}{Swarm Satellite mission}}. Within the scope of this project, we submitted a grant application with very positive reviews (Ref. ESA AO/1-7927/14/NL/MP), and have recently been awarded funding under the \dynhref{http://tinyurl.com/SwarmGrav}{ITT posted by the \ac{ESA}-funded a\ac{DISC} consortium}\\
 
 2014 -- present &
-Collaboration with \ac{TUD} on the \dynhref{doptrack.tudelft.nl}{DopTrack project}, consisting of a {\bf satellite tracking radio station that exploits the Doppler effect}; co-initiated and promoted the project, secured departmental funding, selected and assembled the hardware, developed software, engaged students and mentored practical undergraduate projects.\\
+Collaboration with \ac{TUD} on the \dynhref{http://doptrack.tudelft.nl}{DopTrack project}, consisting of a {\bf satellite tracking radio station that exploits the Doppler effect}; co-initiated and promoted the project, secured departmental funding, selected and assembled the hardware, developed software, engaged students and mentored practical undergraduate projects.\\
 
 \end{cvsection}
 }
@@ -378,7 +374,7 @@ l
    & Speaking & Reading & Writing \\
 \hline
 Portuguese & \multicolumn{3}{c}{mother tongue}  \\
-English\footnote{holder of the \dynhref{www.cambridgeenglish.org/exams/proficiency/index.aspx}{Certificate of Proficiency in English}}    & excellent & excellent & excellent \\
+English\footnote{holder of the \dynhref{http://www.cambridgeenglish.org/exams/proficiency/index.aspx}{Certificate of Proficiency in English}}    & excellent & excellent & excellent \\
 Spanish    & good & good & fair \\
 Italian    & good & good & fair \\
 Dutch      & fair & fair & limited \\
@@ -405,12 +401,12 @@ Sep. 2017 & Dealing with Difficult People, Jeff Stellmach, \ac{UTexas}\\
 
 \begin{cvsection}{Sports}
 1991 -- 2009 & Basketball \\
-April 2006   & Finalist of the \dynhref{www.fortismarathonrotterdam.nl/}{26th International Fortis Marathon of Rotterdam}\\
+April 2006   & Finalist of the \dynhref{http://www.fortismarathonrotterdam.nl/}{26th International Fortis Marathon of Rotterdam}\\
 September 2016 - present & Sailing\\
 \end{cvsection}
 
 \begin{cvsection}{Other Activities}
-1991 -- 2001 & Scout at the 92$^{nd}$ Scout-group of the \dynhref{www.aep.pt}{Association of Portuguese Escoteiros}\\
+1991 -- 2001 & Scout at the 92$^{nd}$ Scout-group of the \dynhref{http://www.aep.pt}{Association of Portuguese Escoteiros}\\
 1993 -- present & Radio Amateur, call sign CT3IU, class B\\
 \procv{1996 -- present & Drivers Licence \\}{}
 \end{cvsection}
@@ -450,7 +446,7 @@ Prof. Boudewijn Ambrosius &
 \end{cvsection}
 
 \vfill
-The \dynhref{jgte.github.io/cv/cv_jgte.pdf}{PDF} and \dynhref{jgte.github.io/cv/cv_jgte_print.pdf}{print-ready} versions this document are available on-line.
+The \dynhref{http://jgte.github.io/cv/}{html}, \dynhref{http://jgte.github.io/cv/cv_jgte.pdf}{PDF} and \dynhref{http://jgte.github.io/cv/cv_jgte_print.pdf}{print-ready} versions this document are available on-line.
 
 \label{endpage}
 \end{document}

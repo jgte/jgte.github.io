@@ -16,4 +16,6 @@
 *.synctex.gz
 *.fls
 *.fdb_latexmk
-.DS_Store
+.DS_Store*.css
+*.md
+*-blx.bib

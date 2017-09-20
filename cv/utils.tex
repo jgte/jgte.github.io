@@ -1,0 +1,53 @@
+% !TEX root = ./cv_jgte.tex
+
+\newenvironment{cvsection}[1]{
+  \setlength{\floatsep}{0pt}
+  \setlength{\textfloatsep}{0pt}
+  \setlength{\intextsep}{0pt}
+  \renewcommand{\arraystretch}{1.5}
+  \section*{#1}
+  % \vspace{-3ex}
+  % https://tex.stackexchange.com/questions/110266/set-longtable-to-fit-the-page-width
+  \begin{longtabu} to \textwidth {lX}
+}{
+  \end{longtabu}
+  % \vspace{-1.5ex}
+  \raggedbottom
+}
+
+\newenvironment{cvtext}[1]{
+  % \vspace{0.15in}
+  \section*{#1}
+  \setlength{\parindent}{3ex}
+  \begin{justify}
+  % \vspace{1.5ex}
+  % \begin{minipage}{\textwidth}
+
+  % \raggedright
+}{
+  \end{justify}
+  % \end{tabular*}
+  % \end{tabularx}
+  % \end{minipage}
+}
+
+\flushbottom
+
+% ------ tight lists --------------------------------------------------------
+
+\newlist{itemizetight}{itemize}{2}
+\setlist[itemizetight]{topsep=0pt,itemsep=1pt,parsep=0pt,partopsep=0pt,leftmargin=0pt,label=}
+
+\newenvironment{itti}{
+  \vspace*{-1.5ex}
+  \begin{itemizetight}
+}{
+  \end{itemizetight}
+}
+
+\newenvironment{ittib}{
+  \begin{itemizetight}[label=$\bullet$,leftmargin=4ex]
+}{
+  \end{itemizetight}
+}
+

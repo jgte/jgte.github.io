@@ -1,0 +1,20 @@
+% !TEX root = ./cv_jgte.tex
+
+\usepackage{tabularx}
+
+\newenvironment{cvsection}[1]{
+  \setlength{\floatsep}{0pt}
+  \setlength{\textfloatsep}{0pt}
+  \setlength{\intextsep}{0pt}
+  \renewcommand{\arraystretch}{1.5}
+  \section*{#1}
+  \RaggedLeft
+  % \vspace{-3ex}
+  % https://tex.stackexchange.com/questions/110266/set-longtable-to-fit-the-page-width
+  \tabularx{\columnwidth}{lX}
+}{
+  \endtabularx
+  % \vspace{-1.5ex}
+  \raggedbottom
+}
+

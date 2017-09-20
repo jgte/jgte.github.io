@@ -13,7 +13,16 @@
 				"*.bcf",
 				"*.run.xml",
 				"*.synctex.gz",
-				"*.gvz"
+				"*.gvz",
+				"*latexmk",
+				"*.idv",
+				"*.4ct",
+				"*.4tc",
+				"*.fls",
+				"*.lg",
+				"*.tmp",
+				"*.xref",
+				"*workspace"
 			],
 			"path": "."
 		}
