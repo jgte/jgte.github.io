@@ -87,9 +87,7 @@ dvi: ps
 	$(DVIPDF) $(MAINTEXFILE)
 
 bib:
-	$(BIB) $(MAINTEXFILE)
-	$(BIB) $(PUBLTEXFILE)
-	$(BIB) $(SUMMTEXFILE)
+	cp -v ../../latex/library.bib .
 
 clean:
 	@for j in summary publications affiliation $(MAINTEXFILE) $(MAINTEXFILE)_print $(PUBLTEXFILE) $(SUMMTEXFILE); do for i in aux dvi log ps pdf toc fdb_latexmk flsm blg bbl bcf out run.xml synctex.gz 4ct 4tc css fls idv lg md tmp xref; do rm -fv $$j.$$i; done; done
