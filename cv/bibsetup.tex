@@ -22,6 +22,22 @@
   }%
 }
 
+% ------ enumerate list of references -------------------------------
+
+\defbibenvironment{bibliography}
+  {\enumerate
+     {}
+     {\setlength{\leftmargin}{\bibhang}%
+      \setlength{\itemindent}{-\leftmargin}%
+      \setlength{\itemsep}{\bibitemsep}%
+      \setlength{\parsep}{\bibparsep}}}
+  {\endenumerate}
+  {\item}
+
+% ------ remove headings -------------------------------
+
+\defbibheading{bibliography}[\refname]{}
+
 % ----------------------------------
 
 \usepackage{xstring}

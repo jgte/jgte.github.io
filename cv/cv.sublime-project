@@ -2,29 +2,8 @@
 	"folders":
 	[
 		{
-			"file_exclude_patterns":
-			[
-				"*.aux",
-				"*.bbl",
-				"*.blg",
-				"*.out",
-				"*.backup",
-				"*.pdf",
-				"*.bcf",
-				"*.run.xml",
-				"*.synctex.gz",
-				"*.gvz",
-				"*latexmk",
-				"*.idv",
-				"*.4ct",
-				"*.4tc",
-				"*.fls",
-				"*.lg",
-				"*.tmp",
-				"*.xref",
-				"*workspace"
-			],
-			"path": "."
+			"path": ".",
+      "file_exclude_patterns": ["*-blx.bib","*.4ct","*.4tc","*.aux","*.bbl","*.bcf","*.blg","*.brf","*.css","*.dvi","*.fdb_latexmk","*.fls","*.flsm","*.idv","*.idx","*.lg","*.lof","*.log","*.lol","*.lot","*.md","*.nav","*.out","*.pdf","*.ps","*.run.xml","*.snm","*.sublime-*","*.synctex*","*.tmp","*.toc","*.xref",".DS_*"]
 		}
 	]
 }

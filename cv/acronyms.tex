@@ -29,21 +29,21 @@
 	%WARNING: always use \acl with the .cite acronyms!
 
 	\ifdefined\UseCitationsInAcronyms
-		\newcommand{\acrodefcite}[4][]{
-		  \acrodef{#2.cite}[!use acl with .cite acronyms!]{#3 (#2)#1\protecting{ (\citealt{#4})\acused{#2}}}
-		  \acrodef{#2.citeonly}[!use acl with .citeonly acronyms!]{\protecting{(\citealt{#4})}}
+    \newcommand{\acrodefcite}[4][]{%
+      \acrodef{#2.cite}[!use acl with .cite acronyms!]{#3 (#2)#1 \protecting{(\citealt{#4})\acused{#2}}}%
+      \acrodef{#2.citeonly}[!use acl with .citeonly acronyms!]{\protecting{(\citealt{#4})}}%
 		}
-		\newcommand{\acrocite}[4][]{
-		  \acro{#2}{#3\acroextra{#1, \protecting{\citet{#4}}}}
-		  \acrodefcite[#1]{#2}{#3}{#4}
+    \newcommand{\acrocite}[4][]{%
+      \acro{#2}{#3\acroextra{#1, \protecting{\citet{#4}}}}%
+      \acrodefcite[#1]{#2}{#3}{#4}%
 		}
 	\else
-		\newcommand{\acrodefcite}[4][]{
-		  \acrodef{#2.cite}[!use acl with .cite acronyms!]{#3 (#2)#1\protecting{\acused{#2}}}
+    \newcommand{\acrodefcite}[4][]{%
+      \acrodef{#2.cite}[!use acl with .cite acronyms!]{#3 (#2)#1\protecting{\acused{#2}}}%
 		}
-		\newcommand{\acrocite}[4][]{
-		  \acro{#2}{#3}
-		  \acrodefcite[#1]{#2}{#3}{#4}
+    \newcommand{\acrocite}[4][]{%
+      \acro{#2}{#3}%
+      \acrodefcite[#1]{#2}{#3}{#4}%
 		}
 	\fi
 
@@ -58,14 +58,14 @@
 	%\acrodef{HRF.ref}[]{Hill Reference Frame (HRF, \ref{sec:hrf})}
 	%WARNING: always use \acl with the .ref acronyms!
 	\ifdefined\UseReferencesInAcronyms
-		\newcommand{\acroref}[3]{
-		  \acro{#1}{#2\acroextra{, \begin{sloppypar}\protecting{\ref{#3}\end{sloppypar}}}}
-		  \acrodef{#1.ref}[!use acl with .ref acronyms!]{#2 \protecting{(#1, \ref{#3})\acused{#1}}}
+    \newcommand{\acroref}[3]{%
+      \acro{#1}{#2\acroextra{, \begin{sloppypar}\protecting{\ref{#3}\end{sloppypar}}}}%
+      \acrodef{#1.ref}[!use acl with .ref acronyms!]{#2 \protecting{(#1, \ref{#3})\acused{#1}}}%
 		}
 	\else
-		\newcommand{\acroref}[3]{
-		  \acro{#1}{#2}
-		  \acrodef{#1.ref}[!use acl with .ref acronyms!]{#2 (#1)\protecting{\acused{#1}}}
+    \newcommand{\acroref}[3]{%
+      \acro{#1}{#2}%
+      \acrodef{#1.ref}[!use acl with .ref acronyms!]{#2 (#1)\protecting{\acused{#1}}}%
 		}
 	\fi
 
@@ -106,10 +106,10 @@
     }
   \fi
 \fi
+\acresetall
 
 \newcommand{\unit}[2]{\ensuremath{{\sf#1}\thickspace{\sf#2}}}
 
-\acresetall
 \begin{acronym}[------------------------]
 
 \renewcommand{\baselinestretch}{0.8}%
@@ -117,18 +117,22 @@
 
 %don't use \ace, \act or \acf with acronyms that include a \citep command
 %linguistic short forms
-\acro{a.i.}{\emph{ad interim}\acroextra{, temporarily}}
+\acrodef{a.i.}{\emph{ad interim}\acroextra{, temporarily}}
 \acro{a.o.}{amongst others}
-\acro{ca.}{\emph{circa}\acroextra{, approximately}}
-\acro{cf.}{\emph{confer}\acroextra{, compare}}
-\acro{e.g.}{\emph{exempli gratia}\acroextra{, for example}}
-\acro{etc.}{\emph{et cetera}\acroextra{, and so forth}}
+\acrodef{ca.}{\emph{circa}\acroextra{, approximately}}
+\acrodef{cf.}{\emph{confer}\acroextra{, compare}}
+\acrodef{e.g.}{\emph{exempli gratia}\acroextra{, for example}}
+\acrodef{etc.}{\emph{et cetera}\acroextra{, and so forth}}
 \acro{i.a.}{\emph{inter alia}\acroextra{, amongst others}}
-\acro{i.e.}{\emph{id est}\acroextra{, that is}}
+\acrodef{i.e.}{\emph{id est}\acroextra{, that is}}
 \acro{i.o.}{\emph{in illo ordine}\acroextra{, respectively}}
-\acro{p.}{page}
-\acro{pp.}{pages}
-\acro{vs.}{\emph{versus}\acroextra{, against}}
+\acrodef{p.}{page}
+\acrodef{pp.}{pages}
+\acrodef{vs.}{\emph{versus}\acroextra{, against}}
+
+%Titles
+\acrodef{Prof.}{Professor}
+\acrodef{Dr.}{Doctor}
 
 %#
 \acro{1D}{uni-dimensional}
