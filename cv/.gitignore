@@ -31,3 +31,4 @@
 *.toc
 *.xref
 .DS_*
+library.bib cannot be a link
