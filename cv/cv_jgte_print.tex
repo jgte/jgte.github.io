@@ -21,27 +21,40 @@
 %acronym packaged loaded inside
 \input{acronyms}
 
-% ------ state home or work address -------------------------------
+% ------ home or work address -------------------------------
 
 \newtoggle{homecontact}
-\togglefalse{homecontact}
-% \toggletrue{homecontact}
+% \togglefalse{homecontact}
+\toggletrue{homecontact}
 \newcommand{\homecv}[2]{\iftoggle{homecontact}{#1}{#2}}
 
-% ------ CV version: professional or academic -------------------------------
+% ------ academic links -------------------------------
+
+\newtoggle{academicweb}
+% \togglefalse{academicweb}
+\toggletrue{academicweb}
+\newcommand{\academicwebcv}[2]{\iftoggle{academicweb}{#1}{#2}}
+
+% ------ professional cv, false for academic cv -------------------------------
 
 \newtoggle{professionalcv}
 \togglefalse{professionalcv}
 % \toggletrue{professionalcv}
 \newcommand{\procv}[2]{\iftoggle{professionalcv}{#1}{#2}}
 
-% ------ Verbose description of milestones -------------------------------
+% ------ teaching experience -------------------------------
 
-\newtoggle{verbose}
-% \togglefalse{verbose}
-\toggletrue{verbose}
-\newcommand{\verbcv}[2]{\iftoggle{verbose}{#1}{#2}}
+\newtoggle{teaching}
+\togglefalse{teaching}
+% \toggletrue{teaching}
+\newcommand{\teachingcv}[2]{\iftoggle{teaching}{#1}{#2}}
 
+% ------ summary text -------------------------------
+
+\newtoggle{summary}
+\togglefalse{summary}
+% \toggletrue{summary}
+\newcommand{\summarycv}[2]{\iftoggle{summary}{#1}{#2}}
 
 % ------ Customizations --------------------------------------------------------
 
@@ -75,14 +88,16 @@
                     78751, Austin Texas, USA\\
   {\bf Telephone:} & +1 512 765 1351\\
   {\bf Email:}     & \href{mailto:j_encarnacao@yahoo.com}{j\_encarnacao@yahoo.com}\\
-  {\bf Web:}       & \dynhref{nl.linkedin.com/in/joaoencarnacao}{LinkedIn}\\
 }{%
   {\bf Address:}   & 3925 W Braker Lane\newline
                      Ste 200 - WPR 2.9076\newline
                      Austin TX 78759-5316, \ac{USA}\\
   {\bf Telephone:} & +1 (512) 232-6897\\
   {\bf Email:}     & \href{mailto:teixeira@csr.utexas.edu}{teixeira@csr.utexas.edu}\\
+}%
+\academicwebcv{%
   {\bf Web:}       & \dynhref{directory.utexas.edu/index.php?q=joao+encarnacao}{University of Texas},
+                     \dynhref{www.tudelft.nl/en/staff/j.g.deteixeiradaencarnacao-2/}{TU Delft},
                      \dynhref{nl.linkedin.com/in/joaoencarnacao}{LinkedIn},
                      \dynhref{www.researchgate.net/profile/Joao_Encarnacao2}{ResearchGate},
                      \dynhref{scholar.google.com/citations?user=k2liFwQAAAAJ}{Google Scholar},
@@ -91,12 +106,16 @@
                      \dynhref{www.scopus.com/authid/detail.uri?authorId=15135565900}{SCOPUS},
                      \dynhref{publons.com/a/782170/}{Publons},
                      \dynhref{github.com/jgte}{GitHub}\\
+}{%
+  {\bf Web:}       & \dynhref{nl.linkedin.com/in/joaoencarnacao}{LinkedIn},
+                     \dynhref{github.com/jgte}{GitHub}\\
 }
+
 \end{cvsection}
 
 % ------- Summary ---------------------------------------------------
 
-% \verbcv{\input{summary}}{}
+\summarycv{\input{summary}}{}
 
 % ------- Education ---------------------------------------------------
 
@@ -232,7 +251,7 @@ Sep. 2001 -- Dec. 2001 &
 
 \end{cvsection}
 
-\verbcv{
+\teachingcv{
 \begin{cvtext}{Teaching Experience}
 
 At TU Delft, I was required to supervise student projects of a practical nature, every year.
@@ -334,8 +353,8 @@ Collaboration with Dr. Guillaume Ramillien from \acf{CNRS} and Dr. Ale\v{s} Bezd
 2017 -- present &
 Collaboration with Dr. Noble Hatten and Dr. Dae Lee of the \ac{CSR}. \ac{UTexas} for the {\bf development of a CubeSat architecture that replicates the gravimetric capabilities of the \ac{GRACE} satellites}.\\
 
-2016 -- present &
-International collaboration with Prof. Luis Rocha of \acf{UMinho} and Dr. Dae Lee of the \ac{CSR}, \ac{UTexas} for the {\bf development of a \ac{MEMS}-based space accelerometer as a first step towards the nano-gravimetric satellite framework}.\\
+% 2016 -- present &
+% International collaboration with Prof. Luis Rocha of \acf{UMinho} and Dr. Dae Lee of the \ac{CSR}, \ac{UTexas} for the {\bf development of a \ac{MEMS}-based space accelerometer as a first step towards the nano-gravimetric satellite framework}.\\
 
 2015 -- present &
 International collaboration with
@@ -400,6 +419,8 @@ Jul. 2017 & Meeting effectiveness, Emil Kresl, \ac{UTexas}\\
 
 Sep. 2017 & Dealing with Difficult People, Jeff Stellmach, \ac{UTexas}\\
 
+Sep. 2017 & Conflict Management Foundations, Kimberly Sullivan, \ac{UTexas}\\
+
 \end{cvsection}
 
 % % -------- Other Activities --------------------------------------------
@@ -420,36 +441,7 @@ September 2016 - present & Sailing\\
 
 % \pagebreak
 
-\begin{cvsection}{Referees}
-Prof. Byron Tapley &
-  \begin{itti}
-    \item Research advisor at \ac{CSR} of \ac{UTexas}
-    \item +1 512 471 5573
-    \item \href{mailto:tapley@csr.utexas.edu}{tapley@csr.utexas.edu}
-  \end{itti}\\
-
-Dr. Himanshu Save &
-  \begin{itti}
-    \item Research advisor at \ac{CSR} of \ac{UTexas}
-    \item +1 512 471 6726
-    \item \href{mailto:save@csr.utexas.edu}{save@csr.utexas.edu}
-  \end{itti}\\
-
-Prof. Pieter Visser &
-  \begin{itti}
-    \item Research advisor at \ac{AS} of \ac{TUD}
-    \item +31 15 27 82595
-    \item \href{mailto:P.N.A.M.Visser@tudelft.nl}{P.N.A.M.Visser@tudelft.nl}
-  \end{itti}\\
-
-Dr. Pavel Ditmar &
-  \begin{itti}
-    \item PhD advisor at \ac{GRS} of \ac{TUD}
-    \item +31 15 27 82501
-    \item \href{mailto:p.g.ditmar@tudelft.nl}{p.g.ditmar@tudelft.nl}
-  \end{itti}\\
-
-\end{cvsection}
+\input{references}
 
 \vfill
 The \dynhref{jgte.github.io/cv/cv_jgte.pdf}{PDF} and \dynhref{jgte.github.io/cv/cv_jgte_print.pdf}{print-ready} versions this document are available on-line.

@@ -1,0 +1,37 @@
+\documentclass[a4paper]{article}
+
+\input{packages}
+\input{bibsetup}
+\input{name}
+\input{utils}
+
+% ------ dynamic web references -------------------------------
+
+%this needs to come before the acronyms
+\newtoggle{expliciturl}
+\togglefalse{expliciturl}
+\newcommand{\dynhref}[2]{%
+  \iftoggle{expliciturl}{%
+    #2 \footnote{\href{http://#1}{\detokenize{#1}}}%
+  }{%
+    \href{#1}{#2}%
+  }%
+}
+
+%acronym packaged loaded inside
+\input{acronyms}
+
+% ----------------------------------------------------
+
+\begin{document}
+
+% print name centered and bold:
+\centerline
+{\huge \rm \textbf \name}
+
+% ----------------------------------------------------
+
+\input{references}
+
+\label{endpage}
+\end{document}
