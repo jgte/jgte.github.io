@@ -5,7 +5,6 @@
 
 \usepackage[style=verbose,backend=bibtex,isbn=false,sorting=none,maxbibnames=99,sorting=ydnt,style=authoryear]{biblatex}
 \addbibresource{library.bib}
-\addbibresource{cv_jgte.bib}
 % \AtEveryCitekey{\clearfield{title}}
 \AtEveryCitekey{%
   \ifentrytype{article}{%
@@ -59,14 +58,21 @@
   }
 }
 
+\newcommand{\Ja}{Jo{\~{a}}o}
+\newcommand{\Jb}{Joao}
+\newcommand{\T}{Teixeira}
+\newcommand{\Ea}{Encarna{\c{c}}{\~{a}}}
+\newcommand{\Eb}{Encarna{\c{c}}{\~{a}}}
+
 \makeauthorsbold{%
-Encarna{\c{c}}{\~{a}}o,Jo{\~{a}}o,%
-Jo{\~{a}}o Encarna{\c{c}}{\~{a}}o,
-de Teixeira da Encarna{\c{c}}{\~{a}}o,%
-Teixeira Encarna{\c{c}}{\~{a}}o,%
-Teixeira da Encarna{\c{c}}{\~{a}}o,%
-da Encarna{\c{c}}{\~{a}}o,Jo{\~{a}}o Teixeira,%
-Teixeira da Encarnacao,%
-Encarnacao,%
-Joao%
+{Teixeira da Encarna{\c{c}}{\~{a}}o}, Jo{\~{a}}o,
+{de Teixeira da Encarna{\c{c}}{\~{a}}o}, Jo{\~{a}}o,
+Encarna{\c{c}}{\~{a}}o, Jo{\~{a}}o,
+Encarnacao, Joao,
+{Teixeira Encarna{\c{c}}{\~{a}}o}, Jo{\~{a}}o',
+{Teixeira da Encarnacao}, J.
+% \Ja \Ea,%
+% \Ja \Eb,%
+% \Jb \Ea,%
+% \Jb \Eb,%
 }

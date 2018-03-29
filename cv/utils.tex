@@ -1,12 +1,21 @@
 % !TEX root = ./cv_jgte.tex
 
-\newenvironment{cvsection}[1]{
-  \setlength{\floatsep}{0pt}
-  \setlength{\textfloatsep}{0pt}
-  \setlength{\intextsep}{0pt}
-  \renewcommand{\arraystretch}{1.5}
+\newcommand{\cvheadingi}[1]{
   \section*{#1}
-  % \vspace{-3ex}
+  % \setlength{\parindent}{3ex}
+}
+
+%this version of the command above adds a space after the heading, can be used by itself 
+\newcommand{\cvheading}[1]{
+  \cvheadingi{#1}\vspace{1em}
+}
+
+\newenvironment{cvsection}[1]{
+  % \setlength{\floatsep}{0pt}
+  % \setlength{\textfloatsep}{0pt}
+  % \setlength{\intextsep}{0pt}
+  \cvheadingi{#1}
+  \renewcommand{\arraystretch}{1.2}
   % https://tex.stackexchange.com/questions/110266/set-longtable-to-fit-the-page-width
   \begin{longtabu} to \textwidth {lX}
 }{
@@ -17,8 +26,8 @@
 
 \newenvironment{cvtext}[1]{
   % \vspace{0.15in}
-  \section*{#1}
-  \setlength{\parindent}{3ex}
+  \cvheadingi{#1}
+  \vspace{1em}
   \begin{justify}
   % \vspace{1.5ex}
   % \begin{minipage}{\textwidth}

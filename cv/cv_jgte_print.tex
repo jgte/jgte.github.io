@@ -65,6 +65,9 @@
 % Don't indent paragraphs.
 \setlength\parindent{0pt}
 
+% https://tex.stackexchange.com/questions/53338/reducing-spacing-after-headings
+\titlespacing\section{12pt}{12pt plus 8pt minus 8pt}{6pt plus 4pt minus 4pt}
+
 % ------ Start --------------------------------------------------------
 
 \begin{document}
@@ -273,12 +276,42 @@ I value all teaching my experiences because they were extremely rewarding.
 
 % \iftoggle{expliciturl}{\pagebreak}{}
 
+% % ------- Funding ------------------------------------------------------
+
+\begin{cvsection}{Funding}
+
+Sep. 2017 -- Sep. 2018 & 
+  \begin{itti}
+    \item \emph{Multi-approach gravity field models from Swarm GPS data}
+    \begin{ittib}
+      \item European Space Agency (Noordwijk, Netherlands)
+      \item Funding: 100k \euro
+      \item Contract: SD-ITT-1.1 (part of contract 4000109587/13/I-NB)
+    \end{ittib}
+  \end{itti}\\
+
+2017 &
+  \begin{itti}
+    \item \dynhref{jgte.github.io/permalinks/H2020_MSCA_IF_2017_Seal_of_Excellence-jgte.pdf}{\emph{Direct Gravimetric data assimilation into Geophysical models}}
+    \begin{ittib}
+      \item H2020 Marie Sk\l{}odowska-Curie Individual Fellowship
+      \item European Union
+      \item \dynhref{ec.europa.eu/research/soe/index.cfm?pg=what}{Seal of Excellent}
+      \item unfunded
+    \end{ittib}
+  \end{itti}\\
+
+\end{cvsection}
 
 % % ------- Skills ------------------------------------------------------
 
 \begin{cvsection}{Skills}
 
-Communication: & Numerous presentations of research results (8 oral and 7 poster)\\
+Communication: & Numerous presentations of research results
+  \begin{ittib}
+    \item 8 oral
+    \item 7 poster
+  \end{ittib}\\
 
 Teaching: & \vspace{-1.5ex}
   \begin{ittib}
@@ -319,10 +352,10 @@ Programming: & \vspace{-1.5ex}
     \item 2002 -- present: Fortran
     \item 2006 -- 2008: C/C++
     \item 2011 -- present: Ruby
-    \item 2015 -- present: Python
+    \item 2017 -- present: Python
   \end{ittib}\\
 
-\acp{OS}: & OSX, MS Windows, Unix/Linux \\
+\aclp{OS}: & OSX, MS Windows, Unix/Linux \\
 
 \end{cvsection}
 
@@ -350,8 +383,8 @@ Programming: & \vspace{-1.5ex}
 2017 -- present &
 Collaboration with Dr. Guillaume Ramillien from \acf{CNRS} and Dr. Ale\v{s} Bezd\v{e}k the \acf{ASU}  of the \acf{AVCR} to {\bf drive surface mass variations directly from \enquote{reduced} gravimetric data } (i.e. observations \enquote{cleaned} of non-gravitational and trivial gravitational effects).\\
 
-2017 -- present &
-Collaboration with Dr. Noble Hatten and Dr. Dae Lee of the \ac{CSR}. \ac{UTexas} for the {\bf development of a CubeSat architecture that replicates the gravimetric capabilities of the \ac{GRACE} satellites}.\\
+% 2017 -- present &
+% Collaboration with Dr. Noble Hatten and Dr. Dae Lee of the \ac{CSR}. \ac{UTexas} for the {\bf development of a CubeSat architecture that replicates the gravimetric capabilities of the \ac{GRACE} satellites}.\\
 
 % 2016 -- present &
 % International collaboration with Prof. Luis Rocha of \acf{UMinho} and Dr. Dae Lee of the \ac{CSR}, \ac{UTexas} for the {\bf development of a \ac{MEMS}-based space accelerometer as a first step towards the nano-gravimetric satellite framework}.\\
@@ -363,7 +396,7 @@ Dr. Ale\v{s} Bezd\v{e}k of the \ac{ASU}  of the \acf{AVCR},
 Prof. Adrian J\"{a}ggi of the \acf{AIUB},
 Prof. Pieter Visser of the \dynhref{www.lr.tudelft.nl}{Aerospace Faculty} of the \ac{TUD} and
 Prof. C.K. Shum of the \acf{SES} of the \acf{OSU}
-for the {\bf study of the time-variable gravity field of the Earth estimated from GPS data collected by the \dynhref{earth.esa.int/web/guest/missions/esa-operational-eo-missions/swarm}{Swarm Satellite mission}}. Within the scope of this project, we submitted a grant application with very positive reviews (Ref. ESA AO/1-7927/14/NL/MP), and have recently been awarded funding under the \dynhref{tinyurl.com/SwarmGrav}{ITT posted by the \ac{ESA}-funded a\ac{DISC} consortium}\\
+for the {\bf study of the time-variable gravity field of the Earth estimated from GPS data collected by the \dynhref{earth.esa.int/web/guest/missions/esa-operational-eo-missions/swarm}{Swarm Satellite mission}}. These activities have started before we were awarded the funding \dynhref{tinyurl.com/SwarmGrav}{ITT posted by the \ac{ESA}-funded \ac{DISC} consortium}.\\
 
 2014 -- present &
 Collaboration with \ac{TUD} on the \dynhref{doptrack.tudelft.nl}{DopTrack project}, consisting of a {\bf satellite tracking radio station that exploits the Doppler effect}; co-initiated and promoted the project, secured departmental funding, selected and assembled the hardware, developed software, engaged students and mentored practical undergraduate projects.\\
@@ -375,6 +408,7 @@ Collaboration with \ac{TUD} on the \dynhref{doptrack.tudelft.nl}{DopTrack projec
 
 \procv{}{
 \begin{cvsection}{Research Projects}
+2017 -- 2018  & Multi-approach gravity field models from Swarm GPS data (DISC contract SD-ITT-1.1, part of ESA contract 4000109587/13/I-NB)\\
 2013 -- 2015  & Assessment of Satellite Constellations for Monitoring the Variations in Earth's Gravity Field (ESA contract 4000108663/13/NL/MV) \\
 2013          & GOCE+ Theme3: Air density and wind retrieval using GOCE data (ESA contract 400010284/11/NL/EL)\\
 2011 -- 2016  & Development of the Swarm Level 2 Algorithms and Associated Level 2 Processing Facility (ESA Contract 4000102140/10/NL/JA)\\
@@ -390,6 +424,7 @@ Collaboration with \ac{TUD} on the \dynhref{doptrack.tudelft.nl}{DopTrack projec
 % % ------- Languages ------------------------------------------------------
 
 \begin{cvtext}{Languages}
+\begin{minipage}{\textwidth}
 \begin{tabular}{
 l
 >{\centering\arraybackslash}m{3cm}
@@ -398,13 +433,14 @@ l
    & Speaking & Reading & Writing \\
 \hline
 Portuguese & \multicolumn{3}{c}{mother tongue}  \\
-English\footnote{holder of the \dynhref{www.cambridgeenglish.org/exams/proficiency/index.aspx}{Certificate of Proficiency in English}}    & excellent & excellent & excellent \\
+English\footnote{holding the \dynhref{www.cambridgeenglish.org/exams/proficiency/index.aspx}{Certificate of Proficiency in English}}    & excellent & excellent & excellent \\
 Spanish    & good & good & fair \\
 Italian    & good & good & fair \\
 Dutch      & fair & fair & limited \\
 French     & fair & fair & limited \\
 \hline
 \end{tabular}
+\end{minipage}
 \end{cvtext}
 
 % % ------- Personal development ------------------------------------------------------
@@ -427,8 +463,8 @@ Sep. 2017 & Conflict Management Foundations, Kimberly Sullivan, \ac{UTexas}\\
 
 \begin{cvsection}{Sports}
 1991 -- 2009 & Basketball \\
-April 2006   & Finalist of the \dynhref{www.fortismarathonrotterdam.nl/}{26th International Fortis Marathon of Rotterdam}\\
-September 2016 - present & Sailing\\
+Apr. 2006   & Finalist of the \dynhref{www.fortismarathonrotterdam.nl/}{26th International Fortis Marathon of Rotterdam}\\
+Spe. 2016 -- present & Sailing\\
 \end{cvsection}
 
 \begin{cvsection}{Other Activities}
@@ -444,7 +480,7 @@ September 2016 - present & Sailing\\
 \input{references}
 
 \vfill
-The \dynhref{jgte.github.io/cv/cv_jgte.pdf}{PDF} and \dynhref{jgte.github.io/cv/cv_jgte_print.pdf}{print-ready} versions this document are available on-line.
+The \dynhref{jgte.github.io/cv/cv_jgte_print.pdf}{print-ready} versions this document are available on-line.
 
 \label{endpage}
 \end{document}

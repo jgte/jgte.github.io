@@ -93,6 +93,19 @@ clean:
 	@for j in summary publications affiliation $(MAINTEXFILE) $(MAINTEXFILE)_print $(PUBLTEXFILE) $(SUMMTEXFILE); do for i in aux dvi log ps pdf toc fdb_latexmk flsm blg bbl bcf out run.xml synctex.gz 4ct 4tc css fls idv lg md tmp xref; do rm -fv $$j.$$i; done; done
 	@rm -fv *-blx.bbl *-blx.bib *-blx.blg *.log *.aux
 
+
+
+#sudo tlmgr install tex4ht
+html:
+	sed 's/\input{cvsection}/\input{cvsection_html}/' $(MAINTEXFILE).tex > $(MAINTEXFILE)_html.tex
+	$(PDFLATEX) $(MAINTEXFILE)_html
+	for j in 1 2 3 4 5 6; do $(BIB) $(MAINTEXFILE)_html$$j-blx; done
+	$(PDFLATEX) $(MAINTEXFILE)_html
+	$(HTLATEX) $(MAINTEXFILE)_html "xhtml, charset=utf-8" " -cunihtf -utf8"
+	mv -f $(MAINTEXFILE)_html.html index.html
+
+#Obsolete stuff
+
 get_bib:
 	open https://scholar.google.com/citations?user=k2liFwQAAAAJ
 	wget '$(GOOGLESCHOLARBIBURL)' -O $(GOOGLESCHOLARBIBFILE).new
@@ -127,19 +140,8 @@ parse_bib:
 	tr '´' "'" < "$(CURDIR)/$(MAINTEXFILE).bib" | sponge "$(CURDIR)/$(MAINTEXFILE).bib"
 	tr '`' "'" < "$(CURDIR)/$(MAINTEXFILE).bib" | sponge "$(CURDIR)/$(MAINTEXFILE).bib"
 
-#Obsolete stuff
 
 
-
-
-#sudo tlmgr install tex4ht
-html:
-	sed 's/\input{cvsection}/\input{cvsection_html}/' $(MAINTEXFILE).tex > $(MAINTEXFILE)_html.tex
-	$(PDFLATEX) $(MAINTEXFILE)_html
-	for j in 1 2 3 4 5 6; do $(BIB) $(MAINTEXFILE)_html$$j-blx; done
-	$(PDFLATEX) $(MAINTEXFILE)_html
-	$(HTLATEX) $(MAINTEXFILE)_html "xhtml, charset=utf-8" " -cunihtf -utf8"
-	mv -f $(MAINTEXFILE)_html.html index.html
 
 
 
