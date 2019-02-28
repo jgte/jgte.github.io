@@ -56,6 +56,13 @@
 % \toggletrue{summary}
 \newcommand{\summarycv}[2]{\iftoggle{summary}{#1}{#2}}
 
+% ------ include list of publications -------------------------------
+
+\newtoggle{listofpubs}
+\togglefalse{listofpubs}
+% \toggletrue{listofpubs}
+\newcommand{\publistcv}[2]{\iftoggle{listofpubs}{#1}{#2}}
+
 % ------ Customizations --------------------------------------------------------
 
 % % Customize page headers
@@ -173,6 +180,7 @@
       \item \ac{GRACE} mission-complete reprocessing;
       \item Time-varying gravity fields estimated from Kinematic Orbits;
       \item In-house software development in Matlab and Ruby.
+      \item MSc student supervision and mentoring.
     \end{ittib}
   \end{itti}\\
 
@@ -201,7 +209,7 @@
     \begin{ittib}
       \item Calibration of the accelerometers on-board the Swarm satellites;
       \item Improvements in the modelling of non-conservative forces acting on satellites;
-      \item Exploiting \acf{DSP} techniques to merge the measurement of non-gravitational accelerations from different sources: \ac{GPS}-driven and accelerometer observations;
+      \item Exploiting \acf{DSP} techniques to merge the measurement of non-gravitational accelerations from different sources: \ac{GPS}-driven and accelerometer non-gravitational observations;
       \item Time-varying gravity fields estimated from Kinematic Orbits;
       \item Research project: Assessment of Satellite Constellations for Monitoring the Variations in Earth's Gravity Field;
       \item Research project: GOCE+ Theme3: Air density and wind retrieval using \acf{GOCE} data;
@@ -330,7 +338,7 @@
   &
   \begin{itti}
     \item Tutor for the Test, Analysis \& Simulation project, \ac{TUD}
-    \item Undergraduate practical project on data analysis and scientific writing
+    \item Undergraduate practical project on data analysis and scientific writing, \ac{TUD}
   \end{itti}\\
 
   \begin{tabular}{c}
@@ -346,6 +354,13 @@
 \end{cvsection}
 
 \begin{cvsection}{Research Supervision}
+
+  2019
+  &
+  \begin{itti}
+    \item \textbf{Co-supervisor}, visiting \ac{TUD} student, \ac{CSR}
+    \item MSc thesis
+  \end{itti}\\
 
   2016
   &
@@ -389,11 +404,12 @@
 Communication: & Numerous presentations of research results
   \begin{ittib}
     \item 8 oral
-    \item 7 poster
+    \item 8 poster
   \end{ittib}\\
 
 Teaching: & \vspace{-1.5ex}
   \begin{ittib}
+    \item MSc thesis supervision
     \item Student supervision in the context of individual and group assignments
     \item Introductory lectures to the practical projects
   \end{ittib}\\
@@ -411,7 +427,7 @@ Theoretical: & \vspace{-1.5ex}
 
 
 \procv{}{
-Articles review: & Reviewed 13 scientific articles in 9 journals, cf. \dynhref{publons.com/a/782170/}{Publons}\\
+Articles review: & Reviewed 16 scientific articles in 10 journals, cf. \dynhref{publons.com/a/782170/}{Publons}\\
 }
 
 Computational: & \vspace{-1.5ex}
@@ -515,7 +531,7 @@ Collaboration with \ac{TUD} on the \dynhref{doptrack.tudelft.nl}{DopTrack projec
 
 % % -------- Publications ----------------------------------------------------
 
-\procv{}{\input{publications}}
+\procv{}{\publistcv{\input{publications}}{}}
 
 % % ------- Languages ------------------------------------------------------
 
@@ -559,12 +575,12 @@ Sep. 2015 & Scientific Writing, Sören Johnson, \ac{TUD}\\
 
 \begin{cvsection}{Sports}
 1991 -- 2009 & Basketball \\
-Apr. 2006   & Finalist of the \dynhref{www.fortismarathonrotterdam.nl/}{26th International Fortis Marathon of Rotterdam}\\
+Apr. 2006   & Finalist of the \dynhref{nl.wikipedia.org/wiki/Marathon_Rotterdam_2006}{26th International Fortis Marathon of Rotterdam}\\
 Sep. 2016 -- present & Sailing\\
 \end{cvsection}
 
 \begin{cvsection}{Other Activities}
-1991 -- 2001 & Scout at the 92$^{nd}$ Scout-group of the \dynhref{www.aep.pt}{Association of Portuguese Escoteiros}\\
+1991 -- 2001 & Scout at the 92$^{nd}$ Scout-group of the \dynhref{www.facebook.com/escoteirosdeportugal/}{Association of Portuguese Escoteiros}\\
 1993 -- present & Radio Amateur, call sign CT3IU, class B\\
 \procv{1996 -- present & Drivers Licence \\}{}
 \end{cvsection}
