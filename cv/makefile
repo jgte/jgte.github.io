@@ -53,7 +53,7 @@ ROOT_DIR:=$(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
 
 .PHONY: all pdf ps dvi bib clean view bibparse
 
-all: clean pdf print publ summ
+all: clean pdf publ summ
 
 publ:
 	$(PDFLATEX) $(PUBLTEXFILE)

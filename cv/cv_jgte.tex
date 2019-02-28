@@ -53,14 +53,14 @@
 
 \newtoggle{summary}
 \togglefalse{summary}
-% \toggletrue{summary}
+% \toggletrue{summary} #NOTICE: this break make (but works with sublime command-B)
 \newcommand{\summarycv}[2]{\iftoggle{summary}{#1}{#2}}
 
 % ------ include list of publications -------------------------------
 
 \newtoggle{listofpubs}
-\togglefalse{listofpubs}
-% \toggletrue{listofpubs}
+% \togglefalse{listofpubs}
+\toggletrue{listofpubs}
 \newcommand{\publistcv}[2]{\iftoggle{listofpubs}{#1}{#2}}
 
 % ------ Customizations --------------------------------------------------------
