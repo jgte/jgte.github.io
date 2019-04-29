@@ -1,21 +1,68 @@
-% !TEX root = ./cv_jgte.tex
+% !TEX root = ./jgte_cv.tex
 
-\newcommand{\cvheadingi}[1]{
+% ----------------------------------
+
+\usepackage{titlesec}% Used to customize the \section command
+\titleformat{\section}
+[hang]      % shape
+{\sf\bf\normalsize} % format
+{}          % label
+{0pt}       % sep
+{\uppercase}          % before-code
+\titlespacing{\section}{0pt}{1ex plus 0.5ex minus 0.5ex}{1ex plus 0.5ex minus 0.5ex} % Spacing around sections
+\titleformat{\subsection}
+[hang]      % shape
+{\sf\bf\normalsize} % format
+{}          % label
+{0pt}       % sep
+{}          % before-code
+\titlespacing{\subsection}{0pt}{1ex plus 0.5ex minus 0.5ex}{1ex plus 0.5ex minus 0.5ex} % Spacing around sections
+
+\renewcommand{\bottomtitlespace}{1cm}
+
+% ----------------------------------
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\it{\name}}
+\lhead{}
+\rfoot{\thepage~of \pageref*{endpage}}
+\thispagestyle{empty}
+
+% ----------------------------------
+
+\newcommand{\cvheading}[1]{
   \section*{#1}
   % \setlength{\parindent}{3ex}
 }
 
-%this version of the command above adds a space after the heading, can be used by itself 
-\newcommand{\cvheading}[1]{
-  \cvheadingi{#1}\vspace{1em}
+%this version of the command above adds a space after the heading, can be used by itself (see publications)
+\newcommand{\cvsubheading}[1]{
+  \subsection*{#1}
+  % \setlength{\parindent}{3ex}
 }
 
 \newenvironment{cvsection}[1]{
   % \setlength{\floatsep}{0pt}
   % \setlength{\textfloatsep}{0pt}
   % \setlength{\intextsep}{0pt}
-  \cvheadingi{#1}
-  \renewcommand{\arraystretch}{1.2}
+  \cvheading{#1}
+  \renewcommand{\arraystretch}{1.5}
+  % https://tex.stackexchange.com/questions/110266/set-longtable-to-fit-the-page-width
+  \begin{longtabu} to \textwidth {lX}
+}{
+  \end{longtabu}
+  % \vspace{-1.5ex}
+  \raggedbottom
+}
+
+\newenvironment{cvsectionlist}[1]{
+  % \setlength{\floatsep}{0pt}
+  % \setlength{\textfloatsep}{0pt}
+  % \setlength{\intextsep}{0pt}
+  \cvheading{#1}
+  \renewcommand{\arraystretch}{0}
   % https://tex.stackexchange.com/questions/110266/set-longtable-to-fit-the-page-width
   \begin{longtabu} to \textwidth {lX}
 }{
@@ -26,7 +73,7 @@
 
 \newenvironment{cvtext}[1]{
   % \vspace{0.15in}
-  \cvheadingi{#1}
+  \cvheading{#1}
   \vspace{1em}
   \begin{justify}
   % \vspace{1.5ex}
@@ -42,10 +89,26 @@
 
 \flushbottom
 
+% ----------------------------------
+
+\newcommand\cvsectionline[3]{
+  #1 -- #2
+  &
+  #3\\
+}
+
+\newcommand\cvsectionlineone[2]{
+  \begin{tabular}{l}
+  #1 \\
+  \end{tabular} 
+  &
+  #2\\
+}
+
 % ------ tight lists --------------------------------------------------------
 
 \newlist{itemizetight}{itemize}{2}
-\setlist[itemizetight]{topsep=0pt,itemsep=1pt,parsep=0pt,partopsep=0pt,leftmargin=0pt,label=}
+\setlist[itemizetight]{nosep,leftmargin=0pt,label=}
 
 \newenvironment{itti}{
   \vspace*{-1.5ex}
@@ -53,6 +116,14 @@
 }{
   \end{itemizetight}
 }
+
+\newenvironment{ittj}{
+  \begin{itemizetight}
+}{
+  \end{itemizetight}
+  \vspace*{1ex}
+}
+
 
 \newenvironment{ittib}{
   \begin{itemizetight}[label=$\bullet$,leftmargin=4ex]

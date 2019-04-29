@@ -1,19 +1,19 @@
-% !TEX root = ./cv_jgte.tex
+% !TEX root = ./jgte_cv.tex
 
 % \usepackage[sorting=ydnt,backend=biber,style=authoryear,maxnames=99]{biblatex}
-% \addbibresource{cv_jgte.bib}
+% \addbibresource{jgte_cv.bib}
 
-\usepackage[style=verbose,backend=bibtex,isbn=false,sorting=none,maxbibnames=99,sorting=ydnt,style=authoryear]{biblatex}
+\usepackage[style=verbose,backend=bibtex,isbn=false,maxbibnames=99,sorting=ydnt,maxbibnames=100,style=authoryear]{biblatex}
 \addbibresource{library.bib}
 % \AtEveryCitekey{\clearfield{title}}
-\AtEveryCitekey{%
+\AtEveryBibitem{%
   \ifentrytype{article}{%
   }{%
     \clearfield{url}%
     \clearfield{urldate}%
   }%
 }
-\AtEveryCitekey{%
+\AtEveryBibitem{%
   \ifentrytype{inproceedings}{%
   }{%
     \clearfield{url}%
@@ -21,16 +21,26 @@
   }%
 }
 
-% ------ enumerate list of references -------------------------------
+% ------ remove year from bib entries -------------------------------
+
+\AtEveryBibitem{\clearfield{year}}
+
+\usepackage{xpatch}
+\xpatchbibmacro{date+extradate}{%
+  \printtext[parens]%
+}{%
+  \setunit*{\addcomma\space}%
+  \printtext%
+}{}{} 
+
+% ------ add year as label to list of references -------------------------------
 
 \defbibenvironment{bibliography}
-  {\enumerate
-     {}
-     {\setlength{\leftmargin}{\bibhang}%
-      \setlength{\itemindent}{-\leftmargin}%
-      \setlength{\itemsep}{\bibitemsep}%
-      \setlength{\parsep}{\bibparsep}}}
-  {\endenumerate}
+  {\list
+     {\printfield{year}}
+     {}%
+  }
+  {\endlist}
   {\item}
 
 % ------ remove headings -------------------------------

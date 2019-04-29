@@ -1,0 +1,31 @@
+% !TEX root = ./jgte_resume.tex
+
+\input{utils}
+
+% ----------------------------------
+
+\titleformat{\section}
+[hang]   % shape
+{\sf\Large} % format
+{}          % label
+{0pt}       % sep
+{}          % before-code
+[           % after-code
+\vspace{-1em}%
+\rule{\textwidth}{0.3pt}
+\vspace{-2em}
+]
+
+\renewcommand{\bottomtitlespace}{1cm}
+
+% ----------------------------------
+
+\renewcommand\cvsectionline[3]{
+  \begin{tabular}{l}
+  #1 -- \\
+  #2 \\ 
+  \end{tabular} 
+  &
+  #3\\
+}
+

@@ -1,0 +1,75 @@
+% !TEX root = ./jgte_publications.tex
+
+
+\vspace{1em}
+\cvheading{Publications}
+\vspace{1em}
+
+% --------------------------------------------------------
+
+\cvsubheading{Refereed Journal publications}
+\begin{refsection}
+\nocite{
+DeTeixeiradaEncarnacao2018,
+TeixeiraEncarnacao2016,
+Bezdek2016,
+Siemes2016,
+VandenIJssel2015,
+HashemiFarahani2013,
+Olsen2013a,
+Visser2013,
+Ditmar2012,
+Gunter2011,
+Resendes2007,
+}
+\togglefalse{bbx:url}
+\printbibliography
+\end{refsection}
+
+%--------------------------------------
+
+\cvsubheading{Peer Reviewed Conference Proceedings}
+\begin{refsection}
+\renewbibmacro*{doi+eprint+url}{%
+  \iftoggle{bbx:doi}
+    {\printfield{doi}}
+    {}%
+  \newunit\newblock
+  \iftoggle{bbx:eprint}
+    {\usebibmacro{eprint}}
+    {}%
+  \newunit\newblock
+  \iftoggle{bbx:url}
+    {\iffieldundef{doi}{\usebibmacro{url+urldate}}{}}
+    {}%
+}
+\nocite{
+Gunter2012a,
+Gunter2010,
+Gunter2009,
+Encarnacao2008a,
+Encarnacao2008,
+Resendes2006,
+Resendes2005,
+}
+\printbibliography
+\end{refsection}
+
+
+%--------------------------------------
+
+\cvsubheading{Other Publications}
+\begin{refsection}
+\nocite{
+Iran-Pour2015,
+Anselmi2010}
+\printbibliography
+\end{refsection}
+
+%--------------------------------------
+
+
+
+
+
+

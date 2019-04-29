@@ -1,9 +1,8 @@
-\documentclass[a4paper,9pt]{article}
+\documentclass[a4paper,10pt]{article}
 
 \input{packages}
 \input{bibsetup}
-\input{name}
-\input{utils}
+\input{utils_resume}
 
 % ------ dynamic web references -------------------------------
 
@@ -63,6 +62,10 @@
 \toggletrue{listofpubs}
 \newcommand{\publistcv}[2]{\iftoggle{listofpubs}{#1}{#2}}
 
+% ------ get my details --------------------------------------------------------
+
+\input{details}
+
 % ------ Customizations --------------------------------------------------------
 
 % % Customize page headers
@@ -76,10 +79,15 @@
 
 \begin{document}
 
-\centerline
-{\huge \rm \textbf \name}
+\begin{centering}
+{\Large \rm \textbf \name}
 
-\procv{}{\input{affiliation}}
+\vspace*{1.5ex}
+{\Large Resume}
+
+\vspace*{1ex}
+\procv{}{\vspace{1ex}\large\jobtitle, \affiliation}
+\end{centering}
 
 % ------- Personal data ---------------------------------------------------
 
@@ -91,16 +99,13 @@
 
 \homecv{%
   {\bf Marital Status:} & Single \\
-  {\bf Address:}   & 4303 Duval Street 302
-                     78751, Austin Texas, USA\\
-  {\bf Telephone:} & +1 512 765 1351\\
-  {\bf Email:}     & \href{mailto:j_encarnacao@yahoo.com}{j\_encarnacao@yahoo.com}\\
+  {\bf Address:}   & \addresshome\\
+  {\bf Telephone:} & \telephonehome\\
+  {\bf Email:}     & \emailhome\\
 }{%
-  {\bf Address:}   & 3925 W Braker Lane\newline
-                     Ste 200 - WPR 2.9076\newline
-                     Austin TX 78759-5316, \ac{USA}\\
-  {\bf Telephone:} & +1 (512) 232-6897\\
-  {\bf Email:}     & \href{mailto:teixeira@csr.utexas.edu}{teixeira@csr.utexas.edu}\\
+  {\bf Address:}   & \addresswork\\
+  {\bf Telephone:} & \telephonework\\
+  {\bf Email:}     & \emailwork\\
 }%
 \academicwebcv{%
   {\bf Web:}       & \dynhref{directory.utexas.edu/index.php?q=joao+encarnacao}{University of Texas},
@@ -122,7 +127,7 @@
 
 % ------- Summary ---------------------------------------------------
 
-\summarycv{\input{summary}}{}
+\summarycv{\input{section_summary}}{}
 
 % ------- Education ---------------------------------------------------
 
@@ -130,7 +135,7 @@
 
 2015 &
   \begin{itti}
-    \item \textbf{PhD in Space Geodesy}
+    \item \textbf{Ph.D. in Space Geodesy}
     \item \acf{GRS}, \acf{TUD}
     \item Dissertation: \dynhref{tinyurl.com/SatGrav}{\emph{Next-generation satellite gravimetry for measuring mass transport in the Earth system}}
     %TODO: fix these URLs
@@ -141,7 +146,7 @@
 
 2004 &
   \begin{itti}
-    \item \textbf{Master of Sciences in Aerospace Engineering}
+    \item \textbf{M.Sc. in Aerospace Engineering}
     \item \acf{AS}, \ac{TUD}
     \item Final Thesis: \emph{Numerical Simulation of Launch Vehicles}
     \item Supervisor: \dynhref{www.tudelft.nl/en/staff/b.a.c.ambrosius}{Prof. Ir. B.A.C. Ambrosius}
@@ -149,7 +154,7 @@
 
 2000 &
   \begin{itti}
-    \item \textbf{\acf{Lic.} in Aerospace Engineering}
+    \item \textbf{\acs{Lic.} in Aerospace Engineering}
     \item \acf{IST}, \acf{UTL}
     \item 5$^{\rm th}$ year concluded at \ac{TUD}, through the \dynhref{www.erasmusprogramme.com}{ERASMUS program}
     \item Report: \emph{Optimum Aerodynamic Shape for a High Altitude Long Endurance Aerostatic Platform}
@@ -164,23 +169,6 @@
 
 
 % % -------- Work experience --------------------------------------------
-
-\newcommand\cvsectionline[3]{
-  \begin{tabular}{l}
-  #1 -- \\
-  #2 \\ 
-  \end{tabular} 
-  &
-  #3\\
-}
-
-\newcommand\cvsectionlineone[2]{
-  \begin{tabular}{l}
-  #1 \\
-  \end{tabular} 
-  &
-  #2\\
-}
 
 
 \begin{cvsection}{Academic and Work Experience}
@@ -297,80 +285,21 @@
 
 \end{cvsection}
 
+% % ------- Awards ------------------------------------------------------
+
+\input{section_awards}
+
 % % ------- Funding ------------------------------------------------------
 
-\begin{cvsection}{Grants and Awards}
+\input{section_grants}
 
-  \cvsectionline{Sep. 2017}{Dec. 2018}{
-    \begin{itti}
-      \item \emph{Multi-approach gravity field models from Swarm GPS data}
-      \begin{ittib}
-        \item European Space Agency (Noordwijk, Netherlands)
-        \item 100k \euro
-        \item Contract: SD-ITT-1.1 (part of contract 4000109587/13/I-NB)
-      \end{ittib}
-    \end{itti}
-  }
+% % ------- Invited talks ------------------------------------------------------
 
-  \cvsectionlineone{2017}{
-    \begin{itti}
-      \item H2020 Marie Sk\l{}odowska-Curie Individual Fellowship \dynhref{ec.europa.eu/research/soe/index.cfm?pg=what}{Seal of Excellent} to the proposal on \dynhref{jgte.github.io/permalinks/H2020_MSCA_IF_2017_Seal_of_Excellence-jgte.pdf}{\emph{Direct Gravimetric data assimilation into Geophysical models}}
-    \end{itti}
-  }
-
-\end{cvsection}
-
-
+\input{section_invited_talks}
 
 % % ------- Teaching ------------------------------------------------------
 
-\teachingcv{
-\begin{cvsection}{Teaching Experience}
-
-  \cvsectionline{2013}{2016}{
-    \begin{itti}
-      \item Tutor for the Test, Analysis \& Simulation project, \ac{TUD}
-      \item Undergraduate practical project on data analysis and scientific writing, \ac{TUD}
-    \end{itti}
-  }
-
-  \cvsectionline{2007}{2011}{
-    \begin{itti}
-      \item Tutor for the Design Synthesis Exercise, \ac{TUD}
-      \item Undergraduate final project
-    \end{itti}
-  }
-
-\end{cvsection}
-
-\begin{cvsection}{Research Supervision}
-
-  \cvsectionlineone{2019}{
-    \begin{itti}
-      \item \textbf{Co-supervisor}, visiting \ac{TUD} student, \ac{CSR}
-      \item MSc thesis
-    \end{itti}
-  }
-
-  \cvsectionlineone{2016}{
-    \begin{itti}
-      \item \textbf{Co-supervisor}, one external student from the Aeronautical Engineering at Inholland University of Applied Sciences, \ac{TUD}
-      \item Bachelor of Engineering final project
-    \end{itti}
-  }
-
-  \cvsectionline{2007}{2011}{
-    \begin{itti}
-      \item \textbf{Co-supervisor}, Design Synthesis Exercise, \ac{TUD}
-      \item Undergraduate final projects (yearly), groups of 7 - 9 students
-    \end{itti}
-  }
-
-\end{cvsection}
-
-}{}
-
-% \iftoggle{expliciturl}{\pagebreak}{}
+\teachingcv{\input{section_teaching}}{}
 
 
 \procv{% % ------- Skills ------------------------------------------------------
@@ -450,9 +379,9 @@ Programming: & \vspace{-2ex}\hspace*{-2ex}
 
 \begin{cvsection}{Collaborations}
 
-\cvsectionline{2017}{present}{
-Collaboration with Dr. Guillaume Ramillien from \acf{CNRS} and Dr. Ale\v{s} Bezd\v{e}k the \acf{ASU}  of the \acf{AVCR} to {\bf drive surface mass variations directly from \enquote{reduced} gravimetric data } (i.e. observations \enquote{cleaned} of non-gravitational and trivial gravitational effects).
-}
+% \cvsectionline{2017}{present}{
+% Collaboration with Dr. Guillaume Ramillien from \acf{CNRS} and Dr. Ale\v{s} Bezd\v{e}k the \acf{ASU}  of the \acf{AVCR} to {\bf drive surface mass variations directly from \enquote{reduced} gravimetric data } (i.e. observations \enquote{cleaned} of non-gravitational and trivial gravitational effects).
+% }
 
 % 2017 -- present &
 % Collaboration with Dr. Noble Hatten and Dr. Dae Lee of the \ac{CSR}. \ac{UTexas} for the {\bf development of a CubeSat architecture that replicates the gravimetric capabilities of the \ac{GRACE} satellites}.\\
@@ -477,76 +406,29 @@ Collaboration with \ac{TUD} on the \dynhref{doptrack.tudelft.nl}{DopTrack projec
 \end{cvsection}
 }
 
-\procv{}{ % % -------- Research Projects ----------------------------------------------------
+% % -------- Research Projects ----------------------------------------------------
 
-\begin{cvsection}{Research Projects}
-2016 -- 2019  & \ac{GRACE} data processing at \ac{CSR} (\ac{NASA} contract NNL14AA00C)\\
-2017 -- 2018  & Multi-approach gravity field models from Swarm \ac{GPS} data (\ac{DISC} contract SD-ITT-1.1, part of \ac{ESA} contract 4000109587/13/I-NB)\\
-2013 -- 2015  & Assessment of Satellite Constellations for Monitoring the Variations in Earth's Gravity Field (\ac{ESA} contract 4000108663/13/NL/MV) \\
-2013          & GOCE+ Theme3: Air density and wind retrieval using \ac{GOCE} data (\ac{ESA} contract 400010284/11/NL/EL)\\
-2011 -- 2016  & Development of the Swarm Level 2 Algorithms and Associated Level 2 Processing Facility (\ac{ESA} Contract 4000102140/10/NL/JA)\\
-2010          & Assessment of a Next Generation Gravity Mission for Monitoring the Variations of Earth's Gravity Field (\ac{ESTEC} contract 22643/09/NL/AF)\\
-2008          & Monitoring and Modelling Individual Sources of Mass Distribution and Transport in the Earth System by Means of Satellites (\ac{ESA} contract 20403) \\
-\end{cvsection}
-}
+\procv{}{\input{section_research}}
 
+% % ------- Review ------------------------------------------------------
 
-\procv{}{ % % ------- Review ------------------------------------------------------
-
-\begin{cvtext}{Peer-reviewing Experience}
-Reviewer for scientific papers submitted to 
-\emph{Advances in Space Research}, 
-\emph{Annales Geophysicae}, 
-\emph{Journal of Geodesy}, 
-\emph{Communications in Nonlinear Science and Numerical Simulation}, 
-\emph{IEEE Geoscience and Remote Sensing Letters}, 
-\emph{International Association of Geodesy Symposia}, 
-\emph{Journal of Geophysical Research: Solid Earth}, 
-\emph{Remote Sensing}, 
-\emph{Sensors} and 
-\emph{Solid Earth},
-cf. \dynhref{publons.com/a/782170/}{Publons}\\
-\end{cvtext}
-}
+\procv{}{\input{section_reviews}}
 
 % % ------- Personal development ------------------------------------------------------
 
-\begin{cvsection}{Personal Development}
+\input{section_training}
 
-Sep. 2017 & Dealing with Difficult People, Jeff Stellmach, \ac{UTexas}\\
+% % ------- Courses prepared to teach ------------------------------------------------------
 
-Sep. 2017 & Conflict Management Foundations, Kimberly Sullivan, \ac{UTexas}\\
-
-Jul. 2017 & Leading without formal authority, Emil Kresl, \ac{UTexas}\\
-
-Jul. 2017 & Meeting effectiveness, Emil Kresl, \ac{UTexas}\\
-
-Sep. 2015 & Scientific Writing, Sören Johnson, \ac{TUD}\\
-
-\end{cvsection}
+\teachingcv{\input{section_courses}}
 
 % % ------- Languages ------------------------------------------------------
 
-\begin{cvtext}{Languages}
-\begin{minipage}{\textwidth}
-\begin{tabular}{
-l
->{\centering\arraybackslash}m{3cm}
->{\centering\arraybackslash}m{3cm}
->{\centering\arraybackslash}m{3cm}}
-   & Speaking & Reading & Writing \\
-\hline
-Portuguese & \multicolumn{3}{c}{mother tongue}  \\
-English\footnote{holding the \dynhref{www.cambridgeenglish.org/exams/proficiency/index.aspx}{Certificate of Proficiency in English}}    & excellent & excellent & excellent \\
-Spanish    & good & good & fair \\
-Italian    & good & good & fair \\
-Dutch      & fair & fair & limited \\
-French     & fair & fair & limited \\
-\hline
-\end{tabular}
-\end{minipage}
-\end{cvtext}
+\input{section_languages}
 
+% % -------- Professional Memberships --------------------------------------------
+
+\procv{}{\input{section_memberships}}
 
 \procv{% % -------- Other Activities --------------------------------------------
 
@@ -565,16 +447,14 @@ Sep. 2016 -- present & Sailing\\
 
 % % -------- Publications ----------------------------------------------------
 
-\procv{}{\publistcv{\input{publications}}{}}
+\procv{}{\publistcv{\input{section_publications}\input{section_conferences}}{}}
 
 % % -------- References --------------------------------------------
 
 % \pagebreak
 
-\input{references}
+\input{section_references}
 
-% \vfill
-% The \dynhref{jgte.github.io/cv/cv_jgte_print.pdf}{print-ready} versions this document are available on-line.
 
 \label{endpage}
 \end{document}

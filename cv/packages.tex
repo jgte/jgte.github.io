@@ -1,4 +1,4 @@
-% !TEX root = ./cv_jgte.tex
+% !TEX root = ./jgte_cv.tex
 
 % sudo tlmgr install carlito fontaxes footmisc tabu varwidth needspace
 
@@ -15,7 +15,7 @@
 \usepackage{eurosym}
 % \usepackage{lastpage}
 % \usepackage{xspace}
-\usepackage[a4paper,left=30mm,right=30mm,top=30mm,bottom=30mm,headsep=5mm,footskip=10mm]{geometry}
+\usepackage[a4paper,left=1in,right=1in,top=1in,bottom=1in,headsep=1em,footskip=1em]{geometry}
 % \addtolength{\oddsidemargin}{-1.5cm}
 % \addtolength{\evensidemargin}{-1.5cm}
 % \addtolength{\textwidth}{3cm}
@@ -39,33 +39,6 @@
 \usepackage{longtable}
 \usepackage{tabu}
 \usepackage{needspace}
-
-% ----------------------------------
-
-\usepackage{titlesec}% Used to customize the \section command
-\titleformat{\section}
-[hang]   % shape
-{\sf\Large} % format
-{}          % label
-{0pt}       % sep
-{}          % before-code
-[           % after-code
-\vspace{-1em}%
-\rule{\textwidth}{0.3pt}
-\vspace{-2em}
-]
-\titlespacing{\section}{0pt}{1em plus 0.5em minus 0.5em}{1ex plus 0.5ex minus 0.5pt} % Spacing around sections
-\renewcommand{\bottomtitlespace}{3cm}
-
-% ----------------------------------
-
-\usepackage{fancyhdr}
-\pagestyle{fancy}
-\fancyhf{}
-\rhead{\it{\name}}
-\lhead{}
-\rfoot{\thepage~of \pageref*{endpage}}
-\thispagestyle{empty}
 
 % ----------------------------------
 

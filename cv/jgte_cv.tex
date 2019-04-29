@@ -1,0 +1,207 @@
+\documentclass[a4paper,12pt]{article}
+
+\input{packages}
+\input{bibsetup}
+\input{utils}
+
+% ------ dynamic web references -------------------------------
+
+%this needs to come before the acronyms
+\newtoggle{expliciturl}
+\togglefalse{expliciturl}
+\newcommand{\dynhref}[2]{%
+  \iftoggle{expliciturl}{%
+    #2 \footnote{\href{http://#1}{\detokenize{#1}}}%
+  }{%
+    \href{http://#1}{#2}%
+  }%
+}
+
+%acronym packaged loaded inside
+\input{acronyms}
+
+% ------ home or work address -------------------------------
+
+\newtoggle{homecontact}
+\togglefalse{homecontact}
+% \toggletrue{homecontact}
+\newcommand{\homecv}[2]{\iftoggle{homecontact}{#1}{#2}}
+
+% ------ academic links -------------------------------
+
+\newtoggle{academicweb}
+% \togglefalse{academicweb}
+\toggletrue{academicweb}
+\newcommand{\academicwebcv}[2]{\iftoggle{academicweb}{#1}{#2}}
+
+% ------ professional cv, false for academic cv -------------------------------
+
+\newtoggle{professionalcv}
+\togglefalse{professionalcv}
+% \toggletrue{professionalcv}
+\newcommand{\procv}[2]{\iftoggle{professionalcv}{#1}{#2}}
+
+% ------ teaching experience -------------------------------
+
+\newtoggle{teaching}
+% \togglefalse{teaching}
+\toggletrue{teaching}
+\newcommand{\teachingcv}[2]{\iftoggle{teaching}{#1}{#2}}
+
+% ------ summary text -------------------------------
+
+\newtoggle{summary}
+\togglefalse{summary}
+% \toggletrue{summary} #NOTICE: this break make (but works with sublime command-B)
+\newcommand{\summarycv}[2]{\iftoggle{summary}{#1}{#2}}
+
+% ------ include list of publications -------------------------------
+
+\newtoggle{listofpubs}
+% \togglefalse{listofpubs}
+\toggletrue{listofpubs}
+\newcommand{\publistcv}[2]{\iftoggle{listofpubs}{#1}{#2}}
+
+% ------ get my details --------------------------------------------------------
+
+\input{details}
+
+% ------ Customizations --------------------------------------------------------
+
+% % Customize page headers
+% \pagestyle{myheadings}
+% \markright{\it{\name}}
+
+% Don't indent paragraphs.
+\setlength\parindent{0pt}
+
+% ------ Start --------------------------------------------------------
+
+\begin{document}
+
+\begin{centering}
+{\Large \rm \textbf \name}
+
+\vspace*{1ex}
+Curriculum Vitae
+\begin{longtabu} to \textwidth {XXX}
+\addresswork
+&
+&
+\addresshome
+\\
+\end{longtabu}
+\end{centering}
+\vspace{3pt}
+
+% ------- Education ---------------------------------------------------
+
+\begin{cvsectionlist}{Education}
+
+2015 &
+  \begin{itti}
+    \item \textbf{Ph.D. in Space Geodesy}
+    \item \acf{GRS}, \acf{TUD}
+    \item \dynhref{tinyurl.com/SatGrav}{\emph{Next-generation satellite gravimetry for measuring mass transport in the Earth system}}
+    \item Committee: %
+    \dynhref{www.tudelft.nl/en/ceg/over-faculteit/departments/geoscience-remote-sensing/staff/scientific-staff/profdr-ing-habil-r-roland-klees/}{Roland Klees} (Promotor), %
+    \dynhref{www.tudelft.nl/citg/over-faculteit/afdelingen/geoscience-remote-sensing/staff/scientific-staff/dr-pg-pavel-ditmar/}{Pavel Ditmar} (Supervisor), %
+    \dynhref{www.tudelft.nl/en/ceg/about-faculty/departments/geoscience-remote-sensing/staff/scientific-staff/profdr-lla-bert-vermeersen/}{Bert Vermeersen}, %
+    \dynhref{www.ae.utexas.edu/faculty/faculty-directory/tapley}{Byron Tapley}, %
+    \dynhref{www.iau.org/administration/membership/individual/15143/}{A. Jäggi}, %
+    \dynhref{www.gfz-potsdam.de/staff/frank-flechtner/}{Frank Flechtner}, %
+    \dynhref{www.tudelft.nl/citg/over-faculteit/afdelingen/geoscience-remote-sensing/staff/scientific-staff/profdrir-rf-ramon-hanssen/}{Ramon Hanssen}
+  \end{itti}\\
+
+2004 &
+  \begin{itti}
+    \item \textbf{M.Sc. in Aerospace Engineering}
+    \item \acf{AS}, \ac{TUD}
+    \item \emph{Numerical Simulation of Launch Vehicles}
+    \item Supervisor: \dynhref{www.tudelft.nl/en/staff/b.a.c.ambrosius}{Boudewijn Ambrosius}
+  \end{itti}\\
+
+2000 &
+  \begin{itti}
+    \item \textbf{\acs{Lic.} in Aerospace Engineering}
+    \item \acf{IST}, \acf{UTL}
+    \item \emph{Optimum Aerodynamic Shape for a High Altitude Long Endurance Aerostatic Platform}
+    \item Supervisor: \dynhref{www.tudelft.nl/lr/organisatie/afdelingen/aerodynamics-wind-energy-flight-performance-and-propulsion/flight-performance-and-propulsion/flight-performance/people/}{Theo van Holten} (\acs{TUD}, under the \dynhref{en.wikipedia.org/wiki/Erasmus_Programme}{Erasmus Programme})
+  \end{itti}\\
+
+\end{cvsectionlist}
+
+% \citem{Scholarships}\\
+% Socrates/ERASMUS Scholarship of the European Union (September 1999 -- June
+% 2000)
+
+
+% % -------- Work experience --------------------------------------------
+
+\begin{cvsection}{Professional Experience}
+\cvsectionline{2018}{present}{Research Engineering/Scientist Associate, \acf{CSR}, \acf{UTexas}, \ac{USA}}
+\cvsectionline{2016}{2018   }{Postdoctoral Fellow, \acf{CSR}, \acf{UTexas}, \ac{USA}}
+\cvsectionline{2011}{2016   }{Research Associate, \acl{AS}, \ac{TUD}, the Netherlands}
+\cvsectionline{2007}{2015   }{PhD Candidate, \ac{GRS}, \ac{TUD}, the Netherlands}
+\cvsectionline{2005}{2006   }{Stress Engineer, \dynhref{www.globaltechnics.nl/}{Global Technics}, Leiden, the Netherlands}
+\cvsectionline{2004}{2005   }{Aerospace Engineer, \dynhref{www.delta-utec.com/}{Delta-Utec}, Leiden, the Netherlands}
+\end{cvsection}
+
+
+% % -------- Publications ----------------------------------------------------
+
+\procv{}{\publistcv{\input{section_publications}}{}}
+
+% % ------- Awards ------------------------------------------------------
+
+\input{section_awards}
+
+% % ------- Funding ------------------------------------------------------
+
+\input{section_grants}
+
+% % ------- Invited talks ------------------------------------------------------
+
+\input{section_invited_talks}
+
+% % ------- Conferences ------------------------------------------------------
+
+\input{section_conferences}
+
+% % ------- Teaching ------------------------------------------------------
+
+\teachingcv{\input{section_teaching}}{}
+
+% % -------- Research Projects ----------------------------------------------------
+
+\procv{}{\input{section_research}}
+
+% % ------- Review ------------------------------------------------------
+
+\procv{}{\input{section_reviews}}
+
+% % ------- Personal development ------------------------------------------------------
+
+\input{section_training}
+
+% % ------- Courses prepared to teach ------------------------------------------------------
+
+\teachingcv{\input{section_courses}}
+
+% % ------- Languages ------------------------------------------------------
+
+\input{section_languages}
+
+% % -------- Professional Memberships --------------------------------------------
+
+\procv{}{\input{section_memberships}}
+
+% % -------- References --------------------------------------------
+
+% \pagebreak
+
+\input{section_references}
+
+
+\label{endpage}
+\end{document}

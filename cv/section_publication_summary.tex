@@ -1,0 +1,42 @@
+% !TEX root = ./publication_summary_jgte.tex
+
+\begin{cvtext}{Publication Summary}
+
+In \cite{TeixeiraEncarnacao2016}, the habitability of the Swarm satellites to observe changes on Earth's gravity field is for the first time demonstrated.
+This research was one in cooperation with five international research institutes (
+\acf{IfG} of the \acf{TUG},
+\ac{ASU}  of the \acf{AVCR},
+\acf{AIUB},
+\dynhref{www.lr.tudelft.nl}{Aerospace Faculty} of the \ac{TUD} and
+\acf{SES} of the \acf{OSU}), 
+within the context of a project initiated and lead by me.
+Since publishing this article, I have taken the leading role securing funding from the \ac{ESA}, through the \ac{DISC}, to develop the methodology to best combine the individual gravity field solutions from each research institute and routinely produce monthly models for the foreseeable future. 
+The Swarm gravity field models constitute an independent source of gravimetric data from dedicated mission (\ac{GRACE} and \ac{GRACE-FO}).
+Although their spatial resolution is much lower, the Swarm models are still able to describe monthly variations of Earth's gravity field within a few millimetres geoid height, when compared with \ac{GRACE}.
+This has proven to be particularly beneficial in monitoring mass transport processes during the gap between the periods when \ac{GRACE} and \ac{GRACE-FO} were and are (respectively) collecting data.
+
+My contribution to \cite{Ditmar2012} demonstrates that the influence of temporal aliasing caused by errors in the \ac{AOD} models, needed to remove rapid-changing gravity variations that are impossible for \ac{GRACE} to observe, cannot explain the unexpected low quality of the gravity field models, compared with pre-launch predictions, particularly in what concerns the striping artefacts.
+Additionally, the results of this publication contrast with other similar studies in the sense that it is clear that different gravity field estimation approaches have different sensitivity to different error types.
+In case of our method, the acceleration approach, the in-situ character of the observation equation ensures the effects of temporal aliasing are mitigated, while the integrating nature of the traditional variational equations approach accumulate \ac{AOD} model errors, magnifying their influence.
+For this reason, other studies have identified errors in the \ac{AOD} models are the primary cause for the striping artefacts.
+On the other hand, the effects of orbit errors, particularly in the form of centrifugal accelerations, are critical to the acceleration approach.
+This is because the orbit is taken as observations, while in the variational equations approach the orbits positions are co-estimated with the gravity field model.
+
+My contribution to \cite{Gunter2011} for the first time explores the possibility of using numerous satellites equipped with \ac{GPS} receiver to augment dedicated gravimetric satellite missions.
+We demonstrate that the current accuracy of \ac{GPS} observations is insufficient to provide meaningful improvements, unless a large number of satellites is used (in the order of hundreds).
+However, future and multiple \ac{GNSS} systems should be accurate enough to make it possible to provide enough information to resolve sub-weekly to daily low-degree solutions with sufficient accuracy to observe, for the first time, global atmospheric mass transport processes.
+This would essentially mean that \ac{AOD} models could be replaced with these observations, with the associated benefits of a much more accurate and realistic description of high-frequency mass transport processes, and consequential improvements in the quality of gravimetric monitoring of lower-frequency processes, such as hydrology.
+
+
+\cvheading{Highlighted publications}
+\begin{refsection}
+\nocite{
+TeixeiraEncarnacao2016,
+Ditmar2012,
+Gunter2011,
+}
+\togglefalse{bbx:url}
+\printbibliography
+\end{refsection}
+
+\end{cvtext}
