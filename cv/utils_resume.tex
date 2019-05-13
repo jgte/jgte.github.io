@@ -20,12 +20,18 @@
 
 % ----------------------------------
 
-\renewcommand\cvsectionline[3]{
-  \begin{tabular}{l}
-  #1 -- \\
-  #2 \\ 
-  \end{tabular} 
-  &
-  #3\\
-}
+\renewenvironment{cvtext}[1]{
+  % \vspace{0.15in}
+  \cvheading{#1}
+  \vspace{2em}
+  \begin{justify}
+  % \vspace{1.5ex}
+  % \begin{minipage}{\textwidth}
 
+  % \raggedright
+}{
+  \end{justify}
+  % \end{tabular*}
+  % \end{tabularx}
+  % \end{minipage}
+}

@@ -44,8 +44,8 @@
 % ------ teaching experience -------------------------------
 
 \newtoggle{teaching}
-% \togglefalse{teaching}
-\toggletrue{teaching}
+\togglefalse{teaching}
+% \toggletrue{teaching}
 \newcommand{\teachingcv}[2]{\iftoggle{teaching}{#1}{#2}}
 
 % ------ summary text -------------------------------
@@ -58,9 +58,24 @@
 % ------ include list of publications -------------------------------
 
 \newtoggle{listofpubs}
-% \togglefalse{listofpubs}
-\toggletrue{listofpubs}
+\togglefalse{listofpubs}
+% \toggletrue{listofpubs}
 \newcommand{\publistcv}[2]{\iftoggle{listofpubs}{#1}{#2}}
+
+% ------ include list of grants -------------------------------
+
+\newtoggle{grants}
+\togglefalse{grants}
+% \toggletrue{grants}
+\newcommand{\grantscv}[2]{\iftoggle{grants}{#1}{#2}}
+
+% ------ include references -------------------------------
+
+\newtoggle{references}
+\togglefalse{references}
+% \toggletrue{references}
+\newcommand{\referencescv}[2]{\iftoggle{references}{#1}{#2}}
+
 
 % ------ get my details --------------------------------------------------------
 
@@ -83,7 +98,7 @@
 {\Large \rm \textbf \name}
 
 \vspace*{1.5ex}
-{\Large Resume}
+{\Large R\'esum\'e}
 
 \vspace*{1ex}
 \procv{}{\vspace{1ex}\large\jobtitle, \affiliation}
@@ -290,7 +305,7 @@
 
 % % ------- Funding ------------------------------------------------------
 
-\input{section_grants}
+\grantscv{\input{section_grants}}
 
 % % ------- Invited talks ------------------------------------------------------
 
@@ -452,7 +467,7 @@ Sep. 2016 -- present & Sailing\\
 
 % \pagebreak
 
-\input{section_references}
+\procv{}{\referencescv{\input{section_references}}{}}
 
 
 \label{endpage}
