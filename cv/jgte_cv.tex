@@ -1,5 +1,7 @@
 \documentclass[a4paper,12pt]{article}
 
+% sudo tlmgr install carlito tabu varwidth needspace xpatch
+
 \input{packages}
 \input{bibsetup}
 \input{utils}
@@ -20,20 +22,6 @@
 %acronym packaged loaded inside
 \input{acronyms}
 
-% ------ home or work address -------------------------------
-
-\newtoggle{homecontact}
-\togglefalse{homecontact}
-% \toggletrue{homecontact}
-\newcommand{\homecv}[2]{\iftoggle{homecontact}{#1}{#2}}
-
-% ------ academic links -------------------------------
-
-\newtoggle{academicweb}
-% \togglefalse{academicweb}
-\toggletrue{academicweb}
-\newcommand{\academicwebcv}[2]{\iftoggle{academicweb}{#1}{#2}}
-
 % ------ professional cv, false for academic cv -------------------------------
 
 \newtoggle{professionalcv}
@@ -47,13 +35,6 @@
 % \togglefalse{teaching}
 \toggletrue{teaching}
 \newcommand{\teachingcv}[2]{\iftoggle{teaching}{#1}{#2}}
-
-% ------ summary text -------------------------------
-
-\newtoggle{summary}
-\togglefalse{summary}
-% \toggletrue{summary} #NOTICE: this break make (but works with sublime command-B)
-\newcommand{\summarycv}[2]{\iftoggle{summary}{#1}{#2}}
 
 % ------ include list of publications -------------------------------
 
@@ -160,15 +141,15 @@ Curriculum Vitae
 
 % % ------- Funding ------------------------------------------------------
 
-\input{section_grants}
+\procv{}{\input{section_grants}}
 
 % % ------- Invited talks ------------------------------------------------------
 
-\input{section_invited_talks}
+\procv{}{\input{section_invited_talks}}
 
 % % ------- Conferences ------------------------------------------------------
 
-\input{section_conferences}
+\procv{}{\publistcv{\input{section_conferences}}{}}
 
 % % ------- Teaching ------------------------------------------------------
 
