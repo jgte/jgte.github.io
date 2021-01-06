@@ -1,6 +1,6 @@
 \documentclass[a4paper,12pt]{article}
 
-% sudo tlmgr install carlito tabu varwidth needspace xpatch
+% sudo tlmgr install carlito tabu varwidth needspace xpatch fontaxes footmisc
 
 \input{packages}
 \input{bibsetup}
@@ -21,6 +21,13 @@
 
 %acronym packaged loaded inside
 \input{acronyms}
+
+% ------ include home address -------------------------------
+
+\newtoggle{homecontact}
+\togglefalse{homecontact}
+% \toggletrue{homecontact}
+\newcommand{\homecv}[2]{\iftoggle{homecontact}{#1}{#2}}
 
 % ------ professional cv, false for academic cv -------------------------------
 
@@ -67,11 +74,15 @@
 Curriculum Vitae
 \begin{longtabu} to \textwidth {XXX}
 \addresswork
+\newline\emailwork
 \newline\telephonework
 &
 &
+\homecv{
 \addresshome
+\newline\emailhome
 \newline\telephonehome
+}{}
 \\
 \end{longtabu}
 \end{centering}
@@ -122,7 +133,8 @@ Curriculum Vitae
 % % -------- Work experience --------------------------------------------
 
 \begin{cvsection}{Professional Experience}
-\cvsectionline{2018}{present}{Research Engineering/Scientist Associate, \acf{CSR}, \acf{UTexas}, \ac{USA}}
+\cvsectionline{2020}{present}{Assistant Professor, \acl{AS}, \ac{TUD}, the Netherlands}
+\cvsectionline{2018}{2020   }{Research Engineering/Scientist Associate, \acf{CSR}, \acf{UTexas}, \ac{USA}}
 \cvsectionline{2016}{2018   }{Postdoctoral Fellow, \ac{CSR}, \ac{UTexas}, \ac{USA}}
 \cvsectionline{2011}{2016   }{Research Associate, \acl{AS}, \ac{TUD}, the Netherlands}
 \cvsectionline{2007}{2015   }{PhD Candidate, \ac{GRS}, \ac{TUD}, the Netherlands}
