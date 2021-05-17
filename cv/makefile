@@ -1,6 +1,6 @@
-MAINTEXFILE:=cv_jgte
-PUBLTEXFILE:=publications_jgte
-SUMMTEXFILE:=summary_jgte
+MAINTEXFILE:=jgte_cv
+PUBLTEXFILE:=jgte_publications
+SUMMTEXFILE:=jgte_summary
 
 GOOGLESCHOLARBIBURL:=https://scholar.googleusercontent.com/citations?view_op=export_citations&user=k2liFwQAAAAJ&citsig=AMstHGQAAAAAWTwP5LOWbyU-D_8kJPCaHzcsYYKO8zbm&hl=en
 GOOGLESCHOLARBIBURL:=https://scholar.googleusercontent.com/citations?view_op=export_citations&user=k2liFwQAAAAJ&citsig=AMstHGQAAAAAWUVsJENP3Wq7ycYTfyozEl9CoKgl7lZJ&hl=en
