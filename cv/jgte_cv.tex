@@ -27,28 +27,30 @@
 \newtoggle{homecontact}
 \togglefalse{homecontact}
 % \toggletrue{homecontact}
-\newcommand{\homecv}[2]{\iftoggle{homecontact}{#1}{#2}}
 
 % ------ professional cv, false for academic cv -------------------------------
 
 \newtoggle{professionalcv}
 \togglefalse{professionalcv}
 % \toggletrue{professionalcv}
-\newcommand{\procv}[2]{\iftoggle{professionalcv}{#1}{#2}}
 
 % ------ teaching experience -------------------------------
 
 \newtoggle{teaching}
 % \togglefalse{teaching}
 \toggletrue{teaching}
-\newcommand{\teachingcv}[2]{\iftoggle{teaching}{#1}{#2}}
 
 % ------ include list of publications -------------------------------
 
 \newtoggle{listofpubs}
 % \togglefalse{listofpubs}
 \toggletrue{listofpubs}
-\newcommand{\publistcv}[2]{\iftoggle{listofpubs}{#1}{#2}}
+
+% ------ include short bio -------------------------------
+
+\newtoggle{bio}
+% \togglefalse{bio}
+\toggletrue{bio}
 
 % ------ get my details --------------------------------------------------------
 
@@ -78,7 +80,7 @@ Curriculum Vitae
 \newline\telephonework
 &
 &
-\homecv{
+\iftoggle{homecontact}{
 \addresshome
 \newline\emailhome
 \newline\telephonehome
@@ -87,6 +89,10 @@ Curriculum Vitae
 \end{longtabu}
 \end{centering}
 \vspace{3pt}
+
+% ------- Education ---------------------------------------------------
+
+\iftoggle{bio}{\input{section_bio}}{}
 
 % ------- Education ---------------------------------------------------
 
@@ -129,7 +135,6 @@ Curriculum Vitae
 % Socrates/ERASMUS Scholarship of the European Union (September 1999 -- June
 % 2000)
 
-
 % % -------- Work experience --------------------------------------------
 
 \begin{cvsection}{Professional Experience}
@@ -142,10 +147,9 @@ Curriculum Vitae
 \cvsectionline{2004}{2005   }{Aerospace Engineer, \dynhref{www.delta-utec.com/}{Delta-Utec}, Leiden, the Netherlands}
 \end{cvsection}
 
-
 % % -------- Publications ----------------------------------------------------
 
-\procv{}{\publistcv{\input{section_publications}}{}}
+\iftoggle{professionalcv}{}{\iftoggle{listofpubs}{\input{section_publications}}{}}
 
 % % ------- Awards ------------------------------------------------------
 
@@ -153,37 +157,39 @@ Curriculum Vitae
 
 % % ------- Funding ------------------------------------------------------
 
-\procv{}{\input{section_grants}}
+\iftoggle{professionalcv}{}{\input{section_grants}}
 
 % % ------- Invited talks ------------------------------------------------------
 
-\procv{}{\input{section_invited_talks}}
+\iftoggle{professionalcv}{}{\input{section_invited_talks}}
 
 % % ------- Conferences ------------------------------------------------------
 
-\procv{}{\publistcv{\input{section_conferences}}{}}
+\iftoggle{professionalcv}{}{\iftoggle{listofpubs}{\input{section_conferences}}{}}
 
 % % ------- Teaching ------------------------------------------------------
 
-\pagebreak
-\teachingcv{\input{section_teaching}}{}
+\iftoggle{teaching}{\input{section_teaching}}{}
+
+% % ------- Teaching ------------------------------------------------------
+
+\iftoggle{teaching}{\input{section_teaching}}{}
 
 % % -------- Research Projects ----------------------------------------------------
 
-\procv{}{\input{section_research}}
+\iftoggle{professionalcv}{}{\input{section_research}}
 
 % % ------- Review ------------------------------------------------------
 
-\procv{}{\input{section_reviews}}
+\iftoggle{professionalcv}{}{\input{section_reviews}}
 
 % % ------- Personal development ------------------------------------------------------
-
 
 \input{section_training}
 
 % % ------- Courses prepared to teach ------------------------------------------------------
 
-\teachingcv{\input{section_courses}}
+\iftoggle{teaching}{\input{section_courses}}{}
 
 % % ------- Languages ------------------------------------------------------
 
@@ -191,7 +197,7 @@ Curriculum Vitae
 
 % % -------- Professional Memberships --------------------------------------------
 
-\procv{}{\input{section_memberships}}
+\iftoggle{professionalcv}{}{\input{section_memberships}}
 
 % % -------- References --------------------------------------------
 
