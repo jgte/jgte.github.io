@@ -2,15 +2,27 @@
 
 \begin{cvtext}{Summary of selected publications}
 
-In \cite{TeixeiraEncarnacao2016}, the habitability of the Swarm satellites to observe changes on Earth's gravity field is for the first time demonstrated.
-This research was one in cooperation with five international research institutes (
+
+In \cite{TeixeiradaEncarnacao2020} I report the results of massive numerical experiments testing different parametrization schemes.
+A full-matrix scale factor parametrization of accelerometers onboard the \ac{GRACE} satellites  is able to handle the different data quality over the complete mission lifetime, while maintain consistency in the processing choices.
+With this accelerometer parametrization scheme, it is possible reduce the number of bias parameters (removing the quadratic terms) and increase the scale parameters in the accelerometer calibration parametrization (from diagonal to full matrix and from monthly to daily), leading to a net decrease of 4 parameters per day, since that the y-axis bias parameters are estimated every 3 hours.
+In terms of the quality of the gravity field model, there is a significant decrease in the intensity of the stripping artefacts, except for those periods with excellent data quality, where there is no noticeable decrease in the model’s quality relative to previous releases.
+% To better support this optimization problem, I took advantage of meta-heuristic procedures, such as genetic algorithms, to speed up the convergence to an advantageous parametrization scheme.
+From this research, both \ac{CSR} and \ac{JPL} (two of the main gravity field model producing centres) have modified their data processing to follow my recommendations.
+
+In \cite{TeixeiraEncarnacao2019}, I report on the operational production of the Swarm gravity field models.
+This research was done in cooperation with five international research institutes (
 \acf{IfG} of the \acf{TUG},
 \ac{ASU}  of the \acf{AVCR},
 \acf{AIUB},
 \dynhref{www.lr.tudelft.nl}{Aerospace Faculty} of the \ac{TUD} and
-\acf{SES} of the \acf{OSU}), 
+\acf{SES} of the \acf{OSU}),
 within the context of a project initiated and lead by me.
-Since publishing this article, I have taken the leading role securing funding from the \ac{ESA}, through the \ac{DISC}, to develop the methodology to best combine the individual gravity field solutions from each research institute. This project has recently been awarded additional funding to routinely produce monthly models for the foreseeable future.
+I have taken the leading role securing funding from the \ac{ESA}, through the \ac{DISC}, to develop the methodology to best combine the individual gravity field solutions from each research institute. This project was awarded additional funding to routinely produce monthly models for the foreseeable future.
+This publication capitalizes on the experience gathered from producing 6 years of Swarm gravity field models, illustrating the strengths and limitations of this dataset.
+I demonstrate that the published models are of superior quality than any of the individual models that are used to estimate it, and that a smoothing of 750km is needed over land, while 3000km is needed over the oceans.
+
+In \cite{TeixeiraEncarnacao2016}, the habitability of the Swarm satellites to observe changes on Earth's gravity field was for the first time demonstrated.
 The Swarm gravity field models constitute an independent source of gravimetric data from dedicated mission (\ac{GRACE} and \ac{GRACE-FO}).
 Although their spatial resolution is much lower, the Swarm models are still able to describe monthly variations of Earth's gravity field within a few millimetres geoid height, when compared with \ac{GRACE}.
 This has proven to be particularly beneficial in monitoring mass transport processes during the gap between the periods when \ac{GRACE} and \ac{GRACE-FO} were and are (respectively) collecting data.
@@ -33,6 +45,8 @@ This work has motivated my research into the design of a gravimetric CubeSats, s
 \vspace{2ex}
 \begin{refsection}
 \nocite{
+TeixeiradaEncarnacao2020,
+TeixeiraEncarnacao2019,
 TeixeiraEncarnacao2016,
 Ditmar2012,
 Gunter2011,
