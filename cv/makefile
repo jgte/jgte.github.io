@@ -2,52 +2,30 @@ MAINTEXFILE:=jgte_cv
 PUBLTEXFILE:=jgte_publications
 SUMMTEXFILE:=jgte_summary
 
-GOOGLESCHOLARBIBURL:=https://scholar.googleusercontent.com/citations?view_op=export_citations&user=k2liFwQAAAAJ&citsig=AMstHGQAAAAAWTwP5LOWbyU-D_8kJPCaHzcsYYKO8zbm&hl=en
-GOOGLESCHOLARBIBURL:=https://scholar.googleusercontent.com/citations?view_op=export_citations&user=k2liFwQAAAAJ&citsig=AMstHGQAAAAAWUVsJENP3Wq7ycYTfyozEl9CoKgl7lZJ&hl=en
-GOOGLESCHOLARBIBURL:=https://scholar.googleusercontent.com/citations?view_op=export_citations&user=k2liFwQAAAAJ&citsig=AMstHGQAAAAAWUfKXezz05QTaki6HPT6ZrdR5kyo59-4&hl=en
-GOOGLESCHOLARBIBURL:=https://scholar.googleusercontent.com/citations?view_op=export_citations&user=k2liFwQAAAAJ&citsig=AMstHGQAAAAAWYXhBeR7kgttcRsuBmyGCYNFCfKYC6pn&hl=en
-GOOGLESCHOLARBIBURL:=https://scholar.googleusercontent.com/citations?view_op=export_citations&user=k2liFwQAAAAJ&citsig=AMstHGQAAAAAWcLnAw5jrZkvLAKzOEIL2cOAdcvf2gVQ&hl=en
-GOOGLESCHOLARBIBFILE:=citations.bib
-GOOGLESCHOLARBIBENCOD=CP1250
-# CP1251
-# CP1252
-# CP1253
-# CP1254
-# CP1255
-# CP1256
-# CP1257
-# CP1258
-# GEORGIAN-ACADEMY
-# GEORGIAN-PS
-# KOI8-T
-# CP154
-# CP874
-# CP1162
+PDFLATEXOPTS:=-halt-on-error -interaction nonstopmode
+PDFVIEW=$(shell which gnome-open || which open || which evince || which gpdf || which kpdf || which acroread || which xpdf)
 
 # determining computer
 UNAME := $(shell uname)
-ifeq ($(UNAME), Linux)
-PDFLATEX:=pdflatex -halt-on-error -interaction nonstopmode
-endif
-
 ifeq ($(UNAME), Darwin)
-PDFLATEX:=/Library/TeX/texbin/pdflatex -halt-on-error -interaction nonstopmode
+	EXEDIR:=/Library/TeX/texbin/
+	export PATH := $(PATH):/Library/TeX/texbin/
 endif
 
-BIBTEX:=bibtex
-PDFVIEW=$(shell which gnome-open || which open || which evince || which gpdf || which kpdf || which acroread || which xpdf)
-HTLATEX:=htlatex
-
-# http://stackoverflow.com/questions/18136918/how-to-get-current-directory-of-your-makefile
-ROOT_DIR:=$(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
+LATEX:=$(EXEDIR)latex
+DVIPS:=$(EXEDIR)dvips
+DVIPDF:=$(EXEDIR)dvipdf
+PDFLATEX:=$(EXEDIR)pdflatex
+BIBTEX:=$(EXEDIR)bibtex
+HTLATEX:=$(EXEDIR)htlatex
+TLMGR:=$(EXEDIR)tlmgr
+LATEXMK=$(EXEDIR)latexmk -pdf
 
 .PHONY: all pdf ps dvi bib clean view
 
-all:
-	$(MAKE) pdf
-	$(MAKE) bib
-	$(MAKE) pdf
-	$(MAKE) view
+report:
+	$(LATEXMK) $(MAINTEXFILE) | egrep -i --colour=always 'Warning|Error'
+	$(PDFVIEW) $(MAINTEXFILE).pdf
 
 publ:
 	$(PDFLATEX) $(PUBLTEXFILE)
@@ -58,26 +36,39 @@ summ:
 	$(PDFLATEX) $(SUMMTEXFILE)
 	$(PDFLATEX) $(SUMMTEXFILE)
 
+poster-portrait:
+	$(PDFLATEX) $(MAINTEXFILE)-poster-portrait | egrep --colour=always 'Warning|Error'
+	$(BIBTEX)   $(MAINTEXFILE)-poster-portrait
+	$(PDFLATEX) $(MAINTEXFILE)-poster-portrait | egrep --colour=always 'Warning|Error'
+	$(PDFLATEX) $(MAINTEXFILE)-poster-portrait | egrep --colour=always 'Warning|Error'
+	$(PDFVIEW)  $(MAINTEXFILE)-poster-portrait.pdf
+
+poster-landscape:
+	$(PDFLATEX) $(MAINTEXFILE)-poster-landscape | egrep --colour=always 'Warning|Error'
+	$(BIBTEX)   $(MAINTEXFILE)-poster-landscape
+	$(PDFLATEX) $(MAINTEXFILE)-poster-landscape | egrep --colour=always 'Warning|Error'
+	$(PDFLATEX) $(MAINTEXFILE)-poster-landscape | egrep --colour=always 'Warning|Error'
+	$(PDFVIEW)  $(MAINTEXFILE)-poster-landscape.pdf
+
+presentation:
+	$(PDFLATEX) -shell-escape $(MAINTEXFILE)-presentation | egrep --colour=always 'Warning|Error'
+	$(BIBTEX) $(MAINTEXFILE)-presentation.aux
+	$(PDFLATEX) -shell-escape $(MAINTEXFILE)-presentation | egrep --colour=always 'Warning|Error'
+
 view:
-	@echo " --- $(PDFVIEW) $(MAINTEXFILE)"
 	$(PDFVIEW) $(MAINTEXFILE).pdf
 
 pdf:
-	@echo " --- $(PDFLATEX) $(MAINTEXFILE)"
 	$(PDFLATEX) $(MAINTEXFILE) | egrep --colour=always 'Warning|Error'
 
 ps:
-	@echo " --- $(LATEX) $(MAINTEXFILE)"
 	$(LATEX) $(MAINTEXFILE)
 
 dvi: ps
-	@echo " --- $(DVIPS) $(MAINTEXFILE)"
-	$(DVIPS) $(MAINTEXFILE)
-	@echo " --- $(DVIPDF) $(MAINTEXFILE)"
+	$(DVIPS)  $(MAINTEXFILE)
 	$(DVIPDF) $(MAINTEXFILE)
 
 bib:
-	@echo " --- $(BIBTEX) $(MAINTEXFILE)"
 	$(BIBTEX) $(MAINTEXFILE)
 
 clean:
@@ -89,24 +80,24 @@ perms:
 
 install-tex:
 	brew install ghostscript imagemagick
-	brew cask install basictex
-	sudo tlmgr update --self
-	sudo tlmgr update --all
-	sudo tlmgr install latexmk collection-latexrecommended collection-fontsrecommended texliveonfly ly1
+	brew install basictex
+	sudo $(TLMGR) update --self
+	sudo $(TLMGR) update --all
+	sudo $(TLMGR) install latexmk collection-latexrecommended collection-fontsrecommended texliveonfly ly1
 
-#NOTICE: this will grep the packages declared explicitly in the code but fail to resolve hidden dependencies
+#NOTICE: this will grep the packages declared explicitly in the code but fail to resolve hidden dependencies; also some packages are not named consistently in the \usepackage and tlmgr
 list-packages:
-	@grep \usepackage *.tex | grep -v ':%' |  awk -F'[\{\}]' '{print $$2}' | sort -u
+	@grep '\usepackage' *.tex | grep -v ':%' |	awk -F'[\{\}]' '{print $$2}' | sort -u
 
 #NOTICE: this greps the 'tlmgr install' annotations, which are incremented manually with the list of necessary packages
 install-list-packages:
 	@grep tlmgr *.tex | awk -F'tlmgr install' '{print $$2}' | tr ' ' '\n' | sort -u | tr '\n' ' '
 
 install-packages:
-	sudo tlmgr install `$(MAKE) install-list-packages`
+	sudo $(TLMGR) install `$(MAKE) install-list-packages`
 
 install-html:
-	sudo tlmgr install tex4ht
+	sudo $(TLMGR) install tex4ht
 
 html: clean
 	#https://tex.stackexchange.com/questions/185349/error-using-pgfsysdriver-with-tex4ht-only-shows-up-with-texlive-2014-ok-with-t
