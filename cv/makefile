@@ -23,18 +23,13 @@ LATEXMK=$(EXEDIR)latexmk -pdf
 
 .PHONY: all pdf ps dvi bib clean view
 
+#This is specific to the CV
+all:
+	for i in jgte_*.tex; do $(LATEXMK) $$i; $(PDFVIEW) $${i/.tex/.pdf};  done
+
 report:
 	$(LATEXMK) $(MAINTEXFILE) | egrep -i --colour=always 'Warning|Error'
 	$(PDFVIEW) $(MAINTEXFILE).pdf
-
-publ:
-	$(PDFLATEX) $(PUBLTEXFILE)
-	for i in 1 2 3 4 5 6; do $(BIB) $(PUBLTEXFILE)$$i-blx; done
-	$(PDFLATEX) $(PUBLTEXFILE)
-
-summ:
-	$(PDFLATEX) $(SUMMTEXFILE)
-	$(PDFLATEX) $(SUMMTEXFILE)
 
 poster-portrait:
 	$(PDFLATEX) $(MAINTEXFILE)-poster-portrait | egrep --colour=always 'Warning|Error'
