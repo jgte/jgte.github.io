@@ -112,7 +112,7 @@ html: clean
 
 #this only works on my machine
 lib:
-	LIBDIR=$$HOME/cloud/common/github/jgte.github.io/cv; [ -e $$LIBDIR/library.bib ] && (rm -f library.bib && cp -fv $$LIBDIR/library.bib .)
+	LIBDIR=$$HOME/cloud/common/github/latex; [ -e $$LIBDIR/library.bib ] && [ ! "$$PWD" == "$$LIBDIR" ] && (rm -f library.bib && cp -fv $$LIBDIR/library.bib .)
 
 html_pdf:
 	rm -fv $(HTMLDIR)/$(MAINTEXFILE).pdf

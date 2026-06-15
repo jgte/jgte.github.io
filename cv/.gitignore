@@ -30,7 +30,6 @@
 *.toc
 *.xref
 .DS_*
-library.bib cannot be a link
 header.tex
 acused.tex
 append-assignment.sh
