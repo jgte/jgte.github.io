@@ -68,6 +68,7 @@ for i in *.tex $DIR_SOURCE/*.tex *.sh $DIR_SOURCE/*.sh Makefile
 do
   [[ "${i/TEMPLATE}" == "$i" ]] || continue
   [[ "${i/$MAINTEX}" == "$i" ]] || continue
+  [ -e $DIR_SINK/sync.ignore ] && grep -q $(basename $i) $DIR_SINK/sync.ignore && continue
   basename $i
 done | sort -u
 )
