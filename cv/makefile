@@ -26,34 +26,28 @@ GOOGLESCHOLARBIBENCOD=CP1250
 
 # determining computer
 UNAME := $(shell uname)
-
-# setting executable dir
 ifeq ($(UNAME), Linux)
-	EXEDIR:=
-	PDFLATEXOPTS:=-halt-on-error -interaction nonstopmode
+PDFLATEX:=pdflatex -halt-on-error -interaction nonstopmode
 endif
+
 ifeq ($(UNAME), Darwin)
-	EXEDIR:=/Library/TeX/texbin/
-	PDFLATEXOPTS:=-halt-on-error -interaction nonstopmode
-	export PATH := $(PATH):/usr/local/bin/
+PDFLATEX:=/Library/TeX/texbin/pdflatex -halt-on-error -interaction nonstopmode
 endif
 
-LATEX:=$(EXEDIR)latex
-DVIPS:=$(EXEDIR)dvips
-DVIPDF:=$(EXEDIR)dvipdf
-# BIB:=$(EXEDIR)biber --output-directory "$(CURDIR)" --input-directory "$(CURDIR)"
-BIB:=$(EXEDIR)bibtex
-
-PDFVIEW:=$(shell which gnome-open || which open || which evince || which gpdf || which kpdf || which acroread || which xpdf)
-PDFLATEX:=$(EXEDIR)pdflatex $(PDFLATEXOPTS)
+BIBTEX:=bibtex
+PDFVIEW=$(shell which gnome-open || which open || which evince || which gpdf || which kpdf || which acroread || which xpdf)
 HTLATEX:=htlatex
 
 # http://stackoverflow.com/questions/18136918/how-to-get-current-directory-of-your-makefile
 ROOT_DIR:=$(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
 
-.PHONY: all pdf ps dvi bib clean view bibparse
+.PHONY: all pdf ps dvi bib clean view
 
-all: clean pdf publ summ
+all:
+	$(MAKE) pdf
+	$(MAKE) bib
+	$(MAKE) pdf
+	$(MAKE) view
 
 publ:
 	$(PDFLATEX) $(PUBLTEXFILE)
@@ -64,85 +58,71 @@ summ:
 	$(PDFLATEX) $(SUMMTEXFILE)
 	$(PDFLATEX) $(SUMMTEXFILE)
 
-pdf:
-	$(PDFLATEX) $(MAINTEXFILE)
-	$(BIB)      $(MAINTEXFILE)
-	for i in 1 2 3 4 5 6; do $(BIB) $(MAINTEXFILE)$$i-blx; done
-	$(PDFLATEX) $(MAINTEXFILE)
-
-print:
-	sed 's_\togglefalse{expliciturl}_\toggletrue{expliciturl}_' $(MAINTEXFILE).tex > $(MAINTEXFILE)_print.tex
-	$(PDFLATEX) $(MAINTEXFILE)_print
-	for i in 1 2 3 4 5 6; do $(BIB) $(MAINTEXFILE)_print$$i-blx; done
-	$(PDFLATEX) $(MAINTEXFILE)_print
-
 view:
+	@echo " --- $(PDFVIEW) $(MAINTEXFILE)"
 	$(PDFVIEW) $(MAINTEXFILE).pdf
 
+pdf:
+	@echo " --- $(PDFLATEX) $(MAINTEXFILE)"
+	$(PDFLATEX) $(MAINTEXFILE) | egrep --colour=always 'Warning|Error'
+
 ps:
+	@echo " --- $(LATEX) $(MAINTEXFILE)"
 	$(LATEX) $(MAINTEXFILE)
 
 dvi: ps
+	@echo " --- $(DVIPS) $(MAINTEXFILE)"
 	$(DVIPS) $(MAINTEXFILE)
+	@echo " --- $(DVIPDF) $(MAINTEXFILE)"
 	$(DVIPDF) $(MAINTEXFILE)
 
 bib:
-	cp -v ../../latex/library.bib .
+	@echo " --- $(BIBTEX) $(MAINTEXFILE)"
+	$(BIBTEX) $(MAINTEXFILE)
 
 clean:
-	@for j in summary publications affiliation $(MAINTEXFILE) $(MAINTEXFILE)_print $(PUBLTEXFILE) $(SUMMTEXFILE); do for i in aux dvi log ps pdf toc fdb_latexmk flsm blg bbl bcf out run.xml synctex.gz 4ct 4tc css fls idv lg md tmp xref; do rm -fv $$j.$$i; done; done
-	@rm -fv *-blx.bbl *-blx.bib *-blx.blg *.log *.aux
+	@for i in -blx.bib 4ct 4tc aux bbl bcf blg brf css dvi fdb_latexmk fls flsm idv idx lg lof log lol lot nav out pdf ps run.xml snm synctex.gz tmp toc xref glo .ist glsdefs .vrb; do rm -fv *$$i; done; rm -fv *synctex*
 
-install:
-	sudo tlmgr install titlesec install carlito tabu varwidth needspace xpatch fontaxes footmisc
+perms:
+	find . -maxdepth 1 -type f | xargs chmod -v a-x
+	chmod -v u+x *.sh
 
-#sudo tlmgr install tex4ht
-html:
-	sed 's/\input{cvsection}/\input{cvsection_html}/' $(MAINTEXFILE).tex > $(MAINTEXFILE)_html.tex
+install-tex:
+	brew install ghostscript imagemagick
+	brew cask install basictex
+	sudo tlmgr update --self
+	sudo tlmgr update --all
+	sudo tlmgr install latexmk collection-latexrecommended collection-fontsrecommended texliveonfly ly1
+
+#NOTICE: this will grep the packages declared explicitly in the code but fail to resolve hidden dependencies
+list-packages:
+	@grep \usepackage *.tex | grep -v ':%' |  awk -F'[\{\}]' '{print $$2}' | sort -u
+
+#NOTICE: this greps the 'tlmgr install' annotations, which are incremented manually with the list of necessary packages
+install-list-packages:
+	@grep tlmgr *.tex | awk -F'tlmgr install' '{print $$2}' | tr ' ' '\n' | sort -u | tr '\n' ' '
+
+install-packages:
+	sudo tlmgr install `$(MAKE) install-list-packages`
+
+install-html:
+	sudo tlmgr install tex4ht
+
+html: clean
+	#https://tex.stackexchange.com/questions/185349/error-using-pgfsysdriver-with-tex4ht-only-shows-up-with-texlive-2014-ok-with-t
+	[ -e pgfsys-tex4ht.def ] && echo "Found fixed pgfsys-tex4ht.def"
+	sed 's/\togglefalse{html}/\toggletrue{html}/' $(MAINTEXFILE).tex > $(MAINTEXFILE)_html.tex
 	$(PDFLATEX) $(MAINTEXFILE)_html
-	for j in 1 2 3 4 5 6; do $(BIB) $(MAINTEXFILE)_html$$j-blx; done
+	$(BIBTEX) $(MAINTEXFILE)_html
 	$(PDFLATEX) $(MAINTEXFILE)_html
-	$(HTLATEX) $(MAINTEXFILE)_html "xhtml, charset=utf-8" " -cunihtf -utf8"
-	mv -f $(MAINTEXFILE)_html.html index.html
+	$(HTLATEX) $(MAINTEXFILE)_html "xhtml,charset=utf-8" " -utf8 -cunihtf" "" -shell-escape
+	for i in html css svg png; do for j in $(MAINTEXFILE)*.$$i; do [ -e $$j ] && mv -fv $$j $(HTMLDIR) || echo No $$j; done ; done
+	cp -r figures $(HTMLDIR)/
 
-#Obsolete stuff
+#this only works on my machine
+lib:
+	LIBDIR=$$HOME/cloud/common/github/jgte.github.io/cv; [ -e $$LIBDIR/library.bib ] && (rm -f library.bib && cp -fv $$LIBDIR/library.bib .)
 
-get_bib:
-	open https://scholar.google.com/citations?user=k2liFwQAAAAJ
-	wget '$(GOOGLESCHOLARBIBURL)' -O $(GOOGLESCHOLARBIBFILE).new
-	iconv -f $(GOOGLESCHOLARBIBENCOD) -t utf-8 $(GOOGLESCHOLARBIBFILE).new > /tmp/$(GOOGLESCHOLARBIBFILE).new
-	mv -f /tmp/$(GOOGLESCHOLARBIBFILE).new $(GOOGLESCHOLARBIBFILE).new
-	@echo New citations:
-	@bash -c "diff <( grep \@ $(GOOGLESCHOLARBIBFILE).new | awk -F'{' '{ print $2}' | sort ) <( grep \@ $(GOOGLESCHOLARBIBFILE) | awk -F'{' '{ print $2}' | sort )" || echo "End new citations."
-	mv -f $(GOOGLESCHOLARBIBFILE).new $(GOOGLESCHOLARBIBFILE)
-
-parse_bib:
-	cat $(GOOGLESCHOLARBIBFILE) \
-	| sed 's|\d0097|-|g' \
-	| sed 's_Encarnacao_Encarna{\\c{c}}{\\~a}o_g' \
-	| sed 's_Encarnagao_Encarna{\\c{c}}{\\~a}o_g' \
-	| sed 's_Encarnac{\\~a}o_Encarna{\\c{c}}{\\~a}o_g' \
-	| sed 's_Encarna{\\c{c}}ao_Encarna{\\c{c}}{\\~a}o_g' \
-	| sed 's_da Encarna{\\c{c}}{\\~a}o_Encarna{\\c{c}}{\\~a}o_g' \
-	| sed 's_Da Encarna{\\c{c}}{\\~a}o_Encarna{\\c{c}}{\\~a}o_g' \
-	| sed 's_de Teixeira__g' \
-	| sed 's_De Teixeira__g' \
-	| sed 's_Teixeira__g' \
-	| sed 's_Encarna{\\c{c}}{\\~a}o, J _Encarna{\\c{c}}{\\~a}o, Jo{\\~a}o _g' \
-	| sed 's_Encarna{\\c{c}}{\\~a}o, J. _Encarna{\\c{c}}{\\~a}o, Jo{\\~a}o _g' \
-	| sed 's_Encarna{\\c{c}}{\\~a}o, J.G. _Encarna{\\c{c}}{\\~a}o, Jo{\\~a}o _g' \
-	| sed 's_Joao_Jo{\\~a}o_g' \
-	# | sed 's_Encarna{\\c{c}}{\\~a}o_\\textbf{de Teixeira da Encarna{\\c{c}}{\\~a}o}_g' \
-	# | sed 's_Jo{\\~a}o_\\textbf{Jo{\\~a}o}_g' \
-	| sed 's_XZQGJ_X_g' \
-	| sed 's_Congres}_Congress}_g' \
-	| sed 's_(scarf)_({SCARF})_g' \
-	 > "$(CURDIR)/$(MAINTEXFILE).bib"
-	tr '´' "'" < "$(CURDIR)/$(MAINTEXFILE).bib" | sponge "$(CURDIR)/$(MAINTEXFILE).bib"
-	tr '`' "'" < "$(CURDIR)/$(MAINTEXFILE).bib" | sponge "$(CURDIR)/$(MAINTEXFILE).bib"
-
-
-
-
-
-
+html_pdf:
+	rm -fv $(HTMLDIR)/$(MAINTEXFILE).pdf
+	cp -fv $(MAINTEXFILE).pdf $(HTMLDIR)/
