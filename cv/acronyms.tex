@@ -30,8 +30,8 @@
 
 	\ifdefined\UseCitationsInAcronyms
     \newcommand{\acrodefcite}[4][]{%
-      \acrodef{#2.cite}[!use acl with .cite acronyms!]{#3 (#2)#1 \protecting{(\citealt{#4})\acused{#2}}}%
-      \acrodef{#2.citeonly}[!use acl with .citeonly acronyms!]{\protecting{(\citealt{#4})}}%
+      \acrodef{#2.cite}[!use acl with .cite acronyms!]{#3 (#2)#1 \protecting{\citep{#4}\acused{#2}}}%
+      \acrodef{#2.citeonly}[!use acl with .citeonly acronyms!]{\protecting{\citep{#4}}}%
 		}
     \newcommand{\acrocite}[4][]{%
       \acro{#2}{#3\acroextra{#1, \protecting{\citet{#4}}}}%
@@ -75,23 +75,23 @@
   \ifdefined\UseUrlInAcronyms
     %includes the URL link in the short form of the acronym
     \newcommand{\acrourl}[3]{%
-      \iftoggle{expliciturl}{%
+      \ifdefined\UseExplicitUrlInAcronyms
         \acro{#1}[\href{http://#3}{#1}]{#2, \protecting{\urlhttp{#3}}}%
-      }{%
+      \else
         \acro{#1}[\href{http://#3}{#1}]{#2\acroextra{, \protecting{\urlhttp{#3}}}}%
-      }%
+      \fi
       \acrodef{#1.url}[!use acl with .url acronyms!]{#2 \protecting{(#1, \urlhttp{#3})\acused{#1}}}%
       \acrodef{#1.urlonly}[!use acl with .urlonly acronyms!]{\protecting{\urlhttp{#3}}}%
-}
+    }
     \newcommand{\acrourlc}[4]{%
-      \iftoggle{expliciturl}{%
+      \ifdefined\UseExplicitUrlInAcronyms
         \acro{#2}[\href{http://#4}{#1}]{#3, \protecting{\urlhttp{#4}}}%
-      }{%
+      \else
         \acro{#2}[\href{http://#4}{#1}]{#3\acroextra{, \protecting{\urlhttp{#4}}}}%
-      }%
+      \fi
       \acrodef{#2.url}[!use acl with .url acronyms!]{#3 \protecting{(#2, \urlhttp{#4})\acused{#2}}}%
       \acrodef{#2.urlonly}[!use acl with .urlonly acronyms!]{\protecting{\urlhttp{#4}}}%
-}
+    }
   \else
     %the link text is only available in the list of acronyms
     \newcommand{\acrourl}[3]{%
@@ -108,7 +108,9 @@
 \fi
 \acresetall
 
-\newcommand{\unit}[2]{\ensuremath{{\sf#1}\thickspace{\sf#2}}}
+%maybe \unit is already defined
+\providecommand{\unit}{}
+\renewcommand{\unit}[2]{\ensuremath{{\sf#1}\thickspace{\sf#2}}}
 
 \begin{acronym}[------------------------]
 
@@ -134,30 +136,46 @@
 \acrodef{Prof.}{Professor}
 \acrodef{Dr.}{Doctor}
 
+%reference frames
+\acro{CRF}{Celestial Reference Frame}
+\acro{CIRS}{Celestial Intermediate Reference System}
+\acro{GRF}{Gradiometer Reference Frame}
+\acro{HRF}{Hill Reference Frame}
+\acro{ICRS}{International Celestial Reference System}
+\acro{LHRF}{Local Horizontally-aligned Reference Frame}
+\acro{LORF}{Local Orbital Reference Frame}
+\acro{LoSRF}{Line-of-sight Reference Frame}
+\acro{SRF}{Satellite Reference Frame}
+\acro{TRF}{Terrestrial Reference Frame}
+
 %#
 \acro{1D}{uni-dimensional}
 \acro{2D}{bi-dimensional}
 \acro{3D}{three-dimensional}
+\acro{3BP}{Three Body Problem}
+\acro{TBP}{Third Body Perturbation}
 %A
 \acrocite{AA}{Acceleration Approach}{Rummel1979}
-\acrocite{DAA}{Decorrelated \acl{AA}}{Bezdek2014}
+\acro{AC}{Analysis Center}
 \acro{ACC}{Accelerometer}
 \acro{ASCR}{Academy of Sciences of the Czech Republic}
 \acro{ACS}{Attitude Control System}
 \acro{ADP}{Auxiliary Data Provider}
 \acro{ADC}{Analogue-to-Digital Converter}
+\acrocite{AESOP}{Advanced Equation Solver for Parallel Systems}{Gunter2004}
+\acro{AFSPC}{Air Force Space Command\acroextra{, redesignated to \ac{USSF}}}
 \acrourl{AGU}{American Geophysical Union}{sites.agu.org}
 \acro{AIL}{Action Item List}
 \acrourl{AIUB}{Astronomical Institute of the University of Bern\acroextra{, Switzerland}}{www.aiub.unibe.ch}
-\acrocite{AIUB-GRACE02S}{\acs{AIUB} \acs{GRACE}-only model, version 2}{Jaggi2012}
-\acrocite{AIUB-GRACE03S}{\acs{AIUB} \acs{GRACE}-only model, version 3}{Jaggi2012}
+\acrocite{AIUB-GRACE02S}{\acs{AIUB} \acs{GRACE}-only static model, version 2}{Jaggi2012}
+\acrocite{AIUB-GRACE03S}{\acs{AIUB} \acs{GRACE}-only static model, version 3}{Jaggi2011c}
 \acro{aka}{also known as}
 \acro{AOCS}{Attitude and Orbital Control System}
-\acro{AOD}{Atmosphere and Ocean De-aliasing}
 %TODO : go throught the text and make sure any \ac{AOD1B} instances is followed by 'product'.
 \acrocite[ product]{AOD1B}{Atmosphere and Ocean De-aliasing \acl{L1B}}{Flechtner2006,Flechtner2007,Flechtner2011}
+\acrocite[ product]{AOD1B-RL06}{Atmosphere and Ocean De-aliasing \acl{L1B} \acs{RL06}}{Dobslaw2017}
 \acrocite{AOTIM-5}{Arctic Ocean Tidal Inverse Model}{Padman2010}
-\acro{ANGARA}{Analysis of Non-Gravitational Accelerations due to Radiation pressure and Aerodynamics}
+\acrocite{ANGARA}{Analysis of Non-Gravitational Accelerations due to Radiation pressure and Aerodynamics}{Fritsche1998}
 \acro{AO}{Announcement of Opportunity}
 \acro{APDF}{Archiving and Payload Data Facility}
 \acro{ARMA}{Auto-Regressive Moving-Average}
@@ -166,13 +184,14 @@
 \acro{ASCII}{American Standard Code for Information Interchange}
 \acro{ASD}{Amplitude Spectral Density\acroextra{, equal to the square-root of the \acs{PSD}}}
 \acrourl{AS}{Astrodynamics and Space missions\acroextra{, Faculty of Aerospace Engineering, \acs{TUD}}}{www.as.lr.tudelft.nl/}
-\acrourl{ASU}{Astronomical Institute\acroextra{ (Astronomick\'y \'ustav), \acs{AVCR}}}{www.asu.cas.cz/en}
+\acrourl{ASU}{Astronomical Institute\acroextra{ (Astronomick\'y \'ustav), \acs{AVCR},} Ond{\v r}ejov}{www.asu.cas.cz/en}
 \acrourl{AVCR}{Czech Academy of Sciences\acroextra{ (Akademie v\v{e}d \v{C}esk\'e Republiky), Czech Republic}}{www.avcr.cz/en/}
 %B
 \acrourl{BASH}{Bourne-again shell}{www.gnu.org/software/bash}
 \acrocite{BDNSS}{BeiDou\slash Compass Navigation Satellite System}{Chengzhi2013}
-\acrocite{Bernese}{Bernese \acs{GNSS} software}{Dach2015}
+\acrodefcite{Bernese}{Bernese \acs{GNSS} software}{Dach2015}
 \acrourl{BGC}{Bristol Glaciology Centre}{www.bristol.ac.uk/geography/research/bgc/}
+\acrourl{BIPM}{Bureau International des Poids et Mesures}{www.bipm.org/en/}
 \acrourl{BIT}{Beijing Institute of Technology}{english.bit.edu.cn}
 \acro{BIRP}{Background Intellectual Property Rights}
 %C
@@ -182,14 +201,19 @@
 \acro{Cal/Val}{Calibration and Validation}
 \acro{CAKAO}{Combined analysis of kinematic orbits and loading observations to determine mass redistribution\acroextra{, \"Osterreichische Forschungsf\"orderungsgesellschaft mbH}}
 \acrourl{CAS}{Chinese Academy of Sciences\acroextra{, China}}{english.cas.cn}
+\acro{CEP}{Celestial Ephemeris Pole}
 \acro{COAS}{College of Oceanic and Atmospheric Sciences\acroextra{, Oregon State University}}
 \acro{CCDB}{Characterisation and Calibration Database}
 \acro{CCR}{Corner-Cube Retro-reflector}
 \acrourl{CDF}{Common Data Format}{cdf.gsfc.nasa.gov}
 \acrourl{CERGA}{Centre d'{\'{e}}tudes et de Recherches en G{\'{e}}odynamique et Astrom{\'{e}}trie}{wwwrc.obs-azur.fr/cerga/CERGA_anglais.html}
+\acro{CIO}{Celestial Intermediate Origin}
+\acro{CIP}{Celestial Intermediate Pole}
+\acro{CEO}{Celestial Ephemeris Origin} %same as CIO
+\acro{CLI}{Command Line Interface}
 \acrourl{CLS}{Collecte Localisation Satellites}{www.cls.fr}
 \acrocite{CHAMP}{CHallenging Mini-Satellite Payload}{Reigber1996,Reigber2002}
-\acro{CODE}{Centre for Orbit Determination in Europe}
+\acrocite{CODE}{Centre for Orbit Determination in Europe}{Dach2017}
 \acro{CIF}{Conventional Inertial Frame}
 \acrocite{CMA}{Celestial Mechanics Approach}{Beutler2010a}
 \acrourl{CNES}{Centre National d{\'{E}}tudes Spatiales\acroextra{, France}}{cnes.fr}
@@ -200,19 +224,22 @@
 \acro{COSMIC}{Constellation Observing System for Meteorology, Ionosphere and Climate\acroextra{ satellite mission (see  also \acs{F3C})}} %reference added to F3C.cite
 \acro{COSMIC-2}{2nd Constellation Observing System for Meteorology, Ionosphere and Climate\acroextra{  satellite mission (see also \acs{F7C2})}} %reference added to F3C.cite
 \acrourl{COSPAR}{Committee on Space Research}{www.cospar-assembly.org}
+\acrourl{COST-G}{Combination Service of Time-variable Gravity Fields}{cost-g.org}
 \acro{COTS}{Commercial Off-The-Shelf}
 \acro{CPR}{Cycle Per Revolution}
 \acrodefplural{CPR}{Cycles Per Revolution}
 \acro{CPU}{Central Processing Unit}
-\acrourl{CSR}{Center for Space Research\acroextra{, \acs{UTexas}, \acs{USA}}}{www.csr.utexas.edu}
+\acro{CRV}{Code Residual Variation}
+\acrourl{CSR}{Center for Space Research\acroextra{, \acs{UT Austin}, \acs{USA}}}{www.csr.utexas.edu}
 \acrocite{CSR3.0}{version 3 of the \acs{CSR}'s global ocean model}{Eanes1996}
 \acrocite{CSR4.0}{version 4 of the \acs{CSR}'s global ocean model}{Eanes1996}
-\acroref{CRF}{Celestial Reference Frame}{sec:crf} %if you change this, also change the superscript
+\acro{CSV}{Comma-Separated Values}
 \acro{CTF}{Conventional Terrestrial Frame}
 \acrourl{CTU}{Czech Technical University in Prague}{www.cvut.cz/en}
 \acrodef{CV}{Curriculum Vit\ae}
 \acrodefplural{CV}{Curricula Vit\ae}
 %D
+\acro{D/O}{Degree and Order}
 \acrocite{DAA}{Decorrelated \acl{AA}}{Bezdek2014,Bezdek2016}
 \acro{DAS}{Degree Amplitude Spectrum}
 \acrodefplural{DAS}{Degree Amplitude Spectra}
@@ -238,12 +265,15 @@
 \acrourl{DTU}{Danish Technical University\acroextra{, Denmark}}{www.dtu.dk}
 \acrocite{DTU10}{\acs{DTU} Ocean wide Mean Sea Surface height model, 2010}{Andersen2010}
 \acrocite{DW95.1}{Desai-Wahr global ocean model}{Desai1995,Desai1997}
+\acrocite{DWM07}{Disturbance Wind Model 07}{Emmert2008a}
 %E
 \acro{E2E}{End-to-End}
+\acro{EARP}{Earth Albedo Radiation Pressure}
 \acro{ESAC}{Earth Science Advisory Council}
 \acro{ECEF}{Earth-Centred, Earth-Fixed\acroextra{ reference frame, see \acs{TRF}}}
 \acro{ECF}{Earth Centred Fixed\acroextra{ reference frame, see \acs{TRF}}}
 \acro{ECI}{Earth-Centred Inertial\acroextra{ reference frame, see \acs{CRF}}}
+\acro{ECTS}{European Credit Transfer System}
 \acro{EFRF}{Earth-Fixed Reference Frame\acroextra{ reference frame, see \acs{TRF}}}
 \acrourl{ECMWF}{European Centre for Medium-Range Weather Forecasts\acroextra{, \acs{UK}}}{www.ecmwf.int}
 \acrocite{EGM2008}{\acs{NGA}'s Earth Gravitational Model 2008}{Pavlis2008}
@@ -257,24 +287,31 @@
 \acrocite{EIGEN-6C}{\acs{GFZ}\slash\acs{GRGS} \acs{EIGEN}, version 6}{Shako2014}
 \acrocite{EIGEN-6C2}{\acs{GFZ}\slash\acs{GRGS} \acs{EIGEN}, version 6.2}{Forste2012}
 \acrocite{EIGEN-6C4}{\acs{GFZ}\slash\acs{GRGS} \acs{EIGEN}, version 6.4}{Forste2014}
+\acro{EIRP}{Earth Infrared Radiation Pressure}
 \acro{EGG}{Electrostatic Gravity Gradiometer}
 \acro{EGG-C}{European \acs{GOCE} Gravity Consortium}
 \acrourl{EGU}{European Geophysical Union}{www.egu.eu}
 \acro{EKF}{Extended Kalman Filter}
-\acrocite{EBA}{Energy Balance Approach}{O'Keefe1957,Jekeli1999}
+\acrocite{EBA}{Energy Balance Approach}{OKeefe1957,Jekeli1999}
 \acro{EnKF}{Ensemble Kalman Filter}
 \acro{ENSS}{European Navigation Satellites Services}
 \acro{ENVISAT}{ENVIronmental SATellite} %need reference
-\acrocite{EOT08a}{2008 Empirical Ocean Tide model derived from Altimeter data}{Savcenko2008,Savcenko2008a}
+\acro{EOT}{Empirical Ocean Tide\acroextra{ model}}
+\acrocite{EOT08a}{2008 \acl{EOT} model}{Savcenko2008,Savcenko2008a}
+\acrocite{EOT11a}{2011 \acl{EOT} model}{Savcenko2012}
 \acro{EWH}{Equivalent Water Height}
 \acro{EWI}{Elektrotechniek, Wiskunde en Informatica\acroextra{ faculteit (Faculty of Electrical Engineering, Mathematics and Computer Science), \ac{TUD}}}
 \acro{EO}{Earth Observation}
+\acro{EOP}{Earth Orientation Parameter}
 \acrourl{EPSRC}{Engineering and Physical Sciences Research Council}{www.epsrc.ac.uk}
+\acrocite{ERBE}{Earth Radiation Budget Experiment}{Barkstrom1986}
+\acro{ERA}{Earth Rotation Angle}
 \acrourl{ERC}{European Research Council}{erc.europa.eu}
+\acro{ERP}{Earth Rotation Parameters}
 \acrocite{ERS-1}{First European Remote Sensing satellite}{Duchossois1991}
 \acrocite{ERS-2}{Second European Remote Sensing satellite}{Francis1995}
 \acrocite{ERA-40}{40-years \acs{ECMWF} Re-Analysis}{Uppala2005}
-\acrocite{ERA-Interim}{\enquote{Interim} \acs{ECMWF} Re-Analysis}{Dee2011,Berrisford2011}
+\acrocite{ERA-Interim}{Interim \acs{ECMWF} Re-Analysis}{Dee2011,Berrisford2011}
 \acro{ESO}{European Southern Observatory}
 \acro{ESRL}{Earth System Research Laboratory\acroextra{ part of \acs{NOOA}}}
 \acrourl{ESA}{European Space Agency}{www.esa.int}
@@ -285,14 +322,15 @@
 %F
 \acrocite{F3C}{\acs{FORMOSAT-3}\slash \acs{COSMIC}}{Kuo1999,Kuo2005}
 \acrocite{F7C2}{\acs{FORMOSAT-7}\slash \acs{COSMIC-2}}{Ector2010,Cook2013}
-\acrourl{FCT}{Funda\c c\~ao para a Ci\^encia e a Tecnologia\acroextra{ (Science and Technology Foundation)}}{www.fct.pt}
 \acro{FDDW}{Frequency-Dependent Data Weighting}
 \acro{FES}{Finite Element Solution\acroextra{ global tide model}}
-\acrocite[ global tide model]{FES94.1}{release 1994 of the \acl{FES}}{LeProvost1994}
-\acrocite[ global tide model]{FES95.2}{release 1995 of the \acl{FES}}{LeProvost1998}
-\acrocite[ global tide model]{FES99}  {release 1999 of the \acl{FES}}{Lefevre2002}
-\acrocite[ global tide model]{FES2004}{release 2004 of the \acl{FES}}{Lyard2006}
+\acrocite[ global tide model]{FES94.1}{1994 \acl{FES}}{LeProvost1994}
+\acrocite[ global tide model]{FES95.2}{1995 \acl{FES}}{LeProvost1998}
+\acrocite[ global tide model]{FES99}  {1999 \acl{FES}}{Lefevre2002}
+\acrocite[ global tide model]{FES2004}{2004 \acl{FES}}{Lyard2006}
+\acrocite[ global tide model]{FES2014}{2014 \acl{FES}}{Carrere2015}
 \acro{FOC}{Free Of Charge}
+\acro{FoV}{Field of View}
 \acro{FRT}{Final Report}
 \acro{FORMOSAT-3}{Taiwan's Formosa Satellite Mission-3\acroextra{ (see also \acs{F3C})}} %reference added to F3C.cite
 \acro{FORMOSAT-7}{Taiwan's Formosa Satellite Mission-7\acroextra{ (see also \acs{F7C2})}} %reference added to F7C2.cite
@@ -304,14 +342,18 @@
 \acro{GeoQ}{Relativistic geodesy and gravimetry with quantum sensors}
 \acro{GEOSAT}{GEOdetic SATellite} %need reference
 \acro{GEOSAT-FO}{\acs{GEOSAT} Follow-On} %need reference
+\acro{GFM}{Gravity Field Model}
 \acrourl{GFZ}{German Research Centre for Geosciences \acroextra{, Germany}}{www.gfz-potsdam.de}
-\acrocite{GHOST}{\acs{GPS} High precision Orbit determination Software Tool}{Wermuth2010}
+\acrocite{GHOST}{\acs{GPS} High precision Orbit determination Software Tool}{VanHelleputte2004,Wermuth2010}
 \acrocite{GGM02}{\acs{GRACE} Gravity Model 02}{Tapley2005}
 \acrocite{GGM03}{\acs{GRACE} Gravity Model 03}{Tapley2007a}
-\acrocite{GGM05G}{\acs{GRACE} Gravity Model 05}{Tapley2013}
+\acrocite{GGM05G}{\acs{GRACE} and \acs{GOCE} Gravity Model 05}{Bettadpur2015}
+\acrocite{GGM05C}{Combined \acs{GRACE} Gravity Model 05}{Ries2016}
 \acro{GIA}{Glacial Isostatic Adjustment}
+\acrocite{GIF48}{\acs{GRACE} Intermediate Field 48}{Ries2011}
 \acrocite{GLDAS}{Global Land Data Assimilation System}{Rodell2004}
 \acrocite{GloNaSS}{Globalnaya Navigatsionnaya Sputnikovaya Sistema}{Polischuk2004} %need reference
+\acro{GMT}{Greenwich Mean Time}
 \acro{GNSS}{Global Navigation Satellite System}
 \acrocite{GOCE}{Gravity field and steady-state Ocean Circulation Explorer}{Balmino1999,Floberghagen2011} %need reference
 \acro{GOCO}{Gravity Observation COmbination}
@@ -319,25 +361,27 @@
 \acrocite{GOCO02S}{\acs{GOCO} release 02 satellite-only gravity field model}{Goiginger2011}
 \acrocite{GOCO03S}{\acs{GOCO} release 03 satellite-only gravity field model}{Mayer-Gurr2012}
 \acrocite{GOCO05S}{\acs{GOCO} release 05 satellite-only gravity field model}{Mayer-Gurr2015}
+\acrocite{GOCO06S}{\acs{GOCO} release 06 satellite-only gravity field model}{Kvas2021}
 \acrocite[ model]{GOT}{Goddard Ocean Tide}{Ray1999}
 \acro{GPS}{Global Positioning System}
 \acrocite{GRACE}{Gravity Recovery And Climate Experiment}{Tapley1996,Tapley2004}
-\acrocite{GRACE-FO}{\acs{GRACE} Follow On}{Sheard2012,Larkin2012,Flechtner2014a}
+\acrocite{GRACE-FO}{\acs{GRACE} Follow On}{Kornfeld2019}
 \acrocite[ mission]{GRAIL}{Gravity Recovery and Interior Laboratory}{Lehman2013}
 \acrocite{GRAPHIC}{Group and Phase Ionospheric Calibration}{Montenbruck2003a}
 \acro{GRAS}{\acs{GNSS} Receiver for Atmospheric Sounding} %need reference
 \acro{GRAZIL}{Gravity field of the moon from radio science tracking and inter-satellite measurements of the \acs{GRAIL} spacecraft\acroextra{, \"Osterreichische Forschungsf\"orderungsgesellschaft mbH}}
-\acroref{GRF}{Gradiometer Reference Frame}{sec:grf} %if you change this, also change the superscript
-\acro{GROOPS}{Gravity Recovery Object Oriented Programming System}
+\acrocite{GROOPS}{Gravity Recovery Object Oriented Programming System}{Mayer-gurr2020}
 \acrourl{GRS}{Geoscience and Remote Sensing\acroextra{, Faculty of Civil Engineering and Geosciences, \ac{TUD}}}{www.tudelft.nl/en/ceg/over-faculteit/departments/geoscience-remote-sensing/}
 \acrocite{GRIB}{GRIdded Binary}{web:GRIB}
 \acrourl{GRGS}{Groupe de Recherche de G\'{e}od\'{e}sie Spatiale\acroextra{, France}}{grgs.obs-mip.fr}
 \acrourl{GSFC}{Goddard Space Flight Center\acroextra{, \ac{USA}}}{www.nasa.gov/centers/goddard}
 \acro{GSOC}{German Space Operations Centre}
 \acrourl{GSP}{General Study Programme}{gsp.esa.int}
+\acro{GST}{Greenwich Sidereal Time} %same as GAST
+\acro{GAST}{Greenwich Apparent Sidereal Time}
+\acro{GMST}{Greenwich Mean Sidereal Time}
 %H
 \acrocite{HASDM}{High Accuracy Satellite Drag Model}{Storz2005}
-\acroref{HRF}{Hill Reference Frame}{sec:hrf}
 \acro{hlsst}[hl-SST]{High-low Satellite-to-Satellite tracking}
 \acro{HPF}{High-Level Processing Facility}
 \acro{HPC}{High Performance Computing}
@@ -353,15 +397,20 @@
 \acro{ICET}{International Center for Earth Tides}
 \acro{ICESat}{Ice, Cloud and land Elevation Satellite} %need reference
 \acrourl{ICGEM}{International Centre for Global Earth Models}{icgem.gfz-potsdam.de}
+\acrocite{IEBA}{Improved \acl{EBA}}{Shang2015}
 \acro{IERS}{International Earth Rotation Service}
+\acrocite{IERS2010}{\acs{IERS} Conventions 2010}{Petit2010}
 \acro{IF}{Intermediate Frequency}
-\acrourl{IfG}{Institute of Geodesy\acroextra{, \acs{TUG}}}{www.itsg.tugraz.at}
+\acrourl{IfG}{Institute of Geodesy\acroextra{, \acs{TUG},} Graz}{www.ifg.tugraz.at}
+\acrourl{IGFS}{International Gravity Field Service}{igfs.topo.auth.gr}
 \acrocite{IGS}{International \acs{GNSS} Service}{Dow2005}
 \acro{InSAR}{Interferometric Synthetic Aperture Radar}
 \acro{IP}{Intellectual Property}
 \acro{IPCC}{Intergovernmental Panel for Climate Change}
 %Iridium NEXT \citep{Gupta2008} %there is no acronym for this, so cannot use \acrocite
+\acro{I/O}{Input/Ouput}
 \acro{I/Q}{In-phase\slash Quadrature}
+\acro{IR}{Infrared Radiation}
 \acrocite{IRNSS}{Indian Regional Navigation Satellite System}{Ganeshan2005}
 \acro{IRF}{Inertial Reference Frame}
 \acro{ISA}{In-situ Accelerations}
@@ -370,35 +419,42 @@
 \acro{ISR}{Inter-Satellite Range}
 \acrourl{IST}{Instituto Superior T\'ecnico}{tecnico.ulisboa.pt}
 \acro{ITAM}{Institute of Theoretical and Applied Mechanics, \acs{AVCR}}
-\acrourl{ITG}{Institut f\"ur Geod\"asie und Geoinformation\acroextra{, Germany}}{www.igg.uni-bonn.de}
-\acro{ITSG}{Institute of Theoretical Geodesy and Satellite Geodesy}
+\acrourl{IGG}{Institut f\"ur Geod\"asie und Geoinformation\acroextra{, Germany}}{www.igg.uni-bonn.de}
+   \acro{ITG}{Institut f\"ur Geod\"asie und Geoinformation\acroextra{, Germany}}
+\acro{ITSG}{Institute of Theoretical Geodesy and Satellite Geodesy\acroextra{, \acs{aka} \acs{IfG}}}
 \acrocite{ITG-CHAMP01}{\acs{ITG} \acs{CHAMP}-only model, version 1}{Mayer-Gurr2005}
 \acrocite{ITG-GRACE2010}{\acs{ITG} \acs{GRACE}-only model, 2010}{Mayer-Gurr2010,Kurtenbach2009}
 \acrocite{ITG-GRACE2010s}{\acs{ITG} \acs{GRACE}-only static model, 2010}{Mayer-Gurr2010}
 \acrocite{ITG-GRACE02s}{\acs{ITG} \acs{GRACE}-only model, version 2}{Mayer-Gurr2007}
 \acrocite{ITG-GRACE03s}{\acs{ITG} \acs{GRACE}-only model, version 3}{Mayer-Gurr2007a}
 \acrocite{ITSG-GRACE2014}{\acs{ITSG} \acs{GRACE}-only model, 2014}{Mayer-Gurr2014}
-\acrocite{ITSG-GRACE2016}{\acs{ITSG} \acs{GRACE}-only model, 2016}{Klinger2016}
+\acrocite{ITSG-GRACE2016}{\acs{ITSG} \acs{GRACE}-only model, 2016}{Mayer-Gurr2016}
 \acrourl{ITRF}{International Terrestrial Reference Frame}{itrf.ensg.ign.fr}
+\acrocite{ITRF2014}{\acs{ITRF}, version 2014}{Rebischung2016}
 \acro{ITT}{Invitation To Tenders}
 \acro{IUGG}{International Union of Geodesy and Geophysics}
 %J
 \acrocite{Jason-1}{First Jason altimetry mission}{Menard2003}
 \acrourl{JAMTEC}{Japan Agency for Marine-Earth Science and Technology}{www.jamstec.go.jp/e/}
+\acrocite{JB2008}{Jacchia-Bowman 2008}{Bowman2008}
 \acrourl{JPL}{Jet Propulsion Laboratory\acroextra{, \acs{USA}}}{www.jpl.nasa.gov}
+\acrocite{JPL-PLE}{\acs{JPL} Planetary and Lunar Ephemerides}{Folkner2014}
+\acrodefplural{JPL-PLE}{\acs{JPL} Planetary and Lunar Ephemerides}
+\acro{JSON}{JavaScript Object Notation}
 %K
 \acrocite{KANTHA2}{Khanta global ocean model}{Kantha1995,Kantha1995a}
 \acro{KB}{Kinematic Baseline}
 \acro{KBR}{K-Band Ranging}
 \acro{KO}{Kinematic Orbit}
+\acro{KVN}{Key-Value Notation}
 \acro{K/O}{Kick Off}
 %L
 \acro{L0}{Level 0\acroextra{ data}}
-\acro{L1}{\unit{1575.42}{mHz} \acs{GPS} carrier\acroextra{ frequency}}
+\acro{L1}{\unit{1575.42}{MHz} \acs{GPS} carrier\acroextra{ frequency}}
 \acro{L1data}[L1]{Level 1\acroextra{ data}}
 \acro{L1A}{Level 1A\acroextra{ data}}
 \acro{L1B}{Level 1B\acroextra{ data}}
-\acro{L2}{\unit{1227.60}{mHz} \acs{GPS} carrier\acroextra{ frequency}}
+\acro{L2}{\unit{1227.60}{MHz} \acs{GPS} carrier\acroextra{ frequency}}
 \acro{L2data}[L2]{Level 2\acroextra{ data}}
 \acro{L2PS}{Level 2 Processing System}
 \acro{L5}{\unit{1176.45}{mHz} \acs{GPS} carrier\acroextra{ frequency}}
@@ -406,23 +462,23 @@
 \acrourl{LDAS}{Land Data Assimilation Systems}{ldas.gsfc.nasa.gov}
 \acro{LAN}{Local Area Network}
 \acrocite{LAGEOS}{LAser GEOdynamics Satellite}{Cohen1985}
+\acrocite{LAMBDA}{Least-squares Ambiguity De-correlation Adjustment}{Teunissen1995}
 \acro{LASER}{Light Amplification by the Stimulated Emission of Radiation}
 \acrourl{latex}{\LaTeX}{www.latex-project.org}
 \acro{LEGOS}{Laboratoire d'Etudes en Geophysique et Oceanographie Spatiale}
 \acro{LEO}{Low-Earth Orbit}
 \acro{LGM}{Last Glacial Maximum}
-\acrourl{Lic.}{Licenciate\acroextra{ (Licenciate in Engineering, pre-Bologna Accords)}}{en.wikipedia.org/wiki/Licentiate_(degree)\#Portugal}
+\acrourlc{Licenciate}{Lic.}{Licenciatura\acroextra{ (Licenciate in Engineering, pre-Bologna Accords)}}{en.wikipedia.org/wiki/Licentiate}
 \acrocite{LISA}{Laser Interferometer Space Antenna}{Merkowitz2003}
-\acroref{LHRF}{Local Horizontally-aligned Reference Frame}{sec:lhrf} %if you change this, also change the superscript
 \acro{llsst}[ll-SST]{low-low Satellite-to-Satellite Tracking}
 \acro{LNA}{Low-Noise Amplifier}
 \acro{LNOF}{Local North-Oriented Frame}
-\acroref{LORF}{Local Orbital Reference Frame}{sec:lorf} %if you change this, also change the superscript
 \acro{LoS}{Line of Sight} %if you change this, also change uv.los
-\acroref{LoSRF}{Line-of-sight Reference Frame}{sec:losrf} %if you change this, also change the superscript
 \acro{LNA}{Low-Noise Amplifier}
-\acro{LS}{Least-Squares}
+\acro{LP}{Linear Programming}
+\acro{LS}{least-squares}
 %M
+\acro{MAD}{Median Absolute Deviation}
 \acrourl{MATLAB}{MATrix LABoratory}{www.mathworks.com}
 \acrocite[ approach]{MasCon}{Mass Concentration}{Rowlands2005,Lemoine2007a}
 \acro{MB}{Mega Bytes\acroextra{, \ac{i.e.} $1024^2$ bytes}}
@@ -430,9 +486,12 @@
 \acrocite{MetOp}{Meteorological Operational satellite programme}{Edwards2000}
 \acro{MetOp-A}{first satellite of the \acl{MetOp}} %need reference
 \acro{MGEX}{Multi-GNSS Experiment}
-\acro{MODK}{Multiple satellites Orbit Determination using Kalman filtering}
+\acro{MJD}{Modified Julian Date}
+\acrocite{MLAMBDA}{Modified \acs{LAMBDA} method}{Chang2005}
+\acrocite{MODK}{Multiple satellites Orbit Determination using Kalman filtering}{Barneveld2012}
 \acrocite{MOG2D-G}{2D Gravity Waves model}{Carrere2003}
 \acro{MPP}{Milestone Payment Plan}
+\acrocite{MSODP}{Multi-Satellite Orbit Determination Program}{Rim1992}
 \acro{MTR}{Mid-Term Review}
 \acro{FR}{Final Review}
 %N
@@ -445,19 +504,27 @@
 \acro{NCAR}{National Center for Atmospheric Research}
 \acrocite{NCEP/NCAR RP}{\acs{NCEP}/\acs{NCAR} Reanalysis Project}{Kalnay1996}
 \acrourl{NCEP}{National Centers for Environmental Prediction\acroextra{, \acs{USA}}}{www.ncep.noaa.gov}
+\acro{NCP}{North Celestial Pole}
+\acro{NEQ}{Normal Equation}
 \acrocite{NetCDF}{Network Common Data Form}{Unidata2010}
 \acrourl{NERC}{Natural Environment Research Council}{www.nerc.ac.uk}
 \acrourl{NGA}{National Geospatial-Intelligence Agency\acroextra{, \acs{USA} (previously called \acs{NIMA})}}{www.nga.mil}
 \acro{NGO}{Non-Governmental Organisations}
 \acro{NIMA}{National Imagery and Mapping Agency}
 \acro{NLDAS}{North American Land Data Assimilation System}
+\acro{NLP}{Non-Linear Programming}
 \acro{NOOA}{National Oceanic and Atmospheric Administration}
-\acrocite{NRLMSISE}{\acroextra(US )Naval Research Laboratory Mass Spectrometer and Incoherent Scatter Radar\acroextra{ tmospheric model}}{Picone2002}
-\acro{NRTDM}{Near Real-Time Density Model}
+\acrocite{NRLMSISE}{\acroextra{US} Naval Research Laboratory Mass Spectrometer and Incoherent Scatter radar\acroextra{ atmospheric model}}{Picone2002}
+\acrocite{NRLMSIS2}{\acroextra{US} Naval Research Laboratory Mass Spectrometer and Incoherent Scatter radar\acroextra{ atmospheric model}, version 2}{Emmert2021}
+\acrocite{NRTDM}{Near Real-Time Density Model}{Doornbos2014}
 \acrourl{NTP}{Network Time Protocol}{www.ntp.org}
 %O
+\acro{O-C}[\emph{O-C}]{Observed minus Computed (modelled) measurements}
 \acrourl{OCA}{Observatoire de la C\^{o}te d'Azur}{www.oca.eu}
+\acro{ODE}{Ordinary Differential Equation}
 \acrocite{OMCT}{Ocean Model for Circulation and Tides}{Thomas2001}
+\acro{OMM}{Orbit Mean-Elements Message}
+\acro{OOP}{Object Oriented Programming}
 \acro{ORD}{Open Research Data}
 \acro{ORI}{Ocean Research Institute\acroextra{, University of Tokyo}}
 \acrocite{ORI-NAO96}{1996 release of the \acs{ORI}-\acs{NAO}'s global ocean model}{Matsumoto1995}
@@ -471,6 +538,7 @@
 \acro{PCA}{Principal Component Analysis}
 \acrocite[ method]{PCCG}{Pre-Conditioned Conjugate Gradient}{Hestenes1952}
 \acro{PCDP}{Personal Career Development Plan}
+\acro{PCV}{Phase Center Variation}
 \acrourl{PDF}{Portable Data Format}{en.wikipedia.org/wiki/Portable_Document_Format}
 \acro{PDGS}{Payload Data Ground Segment}
 \acro{PDO}{Purely Dynamic Orbit}
@@ -487,7 +555,7 @@
 \acro{PRN}{Pseudo-Random Noise}
 \acro{PSD}{Power Spectral Density\acroextra{, equal to the square of the \acs{ASD}}}
 \acro{PSK}{Phase-Shift Keying}
-\acro{PSO}{Precise or Post-processed Science Orbit}
+\acro{PSO}{Precise \acroextra{or Post-processed }Science Orbit}
 \acro{PSS}{Procedures Specifications and Standards}
 %Q
 \acro{QWG}{Quality Working Group}
@@ -498,8 +566,17 @@
 \acro{RDO}{Reduced Dynamic Orbit}
 \acro{REF}{Research Excellence Framework}
 \acrourl{REF2014}{\acl{REF} 2014}{www.ref.ac.uk}
+\acro{RGBoE}{Rules and Guidelines of the Board of Examiners}
 \acro{RF}{Radio Frequency}
 \acro{RINEX}{Receiver Independent Exchange\acroextra{ Format}}
+\acro{RL01}{Release 1}
+\acro{RL02}{Release 2}
+\acro{RL03}{Release 3}
+\acro{RL04}{Release 4}
+\acro{RL05}{Release 5}
+\acro{RL06}{Release 6}
+\acro{ROTI}{Rate of \acs{TEC} Index}
+\acro{RL07}{Release 7}
 \acrocite{RossInv2002}{Ross Sea Height-Based Tidal Inverse Model}{Padman2010b}
 \acro{RMS}{Root Mean Squared}
 \acro{RRC}{Residual Range Combinations}
@@ -508,6 +585,7 @@
 \acro{SA}{Selective Availability}
 \acrocite{SAA}{Short-Arcs Approach}{Mayer-Gurr2006a}
 \acro{SAR}{Synthetic Aperture Radar}
+\acro{SC}{Stokes coefficient}
 \acro{S/C}{spacecraft}
 \acrocite{SCARF}{Swarm Satellite Constellation Application and Research Facility}{Olsen2013a}
 \acro{SCP}{Secure Copy}
@@ -516,23 +594,29 @@
 \acro{SD-E}{\acl{SD} phase measurements between Epochs}
 \acro{SD-S}{\acl{SD} phase measurements between \acs{GPS} Satellites}
 \acro{SDR}{Software Defined Radio}
+\acro{SDS}{Science Data Service}
 \acrourl{SES}{School of Earth Science\acroextra{, \acs{OSU}}}{earthsciences.osu.edu}
 \acro{SFTP}{Secure File Transfer Protocol}
+\acrourl{SINEX}{Solution-Independent Exchange\acroextra{ Format}}{www.iers.org/IERS/EN/Organization/AnalysisCoordinator/SinexFormat/sinex.html}
 \acro{SGG}{Satellite Gravity Gradient}
 \acro{SG}{Satellite Gradiometry}
+\acro{SGP4}{Simplified General Perturbation models}
+\acro{SH}{Spherical Harmonic}
 \acrocite{SLR}{Satellite Laser Ranging}{Smith1993,Combrinck2010}
 \acro{S-LR}[SLR]{Sea-Level Rise}
 \acro{SoW}{Statement of Work\acroextra{, \href{http://www.space.dtu.dk/english/-/media/Institutter/Space/forskning/projekter/swarm/SwarmDISC/SD-ITT-1_1/SW-SW-DTU-GS-111_ITT1-1_SoW.ashx?la=da}{Doc. Ref. SW-SW-DTU-GS-111\_ITT1-1}}}
-\acrourl{SP3c}{Extended Standard Product 3 Orbit Format}{igscb.jpl.nasa.gov/igscb/data/format/sp3c.txt}
+\acrourl{SP3c}{Extended Standard Product 3 Orbit Format}{ftp://igs.org/pub/data/format/sp3c.txt}
+\acrocite{SPARTA}{Stochastic Parallel Rarefied-Gas Time-Accurate Analyzer}{Gallis2014}
 \acro{SPOT}{Satellite Pour l'Observation de la Terre}
 \acro{SPS}{Standard Positioning Service}
 \acro{SNR}{Signal-to-Noise Ratio}
 \acrocite{SR95.1}{\acs{TUD}/\acs{GSFC} Schrama-Ray global ocean models}{Schrama1994}
-\acroref{SRF}{Satellite Reference Frame}{sec:srf} %if you change this, also change the superscript
+\acro{SRP}{Solar Radiation Pressure}
 \acro{SRTM}{Shuttle Radar Topographic Mission} %need reference
 \acro{SSAC}{Space Science Advisory Council}
 \acrourl{SSAU}{Samara State Aerospace University}{www.ssau.ru/english}
 \acro{SSE}{Space Systems Engineering\acroextra{, Faculty of Aerospace Engineering, \ac{TUD}}}
+\acro{SSN}{Space Surveilance Network}
 \acro{SSO}{Sun-Synchronous Orbit}
 \acro{SST}{Satellite-to-Satellite tracking}
 \acrocite{SST-AUX-2}{\acs{GOCE} \acs{HPF} non-tidal dealiasing product}{Gruber2014b}
@@ -546,22 +630,27 @@
 %T
 %\acro{TA}{True Anomaly}
 \acro{TA}{Teaching Assistant}
+\acro{TACC}{Texas Advanced Computing Center}
+\acro{TAI}{International Atomic Time\acroextra{, from its French name \emph{temps atomique international}}}
 \acro{TB}{Tera Bytes\acroextra{, \ac{i.e.} $1024^4$ bytes}}
 \acro{TBA}{To Be Announced}
 \acro{TBD}{To Be Determined}
+\acro{TBC}{To Be Confirmed}
 \acro{TC}{Trailing\slash Cartwheel}
 \acro{TD}{Triple-differenced}
 \acro{TDP}{Technical Data Package}
 \acrourl{TDRSS}{Tracking and Data Relay Satellite System}{tdrs.gsfc.nasa.gov}
 \acro{TDW}{Thermospheric Density and Wind}
+\acro{TEC}{Total Electron Content}
+\acro{TEME}{True Equator Mean Equinox\acroextra{ coordinate system}}
+\acro{TER}{Teaching and Examination Regulations}
 \acrourl{TLE}{Two-Line Elements}{www.space-track.org}
 \acro{TOPEX}{TOPography EXperiment}
 \acrocite{TOPEX/Poseidon}{\acs{TOPEX}\slash Poseidon}{Stewart1981}
 \acrocite{TPXO}{ToPeX Ocean tidal model}{Egbert1994,Egbert2002}
-\acroref{TRF}{Terrestrial Reference Frame}{sec:trf} %if you change this, also change the superscript
 \acro{TS}{Trailing\slash Screw}
 \acro{TT}{Terrestrial Time}
-\acrourlc{TU Delft}{TUD}{Delft University of Technology}{www.tudelft.nl}
+\acrourlc{TU Delft}{TUD}{Delft University of Technology\acroextra{, Netherlands}}{www.tudelft.nl}
 \acrourl{TUDAT}{\acs{TUD} Astrodynamics Toolbox}{tudat.tudelft.nl}
 \acrourl{TUG}{Graz University of Technology\acroextra{, Austria}}{www.tugraz.at}
 \acrocite[  gravity field model]{TUG-CHAMP04}{\acs{TUG} \acs{CHAMP} 2004}{Badura2006}
@@ -570,29 +659,36 @@
 \acro{TVGOGO}{Time Variable Gravity Observed by \acs{GPS}-derived Orbit positions\acroextra{, \"Osterreichische Forschungs-f\"orderungsgesellschaft mbH}}
 \acro{TWS}{Terrestrial Water Storage}
 %U
+\acrocite{UCBS}{Uniform Cubic Basis Splines}{DeBoor2001}
 \acro{UHF}{Ultra High Frequency\acroextra{ band of the \acs{RF} spectrum}}
 \acro{UK}{United Kingdom}
 \acrourl{UMinho}{Universidade do Minho}{www.uminho.pt/EN}
 \acro{UN}{United Nations}
 \acro{URL}{Uniform Resource Locator}
-\acrourl{UTexas}{University of Texas at Austin}{www.utexas.edu}
+\acrourl{UT Austin}{University of Texas at Austin}{www.utexas.edu}
 \acro{UTC}{Coordinated Universal Time}
-\acrourl{ULisboa}{Universidade de Lisboa\acroextra{ University of Lisbon}}{www.ulisboa.pt/en}
+\acrourl{UTL}{Technical University of Lisbon}{www.ulisboa.pt/en}
 \acro{USA}{United States of America}
 \acro{USB}{Universal Serial Bus}
+\acro{USSF}{United States Space Force}
 %V
 \acro{V2}{Version 2\acroextra{ of the \acs{L2PS}}}
+\acrocite{VEA}{Variational Equations Approach}{Montenbruck2000}
+\acro{VCE}{Variance Component Estimation}
 \acro{VHF}{Very High Frequency\acroextra{ band of the \acs{RF} spectrum}}
+\acro{VLBI}{Very Long Baseline Interferometry}
 \acrourl{VZLU}{Aeronautical Research and Test Institute\acroextra{ (V\'yzkumn\'y a zku\u sebn\'i leteck\'y \'ustav)}}{www.vzlu.cz/en}
 %X
+\acro{XML}{Extensible Markup Language}
 %W
 \acro{WAV}{Windows Wave\acroextra{ file format}}
 \acro{WBS}{Work Breakdown Structure}
-\acrocite{WGHM}{Watergap Global Hydrological Model}{Doll2003,Doll2014a}
+\acrocite{WGHM}{Watergap Global Hydrological Model}{Doll2003}
 \acrocite{WGS84}{World Geodetic System 1984}{Mularie2000}
 \acro{WP}{Work Package}
 %Y
+\acrourl{YAML}{YAML Ain't Markup Language}{yaml.org}
 %Z
 \acro{ZD}{Zero-differenced}
 \end{acronym}
-\acresetall
+%NOTICE: beamer may throw an error if there's no acronyms defined in the main document
